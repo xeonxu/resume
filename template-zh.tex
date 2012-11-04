@@ -23,12 +23,15 @@
 %\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
 
 % 字符编码
-% \usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+% 使用xelatex，无需以下设置
 % \usepackage{CJKutf8}
 
 % 调整页面出血
 \usepackage[scale=0.75]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}           % 如果你希望改变日期栏的宽度
+% 解决XeLaTex编译时的编码警告
+\usepackage[unicode,pdfencoding=auto]{hyperref}
 
 % 个人信息
 \firstname{小龙}

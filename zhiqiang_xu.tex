@@ -7,25 +7,30 @@
 
 
 \documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\usepackage{etoolbox}
+\makeatletter
+% 字符编码
+\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+% 使用xelatex，无需以下设置
+% \usepackage{CJKutf8}
 
+\@ifpackageloaded{tex4ht}{
+\usepackage{devng4ht}
+}{%
 \usepackage{fontspec,xunicode}
 \setmainfont{Tahoma}
 \usepackage[slantfont,boldfont]{xeCJK}
-\usepackage{xcolor}                 % replace by the encoding you are using
 \setCJKmainfont{Adobe Song Std L}
 \defaultfontfeatures{Mapping=tex-text}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+}
+\usepackage{xcolor}                 % replace by the encoding you are using
 
 % moderncv 主题
 \moderncvstyle{classic}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
 \moderncvcolor{orange}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
 %\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
-
-% 字符编码
-\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
-% 使用xelatex，无需以下设置
-% \usepackage{CJKutf8}
 
 % 调整页面
 \usepackage[scale=0.75]{geometry}
@@ -45,7 +50,7 @@
 \homepage{blog.xeonxu.info}                  % 可选项、如不需要可删除本行
 \extrainfo{www.github.com/xeonxu}                  % 可选项、如不需要可删除本行
 \photo[80pt][0.4pt]{picture.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
-\quote{Work as a hacker. Hack as a artist.}                 % optional, remove the line if not wante
+\quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not wante
 
 % 显示索引号;仅用于在简历中使用了引言
 %\makeatletter
@@ -63,64 +68,38 @@
 \maketitle
 
 \section{教育背景}
-\cventry{2002 -- 2006}{交通工程学士}{河海大学}{南京}{学分绩点\textit{3.49}}{}  % 第3到第6编码可留白
+\cventry{2002 -- 2006}{交通工程学士}{河海大学}{南京}{}{}  % 第3到第6编码可留白
 
 % \section{毕业论文}
 % \cvitem{题目}{\emph{地铁机车运行信息收发报模拟器的实现}}
 % \cvitem{导师}{徐鹏}
 
 \section{工作背景}
-\cventry{2006 -- 2007}{Java工程师}{南大腾龙}{南京}{}{从事Java相关的测试和开发工作\newline{}
-  主要工作：
+\cventry{2010 -- 至今}{嵌入式软件工程师}{上海斐讯数据通信技术有限公司}{上
+  海}{}{手机研发\newline{}
+主要工作：
+\begin{itemize}
+\item MStar功能机项目。FSB01，FSE71，FSB107，FSB109，FSB304。
   \begin{itemize}
-  \item 为JUSTSYSTEM开发的xfyuass项目
-    \begin{itemize}
-    \item 单元测试代码编写
-    \item 集成化测试整合
-    \item 文档制作
-    \end{itemize}
-  \item 为三得利公司开发自动售卖机在线维护管理系统的vvv项目
-    \begin{itemize}
-    \item 编写数据库的处理代码
-    \item 单元测试代码编写
-    \item 自动化部署脚本编写
-    \item 文档制作
-    \end{itemize}
+  \item 界面修改，三方软件移植以及解决Bug
+  \item 编写自动发布脚本
   \end{itemize}
-}%
-\cventry{2007 -- 2008}{嵌入式软件工程师}{日立制造所}{日立市}{}{作为协力会员为日立公司协助开发基于ARM处理器的车载项目AVCCore。该项目后来为凯迪拉克CTS08,09车型的车载音响。\newline{}
-  主要工作：
+\item MTK功能机项目。FMB304。
   \begin{itemize}
-  \item iPod集成应用。负责车载电脑中iPod Controller和iPod CoreApp开发和维护
-  \item 负责车载电脑的音频文件头解析处理的开发及维护
-  \item 文档制作及维护
+  \item 界面修改，功能定制，解决Bug
   \end{itemize}
-}
-\cventry{2008 -- 2008}{Java工程师}{京瓷公司Mita分公司}{大阪市}{}{作为协力会员在京瓷公司，使用Java语言，协助开发用于医院的纸质文档的电子化解决方案KMCapture Solution。\newline{}
-  主要工作：
+\item Android智能手机项目。在智能手机项目中，本人转为驱动工程师。目前
+  为止，在项目中主职电源管理模块的开发，同时也负责部分外围器件的驱动开
+  发。
   \begin{itemize}
-  \item 担当模块为Controller，Facade以及部分的Storage。
-  \item 软件设计书作成
-  \item 编码及测试
+  \item FWS920，FWS710+，基于Marvell PXA968平台。
+  \item FWS710EU，基于Qualcomm MSM7x27平台。
+  \item FPAD307，i813w，k390w/v，i508d，基于Qualcomm MSM8x25平台。
+  \item i813wa，基于Qualcomm MSM8x25Q平台。
+  \item 制作基于windows和linux系统的高通MP编译环境一键安装配置工具
+  \item 制作各类项目工具
   \end{itemize}
-}
-\cventry{2008 -- 2009}{嵌入式软件工程师}{上海腾龙软件公司}{上海市}{}{参与几个对日项
-  目，主要是嵌入式平台的开发。
-  主要工作：
-  \begin{itemize}
-  \item 日立公司的数字电视项目
-    \begin{itemize}
-    \item 界面的开发及上部逻辑的工作
-    \item 文档制作
-    \item 编码测试
-    \end{itemize}
-  \item vxworks到Linux的移植项目。改进开发环境，快速解决问题。
-  \item openvg移植项目接口
-    \begin{itemize}
-    \item 主体程序移植
-    \item 单元测试程序编写及测试
-    \end{itemize}
-  \end{itemize}
+\end{itemize}
 }
 \cventry{2009 -- 2010}{嵌入式软件工程师}{上海品酷网络科技有限公司}{上海}{}{开发动态手机主题及手机特效（iShow主题系统）\newline{}
   主要工作：
@@ -132,50 +111,77 @@
     \item 蒲公英效果
     \item 生产自动化脚本工具
     \end{itemize}
-  \item 改进完善手机端的下载程序，支持断点续传。使用户可以方便的通过手机端的下载器从
-    网络上下载相应的主题包文件，而扩展手机界面的表现形式。
+  \item 改进及完善手机端的下载程序，支持断点续传。使用户能够通过下载器
+    方便的从网络上下载相应的主题包文件，而扩展手机界面的表现形式。
   \end{itemize}
 }
-\cventry{2010 -- 至今}{嵌入式软件工程师}{上海斐讯数据通信技术有限公司}{上
-  海}{}{手机研发\newline{}
-主要工作：
-\begin{itemize}
-\item MStar功能机项目。FSB01，FSE71，FSB107，FSB109，FSB304。
+\cventry{2008 -- 2009}{嵌入式软件工程师}{上海腾龙软件公司}{上海市}{}{参与几个对日项
+  目，主要是嵌入式平台的开发。
+  主要工作：
   \begin{itemize}
-  \item 界面修改
-  \item 功能对应
-  \item 自动发布脚本
-  \item 解决Bug
+  \item 日立公司的数字电视项目
+    \begin{itemize}
+    \item 界面的开发及上部逻辑的工作
+    \item 编写文档
+    \item 编码测试
+    \end{itemize}
+  \item vxworks到Linux的移植项目。改进开发环境，快速解决问题。
+  \item openvg移植项目接口
+    \begin{itemize}
+    \item 主体程序移植
+    \item 单元测试程序编写及测试
+    \end{itemize}
   \end{itemize}
-\item MTK功能机项目。FMB304。
-  \begin{itemize}
-  \item 界面修改
-  \item 功能对应
-  \item 解决Bug
-  \end{itemize}
-\item Android智能手机项目。在智能手机项目中，本人转为驱动工程师。目前
-  为止，在项目中主职电源管理模块的开发，同时也负责部分外围器件的驱动开
-  发。
-  \begin{itemize}
-  \item FWS920，FWS710+，基于Marvell PXA968平台。
-  \item FWS710EU，基于Qualcomm MSM7x27平台。
-  \item FPAD307，基于Qualcomm MSM8x25平台。
-  \end{itemize}
-\end{itemize}
 }
+\cventry{2008 -- 2008}{Java工程师}{京瓷公司Mita分公司}{大阪市}{}{作为协力会员在京瓷公司，使用Java语言，协助开发用于医院的纸质文档的电子化解决方案KMCapture Solution。\newline{}
+  主要工作：
+  \begin{itemize}
+  \item 担当模块为Controller，Facade以及部分的Storage。
+  \item 编写软件设计书
+  \item 编码及测试
+  \end{itemize}
+}
+\cventry{2007 -- 2008}{嵌入式软件工程师}{日立制造所}{日立市}{}{作为协力会员为日立公司协助开发基于ARM处理器的车载项目AVCCore。该项目后来为凯迪拉克CTS08,09车型的车载音响。\newline{}
+  主要工作：
+  \begin{itemize}
+  \item iPod集成应用。负责车载电脑中iPod Controller和iPod CoreApp开发和维护
+  \item 负责车载电脑的音频文件头解析处理的开发及维护
+  \item 文档的编写及维护
+  \end{itemize}
+}
+\cventry{2006 -- 2007}{Java工程师}{南大腾龙}{南京}{}{从事Java相关的测试和开发工作\newline{}
+  主要工作：
+  \begin{itemize}
+  \item 为JUSTSYSTEM开发的xfyuass项目
+    \begin{itemize}
+    \item 编写单元测试代码
+    \item 集成化测试整合
+    \item 编写文档
+    \end{itemize}
+  \item 为三得利公司开发自动售卖机在线维护管理系统的vvv项目
+    \begin{itemize}
+    \item 编写数据库的处理代码
+    \item 编写单元测试代码
+    \item 编写自动化部署脚本
+    \item 编写文档
+    \end{itemize}
+  \end{itemize}
+}%
+
 \section{语言技能}
 \cvitemwithcomment{英语}{CET4}{一般}
 \cvitemwithcomment{日语}{三级}{一般}
 
 \section{计算机技能}
-\cvdoubleitem{C语言}{熟练}{Java}{懂得不多}
-\cvdoubleitem{Linux/Unix}{熟练}{硬件方面}{继续学习中}
-\cvdoubleitem{脚本}{只会Bash}{编辑器}{Emacs}
+\cvdoubleitem{C语言}{熟练}{Java}{一般}
+\cvdoubleitem{Linux/Unix}{熟练}{硬件方面}{基本概念}
+\cvdoubleitem{脚本}{Bash}{编辑器}{Emacs}
 
 \section{个人兴趣}
-\cvitem{电影}{\small 喜欢看纪录片以及特效片}
-\cvitem{看书}{\small 80\%为计算机相关图书，但也喜欢看一些小说}
-\cvitem{体育}{\small 喜欢滑板运动，但只会一点。喜欢看F1}
+\cvitem{电影}{\small 偏爱纪录片以及科幻片}
+\cvitem{看书}{\small 80\%为计算机相关图书，偶尔看些小说和项目管理类}
+\cvitem{体育}{\small F1，羽毛球}
+\cvitem{开源项目}{\small KOReader，twip}
 
 % \section{开源项目}
 % \cvlistitem{twip：添加proxy支持}

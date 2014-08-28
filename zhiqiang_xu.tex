@@ -20,7 +20,7 @@
 \usepackage{fontspec,xunicode}
 \setmainfont{Tahoma}
 \usepackage[slantfont,boldfont]{xeCJK}
-\setCJKmainfont{Adobe Song Std L}
+\setCJKmainfont{STXihei}
 \defaultfontfeatures{Mapping=tex-text}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
@@ -29,7 +29,7 @@
 
 % moderncv 主题
 \moderncvstyle{classic}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
-\moderncvcolor{orange}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
+\moderncvcolor{green}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
 %\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
 
 % 调整页面
@@ -42,7 +42,7 @@
 \firstname{徐}
 \familyname{至强}
 \title{个人简历}                      % 可选项、如不需要可删除本行
-\address{松江区文翔路3088弄463号402室}{201616，上海}             % 可选项、如不需要可删除本行
+%\address{松江区文翔路3088弄463号402室}{201616，上海}             % 可选项、如不需要可删除本行
 \mobile{+86 13585618661}                         % 可选项、如不需要可删除本行
 \phone{+86 21 67663700}                          % 可选项、如不需要可删除本行
 %% \fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
@@ -50,7 +50,7 @@
 \homepage{blog.xeonxu.info}                  % 可选项、如不需要可删除本行
 \extrainfo{www.github.com/xeonxu}                  % 可选项、如不需要可删除本行
 \photo[80pt][0.4pt]{picture.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
-\quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not wante
+\quote{Work as a hacker. Hack as a artist.}                 % optional, remove the line if not wante
 
 % 显示索引号;仅用于在简历中使用了引言
 %\makeatletter
@@ -68,7 +68,7 @@
 \maketitle
 
 \section{教育背景}
-\cventry{2002 -- 2006}{交通工程学士}{河海大学}{南京}{}{}  % 第3到第6编码可留白
+\cventry{2002 -- 2006}{交通工程学士学位}{河海大学}{南京}{}{}  % 第3到第6编码可留白
 
 % \section{毕业论文}
 % \cvitem{题目}{\emph{地铁机车运行信息收发报模拟器的实现}}
@@ -76,53 +76,43 @@
 
 \section{工作背景}
 \cventry{2010 -- 至今}{嵌入式软件工程师}{上海斐讯数据通信技术有限公司}{上
-  海}{}{手机研发\newline{}
+  海市}{}{工作内容：手机研发\newline{}
 主要工作：
 \begin{itemize}
-\item MStar功能机项目。FSB01，FSE71，FSB107，FSB109，FSB304。
+ \item Android智能手机项目
   \begin{itemize}
-  \item 界面修改，三方软件移植以及解决Bug
-  \item 编写自动发布脚本
+  \item Marvell PXA968平台，传感器，TP以及电源管理芯片驱动。开机logo编译脚本及效果优化。
+  \item Qualcomm MSM7x27/MSM8x25/MSM8x25Q平台。主要负责电源管理模块，编译环境优化，地磁传感器调试方法优化，工厂用TP固件升级方案，基于SMB358双路充电的研发，内置U盘镜像自动生成脚本，制定自适应EMMC容量调整内置U盘容量方案。
+  \item Qualcomm MSM8x10/8x12/8x26/8x16平台。电源管理模块，电池建模等。
   \end{itemize}
-\item MTK功能机项目。FMB304。
-  \begin{itemize}
-  \item 界面修改，功能定制，解决Bug
-  \end{itemize}
-\item Android智能手机项目。在智能手机项目中，本人转为驱动工程师。目前
-  为止，在项目中主职电源管理模块的开发，同时也负责部分外围器件的驱动开
-  发。
-  \begin{itemize}
-  \item FWS920，FWS710+，基于Marvell PXA968平台。
-  \item FWS710EU，基于Qualcomm MSM7x27平台。
-  \item FPAD307，i813w，k390w/v，i508d，基于Qualcomm MSM8x25平台。
-  \item i813wa，基于Qualcomm MSM8x25Q平台。
-  \item 制作基于windows和linux系统的高通MP编译环境一键安装配置工具
-  \item 制作各类项目工具
+\item MStar及MTK功能机项目
+   \begin{itemize}
+  \item 界面修改，功能添加
+  \item 自动发布脚本
   \end{itemize}
 \end{itemize}
 }
-\cventry{2009 -- 2010}{嵌入式软件工程师}{上海品酷网络科技有限公司}{上海}{}{开发动态手机主题及手机特效（iShow主题系统）\newline{}
+\cventry{2009 -- 2010}{嵌入式软件工程师}{上海品酷网络科技有限公司}{上海市}{}{工作内容：开发动态手机主题及手机特效（iShow主题系统）\newline{}
   主要工作：
   \begin{itemize}
-  \item 开发基于mtk平台手机的动态主题和菜单特效。
+  \item 开发基于mtk平台手机的动态主题和菜单特效
     \begin{itemize}
     \item 宫格类主题，圆环类主题
-    \item 飘带效果
-    \item 蒲公英效果
-    \item 生产自动化脚本工具
+    \item 可无极变色到飘带效果动态屏保
+    \item 可区分昼夜的蒲公英效果动态屏保
+    \item 编写研发自动化脚本工具
     \end{itemize}
-  \item 改进及完善手机端的下载程序，支持断点续传。使用户能够通过下载器
-    方便的从网络上下载相应的主题包文件，而扩展手机界面的表现形式。
+  \item 改进完善手机端的下载程序，支持断点续传。
   \end{itemize}
 }
-\cventry{2008 -- 2009}{嵌入式软件工程师}{上海腾龙软件公司}{上海市}{}{参与几个对日项
-  目，主要是嵌入式平台的开发。
+\cventry{2008 -- 2009}{嵌入式软件工程师}{上海腾龙软件公司}{上海市}{}{工作内容：对日项
+  目，主要是嵌入式平台的开发。\newline{}
   主要工作：
   \begin{itemize}
   \item 日立公司的数字电视项目
     \begin{itemize}
-    \item 界面的开发及上部逻辑的工作
-    \item 编写文档
+    \item 界面开发及Bug修正
+    \item 文档维护
     \item 编码测试
     \end{itemize}
   \item vxworks到Linux的移植项目。改进开发环境，快速解决问题。
@@ -133,58 +123,60 @@
     \end{itemize}
   \end{itemize}
 }
-\cventry{2008 -- 2008}{Java工程师}{京瓷公司Mita分公司}{大阪市}{}{作为协力会员在京瓷公司，使用Java语言，协助开发用于医院的纸质文档的电子化解决方案KMCapture Solution。\newline{}
+\cventry{2008 -- 2008}{Java工程师}{京瓷公司Mita分公司}{大阪市}{}{工作内容：使用Java语言，在京瓷公司协助其开发用于医院的纸质文档的电子化解决方案KMCapture Solution。\newline{}
   主要工作：
   \begin{itemize}
-  \item 担当模块为Controller，Facade以及部分的Storage。
+  \item 主要负责Controller，Facade以及部分的Storage模块。
   \item 编写软件设计书
   \item 编码及测试
   \end{itemize}
 }
-\cventry{2007 -- 2008}{嵌入式软件工程师}{日立制造所}{日立市}{}{作为协力会员为日立公司协助开发基于ARM处理器的车载项目AVCCore。该项目后来为凯迪拉克CTS08,09车型的车载音响。\newline{}
+\cventry{2007 -- 2008}{嵌入式软件工程师}{日立制造所}{日立市}{}{工作内容：在日立公司协助其开发基于ARM处理器的车载项目AVCCore。该项目后来为凯迪拉克CTS08,09车型的车载音响。\newline{}
   主要工作：
   \begin{itemize}
   \item iPod集成应用。负责车载电脑中iPod Controller和iPod CoreApp开发和维护
   \item 负责车载电脑的音频文件头解析处理的开发及维护
-  \item 文档的编写及维护
+  \item 文档编写及维护
   \end{itemize}
 }
-\cventry{2006 -- 2007}{Java工程师}{南大腾龙}{南京}{}{从事Java相关的测试和开发工作\newline{}
+\cventry{2006 -- 2007}{Java工程师}{南大腾龙}{南京市}{}{工作内容：从事Java相关的测试和开发工作\newline{}
   主要工作：
   \begin{itemize}
   \item 为JUSTSYSTEM开发的xfyuass项目
     \begin{itemize}
-    \item 编写单元测试代码
-    \item 集成化测试整合
-    \item 编写文档
+    \item 测试代码编写
+    \item 文档维护
     \end{itemize}
   \item 为三得利公司开发自动售卖机在线维护管理系统的vvv项目
     \begin{itemize}
     \item 编写数据库的处理代码
-    \item 编写单元测试代码
-    \item 编写自动化部署脚本
-    \item 编写文档
+    \item 单元测试代码编写
+    \item 自动化部署脚本编写
+    \item 文档维护
     \end{itemize}
   \end{itemize}
 }%
-
 \section{语言技能}
 \cvitemwithcomment{英语}{CET4}{一般}
 \cvitemwithcomment{日语}{三级}{一般}
 
-\section{计算机技能}
-\cvdoubleitem{C语言}{熟练}{Java}{一般}
-\cvdoubleitem{Linux/Unix}{熟练}{硬件方面}{基本概念}
-\cvdoubleitem{脚本}{Bash}{编辑器}{Emacs}
+\section{技能概述}
+\cvdoubleitem{C语言}{熟练}{Java}{略懂}
+\cvdoubleitem{Objective-C}{学习中}{Swift}{学习中}
+\cvdoubleitem{Linux/Unix}{熟练}{硬件}{简单焊接}
+\cvdoubleitem{脚本}{Bash}{编辑器}{Emacs/Vim}
 
 \section{个人兴趣}
-\cvitem{电影}{\small 偏爱纪录片以及科幻片}
-\cvitem{看书}{\small 80\%为计算机相关图书，偶尔看些小说和项目管理类}
-\cvitem{体育}{\small F1，羽毛球}
-\cvitem{开源项目}{\small KOReader，twip}
+\cvitem{电影}{\small 纪录片，科幻片}
+\cvitem{看书}{\small 技术书籍，小说}
+\cvitem{体育}{\small 滑板运动，F1}
 
-% \section{开源项目}
-% \cvlistitem{twip：添加proxy支持}
+\section{开源项目}
+\cvlistitem{twip：添加proxy支持}
+\cvlistitem{ChinaDNS-C: Bug修复及tomato编译支持}
+\cvlistitem{Koreader：Bug修复及编译速度优化}
+\cvlistitem{battery\_analyzer：电池电量表自动测算}
+\cvlistitem{vim\_configs：维护的用于公司工作的vim配置}
 % \cvlistitem{images2bin}
 % \cvlistitem{rasproxy}
 

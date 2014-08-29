@@ -1,5 +1,5 @@
 %% start of file `moderncvstylebanking.sty'.
-%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
@@ -10,16 +10,25 @@
 %                identification
 %-------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{moderncvstylebanking}[2012/10/31 v1.2.0 modern curriculum vitae and letter style scheme: banking]
+\ProvidesPackage{moderncvstylebanking}[2013/04/29 v1.5.1 modern curriculum vitae and letter style scheme: banking]
+
+\newif\if@fullrules\@fullrulesfalse
+\DeclareOption{fullrules}{\@fullrulestrue\@mixedrulesfalse}
+\newif\if@shortrules\@shortrulesfalse
+\DeclareOption{shortrules}{\@shortrulestrue\@mixedrulesfalse}
+\newif\if@mixedrules\@mixedrulesfalse
+\DeclareOption{mixedrules}{\@mixedrulestrue}
+\newif\if@centeredrules\@centeredrulesfalse
+\DeclareOption{centeredrules}{\@centeredrulestrue\@mixedrulesfalse}
+\newif\if@norules\@norulesfalse
+\DeclareOption{norules}{\@norulestrue\@mixedrulesfalse}
+
+\ExecuteOptions{mixedrules}
+\ProcessOptions\relax
 
 
 %-------------------------------------------------------------------------------
 %                required packages
-%-------------------------------------------------------------------------------
-
-
-%-------------------------------------------------------------------------------
-%                package options
 %-------------------------------------------------------------------------------
 
 
@@ -43,11 +52,7 @@
 %\fi
 
 % symbols
-\renewcommand*{\mobilesymbol}{\marvosymbol{72}~}
-\renewcommand*{\phonesymbol}{\marvosymbol{84}~}
-\renewcommand*{\faxsymbol}{\marvosymbol{117}~}
-\renewcommand*{\emailsymbol}{\marvosymbol{66}~}
-\renewcommand*{\homepagesymbol}{{\Large\marvosymbol{205}}~}
+\moderncvicons{awesome}
 
 % commands
 \newcommand*{\maketitlesymbol}{%
@@ -88,17 +93,20 @@
   \parbox{\maketitlewidth}{%
     \centering%
     % name and title
-    \namestyle{\@firstname~\@familyname}%
-    \ifthenelse{\isundefined{\@title}}{}{\titlestyle{~|~\@title}}\\%
+    \namestyle{\@firstname~\@lastname}%
+    \ifthenelse{\equal{\@title}{}}{}{\titlestyle{~|~\@title}}\\% \isundefined doesn't work on \@title, as LaTeX itself defines \@title (before it possibly gets redefined by \title) 
     % detailed information
     \addressfont\color{color2}%
     \ifthenelse{\isundefined{\@addressstreet}}{}{\addtomaketitle{\addresssymbol\@addressstreet}%
-      \ifthenelse{\equal{\@addresscity}{}}{}{\addtomaketitle[~--~]{\@addresscity}}\flushmaketitle\@firstmaketitleelementtrue\\}% if \addresstreet is defined, \addresscity will always be defined but could be empty
-    \ifthenelse{\isundefined{\@mobile}}{}{\addtomaketitle{\mobilesymbol\@mobile}}%
-    \ifthenelse{\isundefined{\@phone}}{}{\addtomaketitle{\phonesymbol\@phone}}%
-    \ifthenelse{\isundefined{\@fax}}{}{\addtomaketitle{\faxsymbol\@fax}}%
+      \ifthenelse{\equal{\@addresscity}{}}{}{\addtomaketitle[~--~]{\@addresscity}}% if \addresstreet is defined, \addresscity and \addresscountry will always be defined but could be empty
+      \ifthenelse{\equal{\@addresscountry}{}}{}{\addtomaketitle[~--~]{\@addresscountry}}%
+      \flushmaketitle\@firstmaketitleelementtrue\\}%
+    \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
+      \addtomaketitle{\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}}%
     \ifthenelse{\isundefined{\@email}}{}{\addtomaketitle{\emailsymbol\emaillink{\@email}}}%
     \ifthenelse{\isundefined{\@homepage}}{}{\addtomaketitle{\homepagesymbol\httplink{\@homepage}}}%
+    \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
+      \addtomaketitle{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
     \ifthenelse{\isundefined{\@extrainfo}}{}{\addtomaketitle{\@extrainfo}}%
     \flushmaketitle}\\[2.5em]}% need to force a \par after this to avoid weird spacing bug at the first section if no blank line is left after \maketitle
 
@@ -111,17 +119,33 @@
 \renewcommand*{\titlefont}{\Huge\mdseries\upshape}
 \renewcommand*{\addressfont}{\normalsize\mdseries\upshape}
 \renewcommand*{\quotefont}{\large\slshape}
-\renewcommand*{\sectionfont}{\Large\bfseries\upshape}
-\renewcommand*{\subsectionfont}{\large\upshape\fontseries{sb}\selectfont}
+\renewcommand*{\sectionfont}{%
+  \if@norules%
+    \Large\bfseries\scshape%
+  \else%
+    \Large\bfseries\upshape\fi}
+\renewcommand*{\subsectionfont}{%
+  \if@norules%
+    \large\mdseries\itshape%
+  \else%
+    \large\upshape\fontseries{sb}\selectfont\fi}
 \renewcommand*{\hintfont}{\bfseries}
 
 % styles
 \renewcommand*{\namestyle}[1]{{\namefont\textcolor{color1}{#1}}}
 \renewcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2!85}{#1}}}
-\renewcommand*{\addressstyle}[1]{{\addressfont\textcolor{color1}{#1}}}
+\renewcommand*{\addressstyle}[1]{{\addressfont\textcolor{color2}{#1}}}
 \renewcommand*{\quotestyle}[1]{{\quotefont\textcolor{color1}{#1}}}
-\renewcommand*{\sectionstyle}[1]{{\sectionfont\textcolor{color1}{#1}}}
-\renewcommand*{\subsectionstyle}[1]{{\subsectionfont\textcolor{color1}{#1}}}
+\renewcommand*{\sectionstyle}[1]{%
+  \if@centeredrules%
+    {\centering\sectionfont\textcolor{color1}{#1}\par}%
+  \else
+    {\sectionfont\textcolor{color1}{#1}}\fi}
+\renewcommand*{\subsectionstyle}[1]{%
+  \if@centeredrules%
+    {\centering\subsectionfont\textcolor{color1}{#1}\par}%
+  \else
+    {\subsectionfont\textcolor{color1}{#1}}\fi}
 \renewcommand*{\hintstyle}[1]{{\hintfont\textcolor{color0}{#1}}}
 
 % lengths
@@ -165,21 +189,39 @@
     {{\centering\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
   \par}% to avoid weird spacing bug at the first section if no blank line is left after \maketitle}
 
-\renewcommand*{\section}[1]{%
+\RenewDocumentCommand{\section}{sm}{%
   \par\addvspace{2.5ex}%
   \phantomsection{}% reset the anchor for hyperrefs
-  \addcontentsline{toc}{section}{#1}%
-  \strut\sectionstyle{#1}%
-  {\color{color1}\hrule}%
+  \addcontentsline{toc}{section}{#2}%
+  \strut\sectionstyle{#2}%
+  \sectionrule%
   \par\nobreak\addvspace{1ex}\@afterheading}
 
-\newcommand{\subsectionfill}{\xleaders\hbox to 0.35em{\scriptsize.}\hfill}% different subsectionfills will not be perfectly aligned, but remaining space at the end of the fill will be distributed evenly between leaders, so it will be barely visible
-\renewcommand*{\subsection}[1]{%
+\RenewDocumentCommand{\subsection}{sm}{%
   \par\addvspace{1ex}%
   \phantomsection{}%
-  \addcontentsline{toc}{subsection}{#1}%
-  \strut\subsectionstyle{#1}{\color{color1}{\subsectionfill}}%
+  \addcontentsline{toc}{subsection}{#2}%
+  \strut\subsectionstyle{#2}%
+  \subsectionrule%
   \par\nobreak\addvspace{0.5ex}\@afterheading}
+
+\newcommand*{\sectionrule}{}
+\newcommand*{\subsectionrule}{}
+\if@fullrules%
+  \renewcommand*{\sectionrule}{\par\nobreak\vspace*{-.7\baselineskip}\leavevmode{\color{color1}\leaders\hbox{\rule{1pt}{0.4pt}}\hfill\kern0pt}}
+  \renewcommand*{\subsectionrule}{\par\nobreak\vspace*{-.7\baselineskip}\leavevmode{\color{color1}\xleaders\hbox to 0.35em{\scriptsize.}\hfill}}\fi% different subsectionrules will not be perfectly aligned, but remaining space at the end of the fill will be distributed evenly between leaders, so it will be barely visible}
+\if@shortrules%
+  \renewcommand*{\sectionrule}{\leavevmode{\color{color1}\leaders\hbox{\rule{1pt}{0.4pt}}\hfill\kern0pt}}
+  \renewcommand*{\subsectionrule}{\leavevmode{\color{color1}\xleaders\hbox to 0.35em{\scriptsize.}\hfill}}\fi% different subsectionrules will not be perfectly aligned, but remaining space at the end of the fill will be distributed evenly between leaders, so it will be barely visible}}
+\if@mixedrules%
+  \renewcommand*{\sectionrule}{\par\nobreak\vspace*{-.7\baselineskip}\leavevmode{\color{color1}\leaders\hbox{\rule{1pt}{0.4pt}}\hfill\kern0pt}}
+  \renewcommand*{\subsectionrule}{\leavevmode{\color{color1}\xleaders\hbox to 0.35em{\scriptsize.}\hfill}}\fi% different subsectionrules will not be perfectly aligned, but remaining space at the end of the fill will be distributed evenly between leaders, so it will be barely visible}}
+\if@centeredrules%
+  \renewcommand*{\sectionrule}{\par\nobreak\vspace*{-.7\baselineskip}\leavevmode{\color{color1}\leaders\hbox{\rule{1pt}{0.4pt}}\hfill\kern0pt}}
+  \renewcommand*{\subsectionrule}{\par\nobreak\vspace*{-.7\baselineskip}\leavevmode{\color{color1}\xleaders\hbox to 0.35em{\scriptsize.}\hfill}}\fi% similar to full rules
+\if@norules%
+  \renewcommand*{\sectionrule}{}
+  \renewcommand*{\subsectionrule}{}\fi
 
 \renewcommand*{\cvitem}[3][.25em]{%
   \ifthenelse{\equal{#2}{}}{}{\hintstyle{#2}: }{#3}%
@@ -204,11 +246,11 @@
 
 \renewcommand*{\cventry}[7][.25em]{
   \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}%
-	  {\bfseries #4} & {\bfseries #5} \\%
-	  {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
+    {\bfseries #4} & {\bfseries #5} \\%
+    {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
   \end{tabular*}%
   \ifx&#7&%
-    \else{\\\vbox{\small#7}}\fi%
+  \else{\\\vbox{\small#7}}\fi%
   \par\addvspace{#1}}
 
 \newbox{\cvitemwithcommentmainbox}
@@ -282,7 +324,7 @@
 
 \renewcommand*{\makeletterclosing}{
   \@closing\\[3em]%
-  {\bfseries \@firstname~\@familyname}%
+  {\bfseries \@firstname~\@lastname}%
   \ifthenelse{\isundefined{\@enclosure}}{}{%
     \\%
     \vfill%

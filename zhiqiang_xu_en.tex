@@ -1,0 +1,216 @@
+% !TEX TS-program = XeLaTeX
+% !TEX encoding = UTF-8 Unicode
+%% start of file `template-zh.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\usepackage{etoolbox}
+\makeatletter
+% 字符编码
+\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+% 使用xelatex，无需以下设置
+% \usepackage{CJKutf8}
+
+\@ifpackageloaded{tex4ht}{
+\usepackage{devng4ht}
+}{%
+\usepackage{fontspec,xunicode}
+\setmainfont{Tahoma}
+\usepackage[slantfont,boldfont]{xeCJK}
+\setCJKmainfont{STXihei}
+\defaultfontfeatures{Mapping=tex-text}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+}
+\usepackage{xcolor}                 % replace by the encoding you are using
+
+% moderncv 主题
+\moderncvstyle{classic}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
+\moderncvcolor{green}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
+%\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
+
+% 调整页面
+\usepackage[scale=0.75]{geometry}
+\setlength{\hintscolumnwidth}{4cm}           % 如果你希望改变日期栏的宽度
+% 解决XeLaTex编译时的编码警告
+\usepackage[unicode,pdfencoding=auto]{hyperref}
+
+% 个人信息
+\firstname{Zhiqiang}
+\familyname{Xu}
+\title{Developer}                      % 可选项、如不需要可删除本行
+%\address{Room 1401, Blvd. 25, Longma Rd. 185 Nong, Songjiang Dicstrict}{201616，Shanghai}             % 可选项、如不需要可删除本行
+\extrainfo{Birth:1983.11 Age:32}
+\mobile{+86 13585618661}                         % 可选项、如不需要可删除本行
+\phone{+86 21 67663700}                          % 可选项、如不需要可删除本行
+%% \fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
+\email{xeonxu@gmail.com}                    % 可选项、如不需要可删除本行
+\homepage{blog.xeonxu.info}                  % 可选项、如不需要可删除本行
+\social[github]{xeonxu}                  % 可选项、如不需要可删除本行
+\social[twitter]{xeonxu}                  % 可选项、如不需要可删除本行
+\photo[80pt][0.8pt]{picture.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+\quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not want
+
+% 显示索引号;仅用于在简历中使用了引言
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% 分类索引
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            内容
+%----------------------------------------------------------------------------------
+\begin{document}
+% \begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
+\maketitle
+
+\section{Educational Qualifications}
+\cventry{2002.09 -- 2006.06}{Traffic engineering bachelor}{Hohai University}{Nanking}{}{}  % 第3到第6编码可留白
+
+% \section{毕业论文}
+% \cvitem{题目}{\emph{地铁机车运行信息收发报模拟器的实现}}
+% \cvitem{导师}{徐鹏}
+
+\section{Professional Experience}
+\cventry{2016.07 -- Now}{Embeded Software Engineer}{Shanghai clever mrobot technologies Co., Ltd. }{Shanghai}{}{Work content: robot development\newline{}
+Main work:
+\begin{itemize}
+ \item Driver development for robot's head and body tablet based on android
+  \begin{itemize}
+  \item Rockwell 3288 platform，solve charging issue and optimize stabilities.
+  \end{itemize}
+ \item Robot control system
+  \begin{itemize}
+  \item Use ROS to develop control system for robot product.
+  \end{itemize}
+\end{itemize}
+}
+\cventry{2010.06 -- 2016.06}{Embeded Software Engineer}{Shanghai Phicomm. Inc.}{Shanghai}{}{Work content: Mobile phone development\newline{}
+Main work:
+\begin{itemize}
+ \item Android Smartphone project
+  \begin{itemize}
+  \item Marvell PXA968 platform，sensors，TP and PMIC drivers. Logo file generator.
+  \item Qualcomm MSM7x27/MSM8x25/MSM8x25Q platform. PMIC module, develop enviroment optimize. Mainly, PMIC module development, geomagnetic debug method optimization, TP fw upgrade method and dual-way charging method based on smb358. Batch review tool for gerrit.
+  \item Qualcomm MSM8x10/8x12/8x26/8x16/8994/8909 platform. PMIC module, battery charactorization.
+  \end{itemize}
+\item MStar and MTK feature phone project
+   \begin{itemize}
+  \item MMI custimization, add SP for customer.
+  \item Write a auto release script.
+  \end{itemize}
+\end{itemize}
+}
+\cventry{2009.10 -- 2010.06}{Embeded software engineer}{Shanghai iBingo network technology Co., Ltd.}{Shanghai}{}{Work content: Develop dynamic theme and screen saver for feature phone (iShow theme system).\newline{}
+  Main work:
+  \begin{itemize}
+  \item Develop dynamic themes for feature phone base on MTK platform.
+    \begin{itemize}
+    \item 3X3 style, Ring style theme.
+    \item Ribbon style screensaver.
+    \item Dandelion screensaver which can distinction between day and light.
+    \item Auto release script.
+    \end{itemize}
+  \item Download effect improvement for theme store. 
+  \end{itemize}
+}
+\cventry{2008.11 -- 2009.10}{Embeded Software Engineer}{Shanghai Dragontec Group}{Shanghai}{}{Work content:Japanese outsourcing software project.\newline{}
+  Main work:
+  \begin{itemize}
+  \item Digital TV develop project from Hitachi.
+    \begin{itemize}
+    \item UI implement and bug fixment.
+    \item Write documentation.
+    \item Code and test.
+    \end{itemize}
+  \item System port from vxworks to Linux. Develop enviroment improvement.
+  \item Openvg port project.
+    \begin{itemize}
+    \item Program port.
+    \item Write and do unit test cases.
+    \end{itemize}
+  \end{itemize}
+}
+\cventry{2008.06 -- 2008.11}{Java Engineer}{Kyrocera Mita}{Oosaka}{}{Work content: Use Java to develop a non-paper work solution for hospital, which is called KMCapture Solution. \newline{}
+  Main work:
+  \begin{itemize}
+  \item Work for implementing Controller, Facade and Storage modules.
+  \item Write documentation.
+  \item Code and test.
+  \end{itemize}
+}
+\cventry{2007.05 -- 2008.06}{Embeded Software Engineer}{Hitachi ICS}{Hitachi}{}{Work content: Work for developing a car audio equipment for Cadillac CTS 08 and 09. \newline{}
+  Main work:
+  \begin{itemize}
+  \item iPod control support function.
+  \item Audio file head information parser.
+  \item Write documentation. 
+  \end{itemize}
+}
+\cventry{2006.07 -- 2007.05}{Java Software Engineer}{Nanking University Dragontec}{Nanking}{}{Work content:Develop online management system for suntory's vending machines.\newline{}
+  Main work:
+  \begin{itemize}
+  \item Write database process using sql.
+  \item Auto release and deployment script.
+  \item Write an do unit test cases.
+  \item Write documentation.
+  \end{itemize}
+}%
+\section{Language Skills}
+\cvitemwithcomment{English}{CET4}{Normal}
+\cvitemwithcomment{Japanese}{}{Normal}
+
+\section{Technical Skills and Knowledge}
+\cvdoubleitem{C}{Proficient}{Java}{Low}
+\cvdoubleitem{Objective-C}{Learning}{Swift}{Learning}
+\cvdoubleitem{Linux/Unix}{Proficient}{Hardware}{Ease soldering}
+\cvdoubleitem{Script}{Bash}{Editor}{Emacs/Vim}
+
+\section{Hobbies}
+\cvitem{Movie}{\small Documentary，Sci-Fi}
+\cvitem{Reading}{\small Technology，Novell}
+\cvitem{Sports}{\small Skate Board，F1}
+
+\section{Open Source}
+\cvlistitem{twip: Add proxy support.}
+\cvlistitem{ChinaDNS-C: Bug fix and add compile target for tomato.}
+\cvlistitem{Koreader: Bug fix and compilation speed optimize. }
+\cvlistitem{battery\_analyzer: Use spline to generate battery SOC table.}
+\cvlistitem{vim\_configs: Vim configure used for co-workers.}
+% \cvlistitem{images2bin}
+% \cvlistitem{rasproxy}
+
+\renewcommand{\listitemsymbol}{-}             % 改变列表符号
+
+% \section{其他 2}
+% \cvlistdoubleitem{项目 1}{项目 4}
+% \cvlistdoubleitem{项目 2}{项目 5\cite{book1}}
+% \cvlistdoubleitem{项目 3}{}
+
+% 来自BibTeX文件但不使用multibib包的出版物
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
+
+% 来自BibTeX文件并使用multibib包的出版物
+% \section{出版物}
+% \nocitebook{book1,book2}
+% \bibliographystylebook{plain}
+%\bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+
+% \clearpage\end{CJK}
+\end{document}
+
+
+%% 文件结尾 `template-zh.tex'.

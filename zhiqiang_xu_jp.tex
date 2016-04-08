@@ -1,0 +1,306 @@
+% !TEX TS-program = XeLaTeX
+% !TEX encoding = UTF-8 Unicode
+%% start of file `template-zh.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\usepackage{etoolbox}
+\makeatletter
+% 字符编码
+%% \usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+% 使用xelatex，无需以下设置
+% \usepackage{CJKutf8}
+
+\@ifpackageloaded{tex4ht}{
+\usepackage{devng4ht}
+}{%
+\usepackage{fontspec,xunicode}
+\setmainfont{Tahoma}            %For Mac
+%% \setmainfont{DejaVu Sans Mono}            %For Linux
+\usepackage[slantfont,boldfont]{xeCJK}
+\setCJKmainfont{Hiragino Maru Gothic ProN} %For Mac
+%% \setCJKmainfont{Ume Gothic} %For Linux
+\defaultfontfeatures{Mapping=tex-text}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+}
+\usepackage{xcolor}                 % replace by the encoding you are using
+
+% moderncv 主题
+\moderncvstyle{classic}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
+\moderncvcolor{green}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
+%\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
+
+% 调整页面
+\usepackage[scale=0.75]{geometry}
+\setlength{\hintscolumnwidth}{4cm}           % 如果你希望改变日期栏的宽度
+% 解决XeLaTex编译时的编码警告
+\usepackage[unicode,pdfencoding=auto]{hyperref}
+
+% 个人信息
+\firstname{徐}
+\familyname{至強}
+\title{組込ソフトウェアエンジニア}                      % 可选项、如不需要可删除本行
+\extrainfo{生年月：昭和58年11月 年齢：33 中国}
+\mobile{+86 13585618661}                         % 可选项、如不需要可删除本行
+\phone{+86 21 67663700}                          % 可选项、如不需要可删除本行
+%% \fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
+\email{xeonxu@gmail.com}                    % 可选项、如不需要可删除本行
+\homepage{blog.xeonxu.info}                  % 可选项、如不需要可删除本行
+\social[github]{xeonxu}                  % 可选项、如不需要可删除本行
+\social[twitter]{xeonxu}                  % 可选项、如不需要可删除本行
+\photo[80pt][0.8pt]{picture.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+\quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not want
+
+% 显示索引号;仅用于在简历中使用了引言
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% 分类索引
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            内容
+%----------------------------------------------------------------------------------
+\begin{document}
+% \begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
+\maketitle
+
+\section{学歴}
+\cventry{2002.09 -- 2006.06}{交通工程学部 交通工程学士}{河海大学}{南京}{}{}  
+
+\section{概要}
+\cvitem{}{
+  \begin{itemize}
+  \item １０年ソフトウェア開発経験
+  \item ８年にわたる、組込ソフトウェア開発経験。まだは、７年モーベルフンを開発で、５年Linuxドライバー関連仕事をした。特に、Qualcomm社商品の開発経験を持ってる。５年電池充電マネージメント経験がある。
+  \item １年にわたる、二つJAVAプロジェクト開発経験。C言語とLinuxが上手で、カーネルドライバーの開発とデバッグも無碍です。
+  \item ２年ソフトウェアプロジェクトを務めて、進捗/人員管理まで各方面の経験。
+  \item Bashスクリプトを作成できる。
+  \item 高い学習能力と論理的思考力を活かして、様々の場面で課題問題を解決。
+  \end{itemize}
+}
+
+\section{ITスキール}
+\cvdoubleitem{C言語}{上手}{Java}{良い}
+\cvdoubleitem{Linuxドラーバ}{上手}{Android BSP}{上手}
+\cvdoubleitem{Linux/Unix}{上手}{硬件}{普通}
+\cvdoubleitem{Git}{上手}{Repo}{上手}
+\cvdoubleitem{Bash}{上手}{Emacs}{上手}
+\cvdoubleitem{Objective-C}{勉強中}{Swift}{勉強中}
+
+\section{言葉}
+\cvdoubleitem{中国語}{}{}{良い}
+\cvdoubleitem{英語}{}{}{簡単な交流}
+\cvdoubleitem{日本語}{}{}{簡単な交流}
+
+\section{プッロジェクト経験}
+\cventry{2015.04 -- 2016.04}{8909/8994関連開発}{}{}{}{}  % 第3到第6编码可留白
+\cvitem{プロジェクト概要}{携帯電話C630，C830/C832，E653，P680シリーズの開発}
+\cvitem{担当}{主に、C630とC830/C832のソフトドライバー側のリーダーを担当する。そして、AliyunOSまだはEfuse等システムモジュールをポートすること。
+。\newline 
+特に、充電管理開発とバッテリーのキャラクタライズすることを担当する。}
+\cvitem{仕事内容}{
+  \begin{itemize}
+   \item MSM8994とSMB1357のパラ充電機能を開発すること。
+   \item パワーオフ充電のアニメーをオプティマイズすること。HSVモデルとアルファチャンネルを使って、イメージリソースを処理し、完美なアニメーを実装する。
+   \item gerritでのコード審査ワークフローをオプティマイズすること。bashスクリプトを実装し、複雑なgerrit操作を一つコマンドだけで替わる。
+  \end{itemize}
+}
+\cventry{2013.04 -- 2015.04}{8x26/8x16/8x12/8x10関連開発}{}{}{}{}  % 第3到第6编码可留白
+\cvitem{プロジェクト概要}{携帯電話C230，E550，E551，E651，P660EUシリーズの開発}
+\cvitem{担当}{主に、C230のソフトドライバー側のリーダーであると、開発資源を配置し、ドライバーコードをマージすると、System ROMをリリースすること。
+充電関連機能開発と、バッテリーのキャラクタライズすることを担当する。}
+\cvitem{仕事内容}{
+  \begin{itemize}
+   \item バッテリーのキャラクタライズ環境を構造すること。
+   \item 负责对每个项目所用电池进行建模以及调试维护充电系统
+   \item 实现基于Emacs org-mode的文档编辑及编译系统。在可以方便的使用git等版本工具管理文档的同时，还可以自动将写好的文档编译为PDF和HTML文件
+  \end{itemize}
+}
+\cventry{2011.10 -- 2013.04}{7x27a/8x25/8x25Q関連開発}{}{}{}{}  % 第3到第6编码可留白
+\cvitem{プロジェクト概要}{携帯電話710EU，910，820，430v，K321等シリーズの開発}
+\cvitem{担当}{ 
+负责TP，陀螺仪，gsensor，psensor，lsensor，以及充电管理}
+\cvitem{仕事内容}{
+  \begin{itemize}
+   \item 完成基于cygwin和Linux的8x25 modem编译环境，将原本4小时编译一次modem的时间缩短为15分钟以内。同时制作一键安装包，进一步将环境搭建时间由4小时改善为10分钟以内。极大提高了生产效率。 
+   \item 改善陀螺仪调试流程，将原本一天左右的调试时间缩短为不到2小时
+   \item 实现免刷机TP固件升级程序，并提供批量化操作脚本，适合工厂生产
+   \item 充电管理中实现自动建模工具，通过采样电池数据，然后程序自动解析数据，利用样条差值，再次拟合出电压电量对应表，很好的解决了电量对应的问题
+   \item 实现基于SMB358的双路充电，在Modem中实现充电策略的切换
+   \item 自动分配U盘大小的策略实现
+  \end{itemize}
+}
+\cventry{2010.10 -- 2011.08}{710+手机项目}{}{}{}{}  % 第3到第6编码可留白
+\cvitem{プロジェクト概要}{基于Marvell PXA968平台的手机项目}
+\cvitem{担当}{BSP，系统板Bring up，驱动调试，排查系统错误，优化系统性能，充电管理
+}
+\cvitem{仕事内容}{
+  \begin{itemize}
+   \item 改善OBM中Logo图片的显示效果
+   \item 改进编译系统
+   \item 自动优化Logo图片
+   \item Psensor，TP效果改善，解决通话过程中出现的问题
+   \item 重写关机充电程序，基于DirectFB结合alpha混合，实现有光影效果的电池充电动画。同时通过定时器方式改进之前状态机的处理方式，大大改善了系统原有程序的效果
+  \end{itemize}
+}
+\cventry{2009.10 -- 2010.06}{iBingo主题系统}{}{}{}{}  % 第3到第6编码可留白
+\cvitem{プロジェクト概要}{在基于MTK系统的手机上开发二维动态主题和屏保效果}
+\cvitem{担当}{开发二维动态主题和动态屏保效果，同时实现整套的工具链
+}
+\cvitem{仕事内容}{
+  \begin{itemize}
+   \item 通过对动态主题程序和资源到剥离，实现了动态主题"套资源"的开发模式
+   \item 编写发布脚本，快速实现UI人员在线查看主题效果，效果确认后自主打包发布到服务器的功能
+   \item 在保证机能情况下，实现类似飘带效果的屏保，同时飘带颜色可以无级渐变过渡
+   \item 实现风车屏保。其中风车会转动，蒲公英随风飘扬，云彩缓慢拂动，日月星辰包括天空颜色也会无级自动变换
+   \item 上述两个屏保被整合入步步高手机中
+  \end{itemize}
+}
+
+\cventry{2008.11 -- 2009.10}{vxworks 到 Linux 的移植项目}{}{}{}{}  % 第3到第6编码可留白
+\cvitem{プロジェクト概要}{将一系列vxworks上的程序，转用Linux的gnu工具链进行编译。排错，添加相应定义}
+\cvitem{担当}{排除编译错误，为出错和缺失的函数添加定义
+}
+\cvitem{仕事内容}{
+  \begin{itemize}
+   \item 在控制台上工作效率偏低，后转用Emacs＋gcc -E编译方式，极大的改善了排查处理速度。将原本2人月的工作缩短为1人月。
+  \end{itemize}
+}
+\cventry{2007.05 -- 2008.06}{AVC Core}{}{}{}{}  % 第3到第6编码可留白
+\cvitem{プロジェクト概要}{为Alpine给凯迪拉克CTS 08 09车型开发车载音响系统}
+\cvitem{担当}{负责音频文件头解析，iPod接口控制。从iPod获取歌曲信息显示在车载音响上，同时向iPod反馈来自车载音响到控制指令。
+}
+\cvitem{仕事内容}{
+  \begin{itemize}
+   \item 通过改善iPod接口数据接口获取数据的方式，将4G Nano机型，2000首歌的信息获取速度由10秒以上改善为1秒左右。
+  \end{itemize}
+}
+
+\section{業務履歴}
+\cventry{2010.06 -- 至今}{組込みソフトウェアエンジニア}{上海Phicomm Inc.}{上海市}{}{
+仕事内容：携帯電話の開発\newline
+主な仕事：
+\begin{itemize}
+ \item Androidスマートフォン
+  \begin{itemize}
+  \item Marvellプラットフォームに基づいて\newline
+    PXA968チップのプロジェクト。センサーや、TPや、PMなどモジュールドライバーの開発を担当する。
+  \item Qualcommプラットフォームに基づいて\newline
+    7x27a、8x25、8x25Q、8x10/12、8x26、8x16、8994、8909などチップのプロジェクト。主に、充電管理と、電池の特性評価を担当する。そして、工作期间，分别实现对编译环境优化，实现分布式编译Android，改进地磁传感器调试方法，实现免刷机TP固件升级方案，编写实现电池建模工具，基于SMB358双路充电的研发，内置U盘镜像自动生成脚本，制定自适应EMMC容量调整内置U盘容量方案，命令行批量审核代码工具。
+  \end{itemize}
+\item フィーチャーフォン（2011.3前）\newline
+  MStar
+  \begin{itemize}
+   \item 画面を修正し、機能を実装する。
+   \item リリース自動化スクリプトを作成する。
+   \item 並列コンパイル環境を構成する。
+  \end{itemize}
+  MTK
+  \begin{itemize}
+   \item 画面修正
+   \item SPアプリのポートすること。
+  \end{itemize}
+\end{itemize}
+}
+\cventry{2009.10 -- 2010.06}{組込みソフトウェアエンジニア}{上海iBingoネットウァク技術会社}{上海市}{}{仕事内容：iShowと言う携帯電話向けダイナミックテーマとスクリーンセーバーを開発する。\newline
+  主な仕事：
+  \begin{itemize}
+  \item MTKプラットフォームでの携帯電話向けダイナミックテーマとスクリーンセーバーを開発する。
+    \begin{itemize}
+    \item 井桁状テーマやリンテーマなどダイナミックテーマを開発する。
+    \item 色が変われるリボンアニメースクリーンせーベーを開発する。
+    \item 蒲公英アニメースクリーンセーバーを開発する。この製品は昼夜交替ができます。
+    \item リリース自動化スクリプトを作成する。
+    \end{itemize}
+  \item 携帯電話向けのテーマストアを開発する。
+  \end{itemize}
+}
+\cventry{2008.11 -- 2009.10}{組込みソフトウェアエンジニア}{上海騰龍グループ}{上海市}{}{仕事内容：日本の会社を対象にテレビやオフィス用ソフトウェアなどを開発する。\newline
+  主な仕事：
+  \begin{itemize}
+  \item 日立社のデジタルテレビ
+    \begin{itemize}
+    \item インターフェースの開発と不具合の対応すること。
+    \item 文書を作成する。
+    \item 単体テストを作成する。
+    \end{itemize}
+  \item vxworksからLinuxへのポートすること。開発環境を改善し、メッションを完備に完了する。
+  \item openvgをソニーテレビにポートすること
+    \begin{itemize}
+    \item 主なプログラムポートする。
+    \item 単体テストを作成する。
+    \end{itemize}
+  \end{itemize}
+}
+\cventry{2008.06 -- 2008.11}{Javaエンジニア}{京セラMita}{大阪市}{}{仕事内容：JavaでKMCapture Solutionと言う病院向け文書電子化ツールを開発する。\newline{}
+  主な仕事：
+  \begin{itemize}
+  \item 主に、コントローラ、ファサードとストレージを担当する。
+  \item 内部仕様を作成する。
+  \item コーディングとテストをする。
+  \end{itemize}
+}
+\cventry{2007.05 -- 2008.06}{組込みソフトウェアエンジニア}{日立製作所}{日立市}{}{仕事内容：Alpine社を対象にAVCCoreと言うキャデラックCTS08/09用のカーオーディオを開発する。\newline{}
+  主な仕事：
+  \begin{itemize}
+  \item iPod操作アプリのコントローラとコーアアプを開発する。
+  \item 音声ファイルの解析ツールを開発する。
+  \item 文書を作成する。
+  \end{itemize}
+}
+\cventry{2006.07 -- 2007.05}{Javaエンジニア}{南大騰龍}{南京市}{}{仕事内容：JUSTSYSTEM社を対象にxfyuassという自動販売機用オンライン管理システムを開発する。。\newline{}
+  主な仕事：
+  \begin{itemize}
+  \item データベース操作コードを作成する
+  \item 自動配備スクリプトを作成する。
+  \item 単体テストを作成する。
+  \item 文書を作成する。
+  \end{itemize}
+}%
+\section{趣味}
+\cvitem{映画}{ドキュメンタリー，SF映画}
+\cvitem{読む}{コンピュータ技術，小説}
+\cvitem{スポーツ}{スケートボード，F1}
+
+\section{オーペンソース}
+\cvitem{twip}{proxy機能を実装する}
+\cvitem{ChinaDNS-C}{不具合を直し、tomatoシステムのサーポートを実装する。}
+\cvitem{Koreader}{不具合を直し、Makefileをオプティマイズする。}
+\cvitem{battery\_analyzer}{バッテリのキャラクタライズのスクリプトを実装する。}
+\cvitem{vim\_configs}{会社同僚はvimを使い易いの目標で、vimのconfファイルをシェアする。}
+
+% \renewcommand{\listitemsymbol}{-}             % 改变列表符号
+
+% \section{其他 2}
+% \cvlistdoubleitem{项目 1}{项目 4}
+% \cvlistdoubleitem{项目 2}{项目 5\cite{book1}}
+% \cvlistdoubleitem{项目 3}{}
+
+% 来自BibTeX文件但不使用multibib包的出版物
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
+
+% 来自BibTeX文件并使用multibib包的出版物
+% \section{出版物}
+% \nocitebook{book1,book2}
+% \bibliographystylebook{plain}
+%\bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+
+% \clearpage\end{CJK}
+\end{document}
+
+
+%% 文件结尾 `template-zh.tex'.

@@ -7,12 +7,11 @@
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
-\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[10pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 \usepackage{etoolbox}
-\usepackage{coffee4}
 \makeatletter
 % 字符编码
-% \usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
 % 使用xelatex，无需以下设置
 % \usepackage{CJKutf8}
 
@@ -20,9 +19,9 @@
 \usepackage{devng4ht}
 }{%
 \usepackage{fontspec,xunicode}
-\setmainfont{WenQuanYi Zen Hei}
+\setmainfont{Tahoma}
 \usepackage[slantfont,boldfont]{xeCJK}
-\setCJKmainfont{WenQuanYi Zen Hei}
+\setCJKmainfont{STXihei}
 \defaultfontfeatures{Mapping=tex-text}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
@@ -45,8 +44,9 @@
 \familyname{至强}
 \title{软件工程师}                      % 可选项、如不需要可删除本行
 % \address{松江区龙马路185弄25号1401室}{201616，上海}             % 可选项、如不需要可删除本行
-\extrainfo{出生：1983.11 年龄：33 籍贯：甘肃  定西}
-\mobile{+86 13585618661}                         % 可选项、如不需要可删除本行
+\extrainfo{出生：1983.11 年龄：35 籍贯：甘肃  定西}
+\mobile{+86 13585618661}                         %
+\mobile{+1 8056698661}                         % 可选项、如不需要可删除本行
 \phone{+86 21 67663700}                          % 可选项、如不需要可删除本行
 %% \fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
 \email{xeonxu@gmail.com}                    % 可选项、如不需要可删除本行
@@ -71,57 +71,78 @@
 % \begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
 \maketitle
 
-\cofeDm{0.2}{0.9}{180}{0cm}{8cm}
-\section{教育背景}
-\cventry{2002.09 -- 2006.06}{交通工程学士学位}{河海大学}{南京}{}{}
-
 \section{概要}
 \cvitem{}{
   \begin{itemize}
-  \item 10年软件开发经验 
-  \item 拥有8年嵌入式程序开发经验，7年手机研发经验，5年Android手机驱动开发经验，5年充电管理相关经验，4年高通平台开发经验，拥有1年Java项目开发经验。熟悉C语言及Linux开发环境，熟悉Linux内核驱动开发及调试方法。
-  \item 拥有2年软件项目管理经验，主导多个项目的驱动研发工作
-  \item 对Linux用户环境，用户管理，终端环境，终端工具以及开发环境有较深入的了解。
-  \item Bash脚本编写，能够根据应用需求，编写出自动化脚本以及搭建测试环境。
-  \item 拥有较强的学习能力和应变能力，面对困难问题，能够通过快速调研，找到解决方案。
+  \item 本科毕业，学士学位。
+  \item 12年软件开发经验，国家软件设计师职称。
+  \item 拥有12年嵌入式软件开发经验：7年手机研发经验，其中5年Android手机驱动开发经验，特别地拥有5年电池管理驱动相关经验。同时拥有4年Qualcomm平台开发经验，1年Marvell平台经验；2年机器人相关开发经验，2年ROS平台经验，半年stm32开发RT-thread经验。
+  \item 对Linux用户环境，用户管理，终端环境，终端工具以及开发环境有深入的了解。熟悉C语言，熟悉Bash脚本编写，熟悉Git版本管理，Jenkins持续集成以及Docker应用。能够根据需求，实现自动化脚本以及搭建高效开发测试环境。同时还会使用python，elisp，Scheme等。
+  \item 拥有2年管理经验，负责过3款手机驱动的研发工作及机器人软件架构的重构工作。
+  \item Github上积极参与开源项目，包括tmk keyboard，rt-thread，koreader等。
+  \item 时刻怀有对技术的渴求和敬畏之心，爱好钻研并尝试新技术在生产中的导入。
   \end{itemize}
 }
 
+\section{教育背景}
+\cventry{2002.09 -- 2006.06}{交通工程学士学位}{河海大学}{南京}{}{}
+
 \section{IT技能}
-\cvdoubleitem{C语言}{熟练}{Java}{一般}
-\cvdoubleitem{内核驱动}{熟练}{Android BSP}{熟练}
-\cvdoubleitem{Linux/Unix}{熟练}{硬件}{简单焊接}
-\cvdoubleitem{Git}{熟练}{Repo}{熟悉}
-\cvdoubleitem{Bash}{熟练}{Emacs}{熟练}
-\cvdoubleitem{Objective-C}{学习中}{Swift}{学习中}
+\cvdoubleitem{C语言}{熟练}{Java}{普通}
+\cvdoubleitem{内核驱动}{熟练}{RT-Thread}{普通}
+\cvdoubleitem{Linux/Unix}{熟练}{Android BSP}{熟练}
+\cvdoubleitem{Git/Repo}{熟练}{Docker}{普通}
+\cvdoubleitem{Bash}{熟练}{Python}{普通}
+\cvdoubleitem{Emacs}{熟练}{Vim}{普通}
+\cvdoubleitem{Latex}{普通}{Scheme}{普通}
+\cvdoubleitem{Router Operating System}{普通}{Robot Operating System}{普通}
 
 \section{语言技能}
 \cvdoubleitem{普通话}{}{}{良好}
-\cvdoubleitem{英语}{CET4}{}{简单交流}
+\cvdoubleitem{英语}{}{}{简单交流}
 \cvdoubleitem{日语}{}{}{简单交流}
 
 \section{项目经验}
-\cventry{2016.07 -- 至今}{Cooky机器人项目}{}{}{}{} 
-\cvitem{项目描述}{Cooky服务机器人的功能开发}
-\cvitem{项目职责}{胸部和头部平板的驱动程序开发和调错。
+\cventry{2017.08 -- 至今}{诺亚机器人项目}{}{}{}{} 
+\cvitem{项目描述}{诺亚物流机器人的功能开发}
+\cvitem{项目职责}{机器人软件架构设计
+\newline
+单片机程序以及上位机对应的ROS节点开发
 \newline 
-基于NVidia TX1的机器人控制环境开发和维护。}
+基于Docker的机器人运行环境的构建及维护}
 \cvitem{项目业绩}{
   \begin{itemize}
-   \item 为瑞芯微RK3288平台增加电池充电温度控制机制，增加关机充电支持。
-   \item 为机器人控制环境建立并维护标准镜像库，改善运行和测试的标准。
-   \item 使用ROS环境重新构建机器人的控制架构。
+   \item 重构在Cooky项目中系统组件的实现方法，改进代码在ROS环境中的运行效率。
+   \item 在单片机传感器上推行使用实时操作系统。通过引入实时操作系统RT-Thread，改进单片机的开发测试和发布流程。使得兼容多个器件的问题可以通过开发操作系统的多个器件驱动这种方式解决，开发更具标准化。同时，借助RT-Thread对各类编译工具链的良好支持，传感器开发流程和固件发布流程也因此更具效率。
+   \item 在机器人工控机上推行使用Docker技术。利用Docker技术标准化机器人的运行时环境，相比之前基于克隆系统或者文件系统展开的版本管理方式来说，Docker方式更为高效和统一，不但自身对版本管理支持良好，Docker 镜像还支持本地或在线增量更新，极大降低了机器人系统部署和后期软件维护的工作强度，提高了效率。
+   \item 标准化机器人ROS运行包的编译，打包和更新方式。结合前述Docker技术，将原本一台机器人需要2人天的部署时间，可以缩短至1人1小时内完成！而且可以完全保证系统环境和运行软件层面的一致统一。
+  \end{itemize}
+}
+\cventry{2016.07 -- 2017.08}{Cooky机器人项目}{}{}{}{} 
+\cvitem{项目描述}{Cooky服务机器人的功能开发}
+\cvitem{项目职责}{胸部和头部平板的驱动程序开发和调错
+\newline 
+基于NVidia TX1的机器人控制环境开发和维护
+\newline
+脑系统及读心术开发
+}
+\cvitem{项目业绩}{
+  \begin{itemize}
+  \item 为瑞芯微RK3288平台增加电池充电温度控制机制，增加关机充电支持。规避RK818 电源管理芯片的固有Bug。
+   \item 推行机器人环境标准化的方案。为TX1平台的机器人运行环境建立版本管控的标准镜像库，标准化运行和测试环境。
+   \item 推行完全使用ROS系统重新构建机器人的控制架构。主导使用ROSJAVA 和 ROSBridge 将Android应用及其他应用和工控的ROS系统对接起来，以使机器人运行控制完全ROS化。
+   \item 其中，开发中的脑系统原形，在2016年WRC上风光了一把。随后，开发的读心术二代产品demo，也为公司吸引到包括建行在内的多家客户。
   \end{itemize}
 }
 \cventry{2015.04 -- 2016.04}{8909/8994平台项目}{}{}{}{} 
 \cvitem{项目描述}{C630，C830/C832，E653，P680系列联通手机入库项目}
-\cvitem{项目职责}{其中担任C630系列及C830/C832系列项目驱动leader，所负责项目使用AliyunOS，涉及Efuse，安全签名等操作 
+\cvitem{项目职责}{其中担任C630系列及C830/C832系列项目驱动leader，所负责项目使用AliyunOS，涉及Efuse，安全签名等操作
 。\newline 
-此外负责每个项目中到充电管理，电池建模等工作。}
+此外负责每个项目中到充电管理，电池建模等工作}
 \cvitem{项目业绩}{
   \begin{itemize}
-   \item 调试优化基于MSM8994+SMB1357的双路并行充电
-   \item 改善高通关机充电显示效果。通过对资源进行图像处理，达到接近于动画般的动态效果
+   \item 调试优化基于MSM8994+SMB1357的双路并行充电。
+   \item 改善高通关机充电显示效果。通过对资源进行图像处理，达到接近于动画般的动态效果。
    \item 由于管理项目，经常升级基线，而公司代码管理涉及gerrit审核。因此编写升级基线后一键上库用的脚本，将原本需要多人花费3-4个小时的上库过程，缩减为一句命令，只需要20分钟，就可以完成全部的上库操作。
   \end{itemize}
 }
@@ -131,8 +152,8 @@
 充电管理模块的维护，C230项目驱动Leader，负责项目中资源协调，以及器件驱动整合和版本发布维护}
 \cvitem{项目业绩}{
   \begin{itemize}
-   \item 搭建高通电池建模环境，负责对每个项目所用电池进行建模以及调试维护充电系统
-   \item 实现基于Emacs org-mode的文档编辑及编译系统。在可以方便的使用git等版本工具管理文档的同时，还可以自动将写好的文档编译为PDF和HTML文件
+   \item 搭建高通电池建模环境，负责对每个项目所用电池进行建模以及调试维护充电系统。
+   \item 实现基于Emacs org-mode的文档编辑及编译系统。在可以方便的使用git等版本工具管理文档的同时，还可以自动将写好的文档编译为PDF和HTML文件。
   \end{itemize}
 }
 \cventry{2011.10 -- 2013.04}{7x27a/8x25/8x25Q系列项目}{}{}{}{}  % 第3到第6编码可留白
@@ -142,11 +163,11 @@
 \cvitem{项目业绩}{
   \begin{itemize}
    \item 完成基于cygwin和Linux的8x25 modem编译环境，将原本4小时编译一次modem的时间缩短为15分钟以内。同时制作一键安装包，进一步将环境搭建时间由4小时改善为10分钟以内。极大提高了生产效率。 
-   \item 改善陀螺仪调试流程，将原本一天左右的调试时间缩短为不到2小时
-   \item 实现免刷机TP固件升级程序，并提供批量化操作脚本，适合工厂生产
-   \item 充电管理中实现自动建模工具，通过采样电池数据，然后程序自动解析数据，利用样条差值，再次拟合出电压电量对应表，很好的解决了电量对应的问题
-   \item 实现基于SMB358的双路充电，在Modem中实现充电策略的切换
-   \item 自动分配U盘大小的策略实现
+   \item 改善陀螺仪调试流程，将原本一天左右的调试时间缩短为不到2小时。
+   \item 实现免刷机TP固件升级程序，并提供批量化操作脚本，适合工厂生产。
+   \item 充电管理中实现自动建模工具，通过采样电池数据，然后程序自动解析数据，利用样条差值，再次拟合出电压电量对应表，很好的解决了电量对应的问题。
+   \item 实现基于SMB358的双路充电，在Modem中实现充电策略的切换。
+   \item 自动分配U盘大小的策略实现。
   \end{itemize}
 }
 \cventry{2010.10 -- 2011.08}{710+手机项目}{}{}{}{}  % 第3到第6编码可留白
@@ -155,11 +176,11 @@
 }
 \cvitem{项目业绩}{
   \begin{itemize}
-   \item 改善OBM中Logo图片的显示效果
-   \item 改进编译系统
-   \item 自动优化Logo图片
-   \item Psensor，TP效果改善，解决通话过程中出现的问题
-   \item 重写关机充电程序，基于DirectFB结合alpha混合，实现有光影效果的电池充电动画。同时通过定时器方式改进之前状态机的处理方式，大大改善了系统原有程序的效果
+   \item 改善OBM中Logo图片的显示效果。
+   \item 改进编译系统。
+   \item 自动优化Logo图片。
+   \item Psensor，TP效果改善，解决通话过程中出现的问题。
+   \item 重写关机充电程序，基于DirectFB结合alpha混合，实现有光影效果的电池充电动画。同时通过定时器方式改进之前状态机的处理方式，大大改善了系统原有程序的效果。
   \end{itemize}
 }
 \cventry{2009.10 -- 2010.06}{iBingo主题系统}{}{}{}{}  % 第3到第6编码可留白
@@ -168,14 +189,12 @@
 }
 \cvitem{项目业绩}{
   \begin{itemize}
-   \item 通过对动态主题程序和资源到剥离，实现了动态主题"套资源"的开发模式
-   \item 编写发布脚本，快速实现UI人员在线查看主题效果，效果确认后自主打包发布到服务器的功能
-   \item 在保证机能情况下，实现类似飘带效果的屏保，同时飘带颜色可以无级渐变过渡
-   \item 实现风车屏保。其中风车会转动，蒲公英随风飘扬，云彩缓慢拂动，日月星辰包括天空颜色也会无级自动变换
-   \item 上述两个屏保被整合入步步高手机中
+   \item 通过对动态主题程序和资源到剥离，实现了动态主题"套资源"的开发模式。
+   \item 编写发布脚本，快速实现UI人员在线查看主题效果，效果确认后自主打包发布到服务器的功能。
+   \item 为步步高手机实现飘带屏保和风车屏保。在保证机能情况下，实现类似飘带效果的屏保，同时飘带颜色可以无级渐变过渡。
+   \item 而风车屏保中风车会转动，有蒲公英随风飘扬，云彩缓慢拂动，日月星辰包括天空颜色也会无级自动变换。
   \end{itemize}
 }
-
 \cventry{2008.11 -- 2009.10}{vxworks 到 Linux 的移植项目}{}{}{}{}  % 第3到第6编码可留白
 \cvitem{项目描述}{将一系列vxworks上的程序，转用Linux的gnu工具链进行编译。排错，添加相应定义}
 \cvitem{项目职责}{排除编译错误，为出错和缺失的函数添加定义
@@ -187,7 +206,7 @@
 }
 \cventry{2007.05 -- 2008.06}{AVC Core}{}{}{}{}  % 第3到第6编码可留白
 \cvitem{项目描述}{为Alpine给凯迪拉克CTS 08 09车型开发车载音响系统}
-\cvitem{项目职责}{负责音频文件头解析，iPod接口控制。从iPod获取歌曲信息显示在车载音响上，同时向iPod反馈来自车载音响到控制指令。
+\cvitem{项目职责}{负责音频文件头解析，iPod接口控制。从iPod获取歌曲信息显示在车载音响上，同时向iPod反馈来自车载音响到控制指令
 }
 \cvitem{项目业绩}{
   \begin{itemize}
@@ -196,20 +215,35 @@
 }
 
 \section{工作履历}
-\cventry{2016.07 -- 至今}{嵌入式软件工程师}{上海木爷机器人有限公司}{上海市}{}{
-工作内容：机器人研发\newline
+\cventry{2016.07 -- 至今}{嵌入式软件工程师 架构师}{上海木爷机器人有限公司}{上海市}{}{
+工作内容：机器人软件研发，软件架构设计\newline
 主要工作：
 \begin{itemize}
  \item 机器人胸部及头部Android系统
   \begin{itemize}
   \item 瑞芯微平台\newline
-    基于RK3288芯片，解决充电以及系统稳定性Bug
+    基于RK3288芯片，负责开机管理和充电管理。并负责解决系统稳定性Bug。
   \end{itemize}
- \item 工控板主控逻辑开发
+ \item TX1工控板主控逻辑开发
   \begin{itemize}
-  \item NVidia\newline
-    基于TX1平台和ROS系统，开发基于传感器的主控逻辑。
+  \item 脑系统开发\newline
+    基于NV TX1平台，使用ROS系统，开发传感器的驱动和上层协议接口。
+  \item 读心术二代开发\newline
+    通过头部肢体语言来控制调查页面的，同时通过不同页面下客户的面部表情来分析出其是否对该调查感兴趣。其中主要使用ROS系统，结合机器人视觉相关的算法来实现。
+  \item TX1生产镜像\newline
+    完成并推行基于文件系统展开方式的，可以进行版本管理和本地模拟运行的标准镜像输出方案。
   \end{itemize}
+ \item X86工控板系统
+   \begin{itemize}
+   \item 完成并推行基于Docker的机器人运行环境\newline{基于Docker技术构建机器人程序的运行环境，从而实现机器人运行环境的标准化版本管理。同时，使用Docker 也为环境升级带来极大的便利，不但可以同时支持线下线上两种升级方案，更是可以增量更新系统，非常便于系统环境的快速迭代。}
+   \item 标准化的ROS程序编译系统\newline{通过标准化运行环境，利用docker 技术对ROS程序进行编译，使得机器人ROS代码的发布完全可控，并完成使用jenkins进行持续集成的功能。}
+   \item 灵活的机器人程序自动升级系统\newline{可以通过插入U盘或者网络推送实现机器人程序的更新。}
+   \end{itemize}
+ \item 单片机传感器
+   \begin{itemize}
+   \item 开发架构重构\newline{标准化单便机开发架构，使用RT Thread实时系统作为单片机基础运行框架，实现灵活高效的单片机开发过程。}
+   \item 标准化编译\newline{所有编译过程都规范使用gcc在linux上完成，实现单片机固件的标准化release。}
+   \end{itemize}
 \end{itemize}
 }
 \cventry{2010.06 -- 2016.06}{嵌入式软件工程师}{上海斐讯数据通信技术有限公司}{上海市}{}{
@@ -219,9 +253,9 @@
  \item Android智能手机项目
   \begin{itemize}
   \item Marvell平台\newline
-    基于PXA968芯片项目，担任传感器，TP以及电源管理芯片驱动。开机logo编译脚本及效果优化。
+    基于PXA968芯片项目，担任传感器，TP以及电源管理芯片驱动。提供并制作8787芯片COB方案的校准环境。开机logo编译脚本及效果优化。
   \item Qualcomm平台\newline
-    分别做过基于7x27a、8x25、8x25Q、8x10/12、8x26、8x16、8994、8909项目。其中主要负责充电管理模块，电池建模。工作期间，分别实现对编译环境优化，实现分布式编译Android，改进地磁传感器调试方法，实现免刷机TP固件升级方案，编写实现电池建模工具，基于SMB358双路充电的研发，内置U盘镜像自动生成脚本，制定自适应EMMC容量调整内置U盘容量方案，命令行批量审核代码工具。
+    分别做过基于7x27a、8x25、8x25Q、8x10/12、8x26、8x16、8994、8909平台的项目。其中主要负责充电管理模块，电池建模。工作期间，分别实现对编译环境优化，实现分布式编译Android，改进地磁传感器调试方法，实现免刷机TP固件升级方案，编写实现电池建模工具，基于SMB358双路充电的研发，内置U盘镜像自动生成脚本，制定自适应EMMC容量调整内置U盘容量方案，命令行批量审核gerrit代码工具。
   \end{itemize}
 \item 功能机项目（2011.3之前）\newline
   MStar
@@ -294,9 +328,16 @@
   \end{itemize}
 }%
 \section{个人兴趣}
+\cvitem{体育}{滑板运动，F1，跑步}
 \cvitem{电影}{纪录片，科幻片}
+\cvitem{制作}{机械键盘，电子小器件}
 \cvitem{看书}{技术书籍，小说}
-\cvitem{体育}{滑板运动，F1}
+
+\section{授权专利}
+\cvdoubleitem{201510477097.X}{一种登录认证方法及系统}{发明}{唯一发明人}
+\cvdoubleitem{201510612722.7}{一种扩展移动终端运算能力的系统}{发明}{唯一发明人}
+\cvdoubleitem{201210585845.2}{硬件固件独立升级系统及方法}{发明}{唯一发明人}
+\cvdoubleitem{201420615063.3}{一种手机进水保护装置}{实用新型}{联合发明人}
 
 \section{开源项目}
 \cvitem{twip}{添加proxy支持}
@@ -304,9 +345,11 @@
 \cvitem{Koreader}{Bug修复及编译速度优化}
 \cvitem{battery\_analyzer}{电池电量表自动测算}
 \cvitem{vim\_configs}{维护的用于公司工作的vim配置}
-\cvitem{tmk_keyboard}{为usb2usb增加蓝牙功能，蓝牙使用rn42模块}
+\cvitem{tmk\_keyboard}{为usb2usb增加蓝牙功能，蓝牙使用rn42模块}
+\cvitem{csr\_tool}{Dump csr芯片的脚本工具}
+\cvitem{RT Thread}{stm32f10x板级支持bug的修复等}
 
-% \renewcommand{\listitemsymbol}{-}             % 改变列表符号
+\renewcommand{\listitemsymbol}{¤}             % 改变列表符号
 
 % \section{其他 2}
 % \cvlistdoubleitem{项目 1}{项目 4}

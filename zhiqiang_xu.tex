@@ -10,9 +10,10 @@
 
 \documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 \usepackage{etoolbox}
+\usepackage{coffee4}
 \makeatletter
 % 字符编码
-\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+% \usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
 % 使用xelatex，无需以下设置
 % \usepackage{CJKutf8}
 
@@ -20,9 +21,9 @@
 \usepackage{devng4ht}
 }{%
 \usepackage{fontspec,xunicode}
-\setmainfont{Tahoma}
+\setmainfont{WenQuanYi Zen Hei}
 \usepackage[slantfont,boldfont]{xeCJK}
-\setCJKmainfont{STXihei}
+\setCJKmainfont{WenQuanYi Zen Hei}
 \defaultfontfeatures{Mapping=tex-text}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
@@ -71,6 +72,7 @@
 % \begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
 \maketitle
 
+\cofeDm{0.2}{0.9}{180}{0cm}{8cm}
 \section{教育背景}
 \cventry{2002.09 -- 2006.06}{交通工程学士学位}{河海大学}{南京}{}{}  % 第3到第6编码可留白
 

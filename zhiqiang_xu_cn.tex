@@ -2,7 +2,7 @@
 % !TEX encoding = UTF-8 Unicode
 %% start of file `template-zh.tex'.
 %% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
-%
+% 
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
@@ -17,22 +17,22 @@
 % \usepackage{CJKutf8}
 
 \@ifpackageloaded{tex4ht}{
-\usepackage{devng4ht}
+  \usepackage{devng4ht}
 }{%
-\usepackage{fontspec,xunicode}
-\setmainfont{Tahoma}
-\usepackage[slantfont,boldfont]{xeCJK}
-\setCJKmainfont{STXihei}
-\defaultfontfeatures{Mapping=tex-text}
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+  \usepackage{fontspec,xunicode}
+  \setmainfont{Tahoma}
+  \usepackage[slantfont,boldfont]{xeCJK}
+  \setCJKmainfont{STXihei}
+  \defaultfontfeatures{Mapping=tex-text}
+  \XeTeXlinebreaklocale "zh"
+  \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 }
 \usepackage{xcolor}                 % replace by the encoding you are using
 
 % moderncv 主题
 \moderncvstyle{classic}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
 \moderncvcolor{green}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
-%\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
+% \nopagenumbers{}                             % 消除注释以取消自动页码生成功能
 
 % 调整页面
 \usepackage[scale=0.75]{geometry}
@@ -58,16 +58,16 @@
 \quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not want
 
 % 显示索引号;仅用于在简历中使用了引言
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
+% \makeatletter
+% \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+% \makeatother
 
 % 分类索引
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            内容
-%----------------------------------------------------------------------------------
+% \usepackage{multibib}
+% \newcites{book,misc}{{Books},{Others}}
+% ----------------------------------------------------------------------------------
+% 内容
+% ----------------------------------------------------------------------------------
 \begin{document}
 % \begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
 \maketitle
@@ -103,260 +103,86 @@
 \cvdoubleitem{英语}{}{}{简单交流}
 \cvdoubleitem{日语}{}{}{简单交流}
 
-\section{项目经验}
-\cventry{2018.06 -- 至今}{红星美凯龙大天使机器人项目}{}{}{}{} 
-\cvitem{项目描述}{大天使机器人的功能开发}
-\cvitem{项目职责}{机器人软件架构设计，实现，运行系统的构建及标准化
-\newline
-单片机程序的标准化和开发以及实现上位机ROS节点开发
-\newline 
-在线升级功能的设计和实现}
-\cvitem{项目业绩}{
-  \begin{itemize}
-   \item 从零构建机器人运行系统
-   \item 搭建公司版本服务器，编译服务器，公司路由QOS配置
-   \item 标准化软件运行环境，标准化软件输出打包，可实现软件发布后，10分钟内部署入目标机。
-   \item Intel realsense驱动环境维护，移植人脸识别算法节点
-   \item 机内Mikrotik路由器配置，支持4G和wifi双上行自动链路切换，VPN拨号公司内网做业务维护，支持和第三方设备不同网段互联互通。
-   \item 标准化工控机生产和部署，制作相关工具实现5分钟生产部署一台。且过程无需人员干预。
-  \end{itemize}
-}
-\cventry{2017.08 -- 2018.05}{诺亚机器人项目}{}{}{}{} 
-\cvitem{项目描述}{诺亚物流机器人的功能开发}
-\cvitem{项目职责}{机器人软件架构设计
-\newline
-单片机程序以及上位机对应的ROS节点开发
-\newline 
-基于Docker的机器人运行环境的构建及维护}
-\cvitem{项目业绩}{
-  \begin{itemize}
-   \item 重构在Cooky项目中系统组件的实现方法，改进代码在ROS环境中的运行效率。
-   \item 在单片机传感器上推行使用实时操作系统。通过引入实时操作系统RT-Thread，改进单片机的开发测试和发布流程。使得兼容多个器件的问题可以通过开发操作系统的多个器件驱动这种方式解决，开发更具标准化。同时，借助RT-Thread对各类编译工具链的良好支持，传感器开发流程和固件发布流程也因此更具效率。
-   \item 在机器人工控机上推行使用Docker技术。利用Docker技术标准化机器人的运行时环境，相比之前基于克隆系统或者文件系统展开的版本管理方式来说，Docker方式更为高效和统一，不但自身对版本管理支持良好，Docker 镜像还支持本地或在线增量更新，极大降低了机器人系统部署和后期软件维护的工作强度，提高了效率。
-   \item 标准化机器人ROS运行包的编译，打包和更新方式。结合前述Docker技术，将原本一台机器人需要2人天的部署时间，可以缩短至1人1小时内完成！而且可以完全保证系统环境和运行软件层面的一致统一。
-  \end{itemize}
-}
-\cventry{2016.07 -- 2017.08}{Cooky机器人项目}{}{}{}{} 
-\cvitem{项目描述}{Cooky服务机器人的功能开发}
-\cvitem{项目职责}{胸部和头部平板的驱动程序开发和调错
-\newline 
-基于NVidia TX1的机器人控制环境开发和维护
-\newline
-脑系统及读心术开发
-}
-\cvitem{项目业绩}{
-  \begin{itemize}
-  \item 为瑞芯微RK3288平台增加电池充电温度控制机制，增加关机充电支持。规避RK818 电源管理芯片的固有Bug。
-   \item 推行机器人环境标准化的方案。为TX1平台的机器人运行环境建立版本管控的标准镜像库，标准化运行和测试环境。
-   \item 推行完全使用ROS系统重新构建机器人的控制架构。主导使用ROSJAVA 和 ROSBridge 将Android应用及其他应用和工控的ROS系统对接起来，以使机器人运行控制完全ROS化。
-   \item 其中，开发中的脑系统原形，在2016年WRC上风光了一把。随后，开发的读心术二代产品demo，也为公司吸引到包括建行在内的多家客户。
-  \end{itemize}
-}
-\cventry{2015.04 -- 2016.04}{8909/8994平台项目}{}{}{}{} 
-\cvitem{项目描述}{C630，C830/C832，E653，P680系列联通手机入库项目}
-\cvitem{项目职责}{其中担任C630系列及C830/C832系列项目驱动leader，所负责项目使用AliyunOS，涉及Efuse，安全签名等操作
-。\newline 
-此外负责每个项目中到充电管理，电池建模等工作}
-\cvitem{项目业绩}{
-  \begin{itemize}
-   \item 调试优化基于MSM8994+SMB1357的双路并行充电。
-   \item 改善高通关机充电显示效果。通过对资源进行图像处理，达到接近于动画般的动态效果。
-   \item 由于管理项目，经常升级基线，而公司代码管理涉及gerrit审核。因此编写升级基线后一键上库用的脚本，将原本需要多人花费3-4个小时的上库过程，缩减为一句命令，只需要20分钟，就可以完成全部的上库操作。
-  \end{itemize}
-}
-\cventry{2013.04 -- 2015.04}{8x26/8x16/8x12/8x10系列项目}{}{}{}{}  % 第3到第6编码可留白
-\cvitem{项目描述}{C230系列项目，E550，E551，E651，P660EU系列项目}
-\cvitem{项目职责}{ 
-充电管理模块的维护，C230项目驱动Leader，负责项目中资源协调，以及器件驱动整合和版本发布维护}
-\cvitem{项目业绩}{
-  \begin{itemize}
-   \item 搭建高通电池建模环境，负责对每个项目所用电池进行建模以及调试维护充电系统。
-   \item 实现基于Emacs org-mode的文档编辑及编译系统。在可以方便的使用git等版本工具管理文档的同时，还可以自动将写好的文档编译为PDF和HTML文件。
-  \end{itemize}
-}
-\cventry{2011.10 -- 2013.04}{7x27a/8x25/8x25Q系列项目}{}{}{}{}  % 第3到第6编码可留白
-\cvitem{项目描述}{710EU，910，820，430v，K321等系列项目}
-\cvitem{项目职责}{ 
-负责TP，陀螺仪，gsensor，psensor，lsensor，以及充电管理}
-\cvitem{项目业绩}{
-  \begin{itemize}
-   \item 完成基于cygwin和Linux的8x25 modem编译环境，将原本4小时编译一次modem的时间缩短为15分钟以内。同时制作一键安装包，进一步将环境搭建时间由4小时改善为10分钟以内。极大提高了生产效率。 
-   \item 改善陀螺仪调试流程，将原本一天左右的调试时间缩短为不到2小时。
-   \item 实现免刷机TP固件升级程序，并提供批量化操作脚本，适合工厂生产。
-   \item 充电管理中实现自动建模工具，通过采样电池数据，然后程序自动解析数据，利用样条差值，再次拟合出电压电量对应表，很好的解决了电量对应的问题。
-   \item 实现基于SMB358的双路充电，在Modem中实现充电策略的切换。
-   \item 自动分配U盘大小的策略实现。
-  \end{itemize}
-}
-\cventry{2010.10 -- 2011.08}{710+手机项目}{}{}{}{}  % 第3到第6编码可留白
-\cvitem{项目描述}{基于Marvell PXA968平台的手机项目}
-\cvitem{项目职责}{BSP，系统板Bring up，驱动调试，排查系统错误，优化系统性能，充电管理
-}
-\cvitem{项目业绩}{
-  \begin{itemize}
-   \item 改善OBM中Logo图片的显示效果。
-   \item 改进编译系统。
-   \item 自动优化Logo图片。
-   \item Psensor，TP效果改善，解决通话过程中出现的问题。
-   \item 重写关机充电程序，基于DirectFB结合alpha混合，实现有光影效果的电池充电动画。同时通过定时器方式改进之前状态机的处理方式，大大改善了系统原有程序的效果。
-  \end{itemize}
-}
-\cventry{2009.10 -- 2010.06}{iBingo主题系统}{}{}{}{}  % 第3到第6编码可留白
-\cvitem{项目描述}{在基于MTK系统的手机上开发二维动态主题和屏保效果}
-\cvitem{项目职责}{开发二维动态主题和动态屏保效果，同时实现整套的工具链
-}
-\cvitem{项目业绩}{
-  \begin{itemize}
-   \item 通过对动态主题程序和资源到剥离，实现了动态主题"套资源"的开发模式。
-   \item 编写发布脚本，快速实现UI人员在线查看主题效果，效果确认后自主打包发布到服务器的功能。
-   \item 为步步高手机实现飘带屏保和风车屏保。在保证机能情况下，实现类似飘带效果的屏保，同时飘带颜色可以无级渐变过渡。
-   \item 而风车屏保中风车会转动，有蒲公英随风飘扬，云彩缓慢拂动，日月星辰包括天空颜色也会无级自动变换。
-  \end{itemize}
-}
-\cventry{2008.11 -- 2009.10}{vxworks 到 Linux 的移植项目}{}{}{}{}  % 第3到第6编码可留白
-\cvitem{项目描述}{将一系列vxworks上的程序，转用Linux的gnu工具链进行编译。排错，添加相应定义}
-\cvitem{项目职责}{排除编译错误，为出错和缺失的函数添加定义
-}
-\cvitem{项目业绩}{
-  \begin{itemize}
-   \item 在控制台上工作效率偏低，后转用Emacs＋gcc -E编译方式，极大的改善了排查处理速度。将原本2人月的工作缩短为1人月。
-  \end{itemize}
-}
-\cventry{2007.05 -- 2008.06}{AVC Core}{}{}{}{}  % 第3到第6编码可留白
-\cvitem{项目描述}{为Alpine给凯迪拉克CTS 08 09车型开发车载音响系统}
-\cvitem{项目职责}{负责音频文件头解析，iPod接口控制。从iPod获取歌曲信息显示在车载音响上，同时向iPod反馈来自车载音响到控制指令
-}
-\cvitem{项目业绩}{
-  \begin{itemize}
-   \item 通过改善iPod接口数据接口获取数据的方式，将4G Nano机型，2000首歌的信息获取速度由10秒以上改善为1秒左右。
-  \end{itemize}
-}
-
 \section{工作履历}
-\cventry{2018.06 -- 至今}{红星美凯龙大天使机器人项目}{}{}{}{
-  工作内容：机器人软件架构设计，实现，运行系统的构建及标准化
-  \newline
-主要工作：
+\cventry{2018.06 -- 至今}{高级软件工程师 架构师}{上海云绅智能科技有限公司}{上海市}{}{
+  工作内容：红星美凯龙“大天使”机器人软件架构设计及实现，研发基础环境的构建
+  \newline{}
+  主要工作：
   \begin{itemize}
+  \item 搭建并维护版本服务器，编译服务器，公司网络漫游以及QOS配置
+  \item 从零构建机器人运行系统
   \item 单片机程序的标准化和开发以及实现上位机ROS节点开发
   \item 在线升级功能的设计和实现
-   \item 从零构建机器人运行系统
-   \item 搭建公司版本服务器，编译服务器，公司路由QOS配置
-   \item 标准化软件运行环境，标准化软件输出打包，可实现软件发布后，10分钟内部署入目标机。
-   \item Intel realsense驱动环境维护，移植人脸识别算法节点
-   \item 机内Mikrotik路由器配置，支持4G和wifi双上行自动链路切换，VPN拨号公司内网做业务维护，支持和第三方设备不同网段互联互通。
-   \item 标准化工控机生产和部署，制作相关工具实现5分钟生产部署一台。且过程无需人员干预。
+  \item 标准化软件运行环境，标准化软件输出打包，可实现软件发布后，10分钟内部署入目标机。
+  \item Intel realsense驱动环境维护，移植人脸识别算法节点
+  \item 机内Mikrotik路由器配置，支持4G和wifi双上行自动链路切换，VPN拨号公司内网做业务维护，支持和第三方设备不同网段互联互通。
+  \item 标准化工控机生产和部署，开发相关生产工具，实现5分钟生产部署一台工控系统，且过程无需人员干预。
   \end{itemize}
 }
-\cventry{2016.07 -- 至今}{嵌入式软件工程师 架构师}{上海木爷机器人有限公司}{上海市}{}{
-工作内容：机器人软件研发，软件架构设计\newline
-主要工作：
-\begin{itemize}
- \item 机器人胸部及头部Android系统
+\cventry{2016.07 -- 2018.05}{嵌入式软件工程师 架构师}{上海木爷机器人有限公司}{上海市}{}{
+  工作内容：机器人软件研发，软件架构设计\newline{}
+  主要工作：
   \begin{itemize}
-  \item 瑞芯微平台\newline
-    基于RK3288芯片，负责开机管理和充电管理。并负责解决系统稳定性Bug。
+  \item 开发基于RK3288芯片的Android平板，负责充电管理以及优化系统稳定性。
+  \item 基于NVidia TX1工控板开发传感器驱动，接口和主控逻辑，制作生产镜像
+  \item 标准化X86工控板系统
+  \item 探索实现基于Docker环境的机器人运行时
+  \item 标准化的ROS程序编译系统
+  \item 灵活的机器人程序自动升级系统
+  \item 尝试使用RT Thread重构单片机开发架构
   \end{itemize}
- \item TX1工控板主控逻辑开发
-  \begin{itemize}
-  \item 脑系统开发\newline
-    基于NV TX1平台，使用ROS系统，开发传感器的驱动和上层协议接口。
-  \item 读心术二代开发\newline
-    通过头部肢体语言来控制调查页面的，同时通过不同页面下客户的面部表情来分析出其是否对该调查感兴趣。其中主要使用ROS系统，结合机器人视觉相关的算法来实现。
-  \item TX1生产镜像\newline
-    完成并推行基于文件系统展开方式的，可以进行版本管理和本地模拟运行的标准镜像输出方案。
-  \end{itemize}
- \item X86工控板系统
-   \begin{itemize}
-   \item 完成并推行基于Docker的机器人运行环境\newline{基于Docker技术构建机器人程序的运行环境，从而实现机器人运行环境的标准化版本管理。同时，使用Docker 也为环境升级带来极大的便利，不但可以同时支持线下线上两种升级方案，更是可以增量更新系统，非常便于系统环境的快速迭代。}
-   \item 标准化的ROS程序编译系统\newline{通过标准化运行环境，利用docker 技术对ROS程序进行编译，使得机器人ROS代码的发布完全可控，并完成使用jenkins进行持续集成的功能。}
-   \item 灵活的机器人程序自动升级系统\newline{可以通过插入U盘或者网络推送实现机器人程序的更新。}
-   \end{itemize}
- \item 单片机传感器
-   \begin{itemize}
-   \item 开发架构重构\newline{标准化单便机开发架构，使用RT Thread实时系统作为单片机基础运行框架，实现灵活高效的单片机开发过程。}
-   \item 标准化编译\newline{所有编译过程都规范使用gcc在linux上完成，实现单片机固件的标准化release。}
-   \end{itemize}
-\end{itemize}
 }
 \cventry{2010.06 -- 2016.06}{嵌入式软件工程师}{上海斐讯数据通信技术有限公司}{上海市}{}{
-工作内容：手机研发\newline
-主要工作：
-\begin{itemize}
- \item Android智能手机项目
+  工作内容：手机研发\newline
+  主要工作：
   \begin{itemize}
-  \item Marvell平台\newline
-    基于PXA968芯片项目，担任传感器，TP以及电源管理芯片驱动。提供并制作8787芯片COB方案的校准环境。开机logo编译脚本及效果优化。
-  \item Qualcomm平台\newline
-    分别做过基于7x27a、8x25、8x25Q、8x10/12、8x26、8x16、8994、8909平台的项目。其中主要负责充电管理模块，电池建模。工作期间，分别实现对编译环境优化，实现分布式编译Android，改进地磁传感器调试方法，实现免刷机TP固件升级方案，编写实现电池建模工具，基于SMB358双路充电的研发，内置U盘镜像自动生成脚本，制定自适应EMMC容量调整内置U盘容量方案，命令行批量审核gerrit代码工具。
+  \item 开发分别基于Marvell平台和Qualcomm平台的Android智能设备项目
+  \item 主要开发传感器，TP以及电源管理芯片驱动
+  \item 特别地在工作中优化改进了电池建模，BMS算法，开发环境和开发工具，极大提高项目效率
   \end{itemize}
-\item 功能机项目（2011.3之前）\newline
-  MStar
-  \begin{itemize}
-   \item 界面修改，功能添加
-   \item 自动发布脚本
-   \item 分布式编译环境搭建
-  \end{itemize}
-  MTK
-  \begin{itemize}
-   \item 界面修改
-   \item 第三方SP功能整合
-  \end{itemize}
-\end{itemize}
 }
-\cventry{2009.10 -- 2010.06}{嵌入式软件工程师}{上海品酷网络科技有限公司}{上海市}{}{工作内容：开发动态手机主题及手机特效（iShow主题系统）\newline
+\cventry{2009.10 -- 2010.06}{嵌入式软件工程师}{上海品酷网络科技有限公司}{上海市}{}{
+  工作内容：开发动态手机主题及手机特效（iShow主题系统）\newline
   主要工作：
   \begin{itemize}
   \item 开发基于mtk平台手机的动态主题和菜单特效
-    \begin{itemize}
-    \item 传统宫格类主题，渐变呼吸效果的主题，圆环类主题
-    \item 可无极变色的飘带效果动态屏保
-    \item 可区分昼夜的蒲公英效果动态屏保
-    \item 编写研发自动化脚本工具
-    \end{itemize}
-  \item 改进完善手机端的下载程序，支持断点续传。
+  \item 可无极变色的飘带效果动态屏保
+  \item 可区分昼夜的蒲公英效果动态屏保
+  \item 编写研发自动化脚本工具
+  \item 改进完善手机端的http下载程序，支持断点续传
   \end{itemize}
 }
-\cventry{2008.11 -- 2009.10}{嵌入式软件工程师}{上海腾龙软件公司}{上海市}{}{工作内容：对日项
-  目，主要是嵌入式平台的开发。\newline
+\cventry{2008.11 -- 2009.10}{嵌入式软件工程师}{上海腾龙软件公司}{上海市}{}{
+  工作内容：对日项目，主要是嵌入式平台的开发。\newline
   主要工作：
   \begin{itemize}
-  \item 日立公司的数字电视项目
-    \begin{itemize}
-    \item 界面开发及Bug修正
-    \item 文档维护
-    \item 编码测试
-    \end{itemize}
+  \item 在日立公司的数字电视项目中负责界面开发和编码测试
   \item vxworks到Linux的移植项目。改进开发环境，快速解决问题。
-  \item openvg移植项目接口
-    \begin{itemize}
-    \item 主体程序移植
-    \item 单元测试程序编写及测试
-    \end{itemize}
+  \item openvg移植项目，负责主体程序移植以及单元测试编写和回归测试
   \end{itemize}
 }
-\cventry{2008.06 -- 2008.11}{Java工程师}{京瓷公司Mita分公司}{大阪市}{}{工作内容：使用Java语言，在京瓷公司协助其开发用于医院的纸质文档的电子化解决方案KMCapture Solution。\newline{}
+\cventry{2008.06 -- 2008.11}{Java工程师}{京瓷公司Mita分公司}{大阪市}{}{
+  工作内容：开发用于医院的纸质文档的电子化解决方案KMCapture Solution。\newline{}
   主要工作：
   \begin{itemize}
-  \item 主要负责Controller，Facade以及部分的Storage模块。
-  \item 编写软件设计书
-  \item 编码及测试
+  \item 主要负责Controller，Facade以及部分的Storage模块设计，编码和测试
   \end{itemize}
 }
-\cventry{2007.05 -- 2008.06}{嵌入式软件工程师}{日立制造所}{日立市}{}{工作内容：在日立公司协助其开发基于ARM处理器的车载项目AVCCore。该项目后来为凯迪拉克CTS08,09车型的车载音响。\newline{}
+\cventry{2007.05 -- 2008.06}{嵌入式软件工程师}{日立制造所}{日立市}{}{
+  工作内容：开发基于ARM处理器的车载项目AVCCore。该项目后来为凯迪拉克CTS08,09车型的车载音响。\newline{}
   主要工作：
   \begin{itemize}
   \item iPod集成应用。负责车载电脑中iPod Controller和iPod CoreApp开发和维护
   \item 负责车载电脑的音频文件头解析处理的开发及维护
-  \item 文档编写及维护
   \end{itemize}
 }
-\cventry{2006.07 -- 2007.05}{Java工程师}{南大腾龙}{南京市}{}{工作内容：为JUSTSYSTEM开发的xfyuass以及三得利公司开发自动售卖机在线维护管理系统。\newline{}
+\cventry{2006.07 -- 2007.05}{Java工程师}{南大腾龙}{南京市}{}{
+  工作内容：为三得利公司开发自动售卖机在线维护管理系统。\newline{}
   主要工作：
   \begin{itemize}
   \item 编写数据库的处理代码
-  \item 自动化部署脚本编写
-  \item 测试代码编写
+  \item 编写自动化部署脚本
+  \item 编写测试代码
   \item 文档维护
   \end{itemize}
 }%
@@ -390,7 +216,7 @@
 % \cvlistdoubleitem{项目 3}{}
 
 % 来自BibTeX文件但不使用multibib包的出版物
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+% \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
 \nocite{*}
 \bibliographystyle{plain}
 \bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
@@ -399,10 +225,10 @@
 % \section{出版物}
 % \nocitebook{book1,book2}
 % \bibliographystylebook{plain}
-%\bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+% \bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+% \nocitemisc{misc1,misc2,misc3}
+% \bibliographystylemisc{plain}
+% \bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
 
 % \clearpage\end{CJK}
 \end{document}

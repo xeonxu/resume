@@ -1,5 +1,5 @@
 %% start of file `moderncv.cls'.
-%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
@@ -10,7 +10,7 @@
 %                identification
 %-------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{moderncv}[2013/04/29 v1.5.1 modern curriculum vitae and letter document class]
+\ProvidesClass{moderncv}[2015/07/28 v2.0.0 modern curriculum vitae and letter document class]
 
 
 %-------------------------------------------------------------------------------
@@ -146,6 +146,8 @@
 \newcommand*{\nopagenumbers}{\@displaypagenumbersfalse}
 \AtEndPreamble{%
   \AtBeginDocument{%
+    % fancyhdr length
+    \renewcommand{\headwidth}{\textwidth}
     \if@displaypagenumbers%
       \@ifundefined{r@lastpage}{}{%
         \ifthenelse{\pageref{lastpage}>1}{%
@@ -153,13 +155,13 @@
           \settowidth{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
           \fancypagestyle{plain}{%
             \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
-          \pagestyle{plain}}{}}%
-      \AtEndDocument{\label{lastpage}}\else\fi}}
+          \pagestyle{plain}}{}}\fi}%
+  \AtEndDocument{\label{lastpage}}}
 \pagestyle{plain}
 
 % reduced list spacing
 % package providing hooks into lists
-%   originally developped by Jakob Schiøtz (see http://dcwww.camd.dtu.dk/~schiotz/comp/LatexTips/tweaklist.sty)
+%   originally developped by Jakob Schiotz (see http://dcwww.camd.dtu.dk/~schiotz/comp/LatexTips/tweaklist.sty)
 %   modified and distributed with moderncv(not available otherwise on ctan)
 \RequirePackage{tweaklist}
 \renewcommand*{\itemhook}{%
@@ -189,6 +191,7 @@
 % compatibility package with older versions of moderncv
 \RequirePackageWithOptions{moderncvcompatibility}
 
+\RequirePackage{l3regex}
 
 %-------------------------------------------------------------------------------
 %                class definition
@@ -245,18 +248,26 @@
 % usage: \phone[<optional type>]{<number>}
 % where <optional type> should be either "fixed" (default), "mobile" or "fax
 \collectionnew{phones}
-\newcommand*{\phone}[2][fixed]{\collectionadd[#1]{phones}{#2}}
+\NewDocumentCommand{\phone}{O{fixed}m}{%
+  \ifthenelse{\equal{#1}{fax}}%
+    {\collectionadd[#1]{phones}{#2}}
+    {\collectionadd[#1]{phones}{\protect\tellink{#2}}}
+    }
+
 
 % adds a social link to one's personal information (optional)
 % usage: \social[<optional type>][<optional url>]{<account name>}
-% where <optional type> should be either "linkedin", "twitter" or "github"
+% where <optional type> should be either "linkedin", "xing", "twitter", "github", "gitlab" or "skype"
 \collectionnew{socials}
 \NewDocumentCommand{\social}{O{}O{}m}{%
   \ifthenelse{\equal{#2}{}}%
     {%
-      \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}{\protect\httplink[#3]{www.linkedin.com/in/#3}}}{}%
-      \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\httplink[#3]{www.twitter.com/#3}}}    {}%
-      \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\httplink[#3]{www.github.com/#3}}}     {}%
+      \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}{\protect\httplink[#3]{www.linkedin.com/in/#3}}} {}%
+      \ifthenelse{\equal{#1}{xing}}    {\collectionadd[xing]{socials}    {\protect\httplink[#3]{www.xing.com/profile/#3}}}{}%
+      \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\httplink[#3]{www.twitter.com/#3}}}     {}%
+      \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\httplink[#3]{www.github.com/#3}}}      {}%
+      \ifthenelse{\equal{#1}{gitlab}}  {\collectionadd[gitlab]{socials}  {\protect\httplink[#3]{www.gitlab.com/#3}}}      {}%
+      \ifthenelse{\equal{#1}{skype}}   {\collectionadd[skype]{socials}   {#3}}                                            {}%
     }
     {\collectionadd[#1]{socials}{\protect\httplink[#3]{#2}}}}
 
@@ -294,8 +305,11 @@
 \newcommand*{\emailsymbol}         {}
 \newcommand*{\homepagesymbol}      {}
 \newcommand*{\linkedinsocialsymbol}{}
+\newcommand*{\xingsocialsymbol}    {}
 \newcommand*{\twittersocialsymbol} {}
 \newcommand*{\githubsocialsymbol}  {}
+\newcommand*{\gitlabsocialsymbol}  {}
+\newcommand*{\skypesocialsymbol}   {}
 
 % other
 %------
@@ -310,34 +324,39 @@
 % usage: \makefooter
 \newcommand*{\makefooter}{}%
 
+\newcommand*{\@loadmoderncvpackage}[3][]{%
+  \begingroup\edef\x{\endgroup%
+    \noexpand\RequirePackage[#1]{moderncv#2\ifcase#3\or i\or ii\or iii\or iv\or v\or vi\or vii\or viii\or ix\or x\fi}%
+  }\x}
+
 % loads a style variant (a combination of header, body and footer)
 % usage: \moderncvstyle{<style variant name>}
-\newcommand*{\moderncvstyle}[2][]{
+\newcommand*{\moderncvstyle}[2][]{%
   \RequirePackage[#1]{moderncvstyle#2}}
 
 % loads a header variant
-% usage: \moderncvhead{<header variant number>}
-\newcommand*{\moderncvhead}[1]{
-  \expandafter\RequirePackage\expandafter{\expandafter moderncvhead\romannumeral #1}}
+% usage: \moderncvhead[<optional head option>]{<header variant number>}
+\newcommand*{\moderncvhead}[2][]{%
+  \@loadmoderncvpackage[#1]{head}{#2}}
 
 % loads a body variant
-% usage: \moderncvbody{<body variant number>}
-\newcommand*{\moderncvbody}[1]{
-  \expandafter\RequirePackage\expandafter{\expandafter moderncvbody\romannumeral #1}}
+% usage: \moderncvbody[<optional body option>]{<body variant number>}
+\newcommand*{\moderncvbody}[2][]{%
+  \@loadmoderncvpackage[#1]{body}{#2}}
 
 % loads a footer variant
-% usage: \moderncvfoot{<footer variant number>}
-\newcommand*{\moderncvfoot}[1]{
-  \expandafter\RequirePackage\expandafter{\expandafter moderncvfoot\romannumeral #1}}
+% usage: \moderncvfoot[<optional foot option>]{<foot variant number>}
+\newcommand*{\moderncvfoot}[2][]{%
+  \@loadmoderncvpackage[#1]{foot}{#2}}
   
 % loads a color scheme
 % usage: \moderncvcolor{<color scheme name>}
-\newcommand*{\moderncvcolor}[1]{
+\newcommand*{\moderncvcolor}[1]{%
   \RequirePackage{moderncvcolor#1}}
 
 % loads an icons set
 % usage: \moderncvicons{<icon set name>}
-\newcommand*{\moderncvicons}[1]{
+\newcommand*{\moderncvicons}[1]{%
   \RequirePackage{moderncvicons#1}}
 
 % recomputes all automatic lengths
@@ -347,12 +366,19 @@
 \newcommand*{\recomputelengths}{\recomputecvlengths}
 \AtBeginDocument{\recomputelengths{}}
 
+% creates a command if not yet defined
+\newcommand*{\@initializecommand}[2]{%
+  \ifdefined#1
+    \renewcommand{#1}{#2}%
+  \else%
+    \newcommand*{#1}{#2}\fi}
+
 % creates a length if not yet defined
 \newcommand*{\@initializelength}[1]{%
   \ifdefined#1
-    \setlength{#1}{0pt}%
   \else%
-    \newlength{#1}\fi}
+    \newlength{#1}\fi%
+  \setlength{#1}{0pt}}
 
 % creates a box if not yet defined
 \newcommand*{\@initializebox}[1]{%
@@ -363,13 +389,14 @@
 
 % creates an if switch if not yet defined
 \newcommand*{\@initializeif}[1]{%
-  \ifdefined#1
-  \else%
-    \newif#1\fi}
+%  \ifdefined#1% not working due to the nested \if
+%  \else%
+    \newif#1%\fi
+  }
 
-% custom strut for spacing; the first argument is the vertical offset of the strut, the second its total height (both as a fraction of \baselineskip)
+% custom strut for spacing; the first argument is the vertical offset of the strut, the second its total height
 \newcommand*{\@moderncvstrut}[2]{%
-  \rule[-#1\baselineskip]{0pt}{#2\baselineskip}}
+  \rule[-#1]{0pt}{#2}}
 
 
 %-------------------------------------------------------------------------------
@@ -418,20 +445,20 @@
 
 % internal maketitle command to issue a new line only when required
 \newif\if@firstdetailselement\@firstdetailselementtrue
-\newcommand*{\makenewline}{
+\newcommand*{\makenewline}[1][0pt]{%
   \if@firstdetailselement%
     \strut% to ensure baseline alignment, e.g. with when put in the margin vs sections that also contains a \strut
   \else%
-    \\\fi%
+    \\[#1]\fi%
   \@firstdetailselementfalse}
 
 % makes the resume title
 % usage: \makecvtitle
-\newcommand*{\makecvtitle}{}
-
-% makes the resume footer
-% usage: \makecvfooter
-\newcommand*{\makecvfooter}{\makefooter}
+\newcommand*{\makecvtitle}{%
+  \makecvhead%
+  \makecvfoot}
+\newcommand*{\makecvhead}{}
+\newcommand*{\makecvfoot}{}
 
 % makes a resume section
 % usage: \section{<title>}
@@ -486,6 +513,22 @@
   \ifthenelse{\equal{#1}{}}%
     {\href{mailto:#2}{#2}}%
     {\href{mailto:#2}{#1}}}
+    
+% makes a tel hyperlink
+% usage: \tellink[optional text]{link}
+\newcommand*{\tellink}[2][]{%
+  \ifthenelse{\equal{#1}{}}%
+    {\expandafter\onlynumberslink\expandafter{#2}{#2}}%
+    {\expandafter\onlynumberslink\expandafter{#2}{#1}}}
+
+\ExplSyntaxOn
+\tl_new:N \l_onlynumberslink_tl
+\cs_new:Npn \onlynumberslink #1 #2  {
+    \tl_set:Nn \l_onlynumberslink_tl {#1}
+    \regex_replace_all:nnN {[^0-9+]} {} \l_onlynumberslink_tl
+    \href{ tel\token_to_str:N : \tl_use:N \l_onlynumberslink_tl}{ #2 }
+}
+\ExplSyntaxOff
 
 % cvcolumns environment, where every column is created through \cvcolumn
 % usage: \begin{cvcolumns}
@@ -508,7 +551,7 @@
     \setcounter{cvcolumnsautowidthcounter}{0}%
     \setlength{\cvcolumnsautowidth}{\cvcolumnsdummywidth}%
     \setlength{\cvcolumnautowidth}{0pt}%
-    \@cvcolumns@head@emptytrue}%
+    \@cvcolumns@head@emptytrue\ignorespaces}%
   {% at environment closing: typeset environment
     % compute the width of each cvcolumn, considering a spacing of \separatorcolumnwidth and the columns with set width
     \ifnum\thecvcolumnscounter>0%
@@ -550,7 +593,7 @@
     % create the tabular
     \cvitem{}{%
 %      \begin{tabular}{\cvcolumns@def}% this conflicts with the "colortbl" package (loaded by xcolor when passing the "table" option), and requires the below 2 lines to expand \cvcolumns@def
-      \def\begincvcolumns{\begin{tabular}}
+      \def\begincvcolumns{\begin{tabular}[t]}% "[t]" is required for some body styles; the default alignment is "[c]"
       \expandafter\begincvcolumns\expandafter{\cvcolumns@def}%
         \if@cvcolumns@head@empty\else%
           \cvcolumns@head%\\[-.8em]%
@@ -575,7 +618,8 @@
       \expandafter\expandafter\expandafter\def\expandafter\csname cvcolumn\roman{cvcolumnscounter}@head\endcsname{\protect\parbox[b]{#1\cvcolumnswidth}{\protect\subsectionstyle{#2}}}}%
   \ifthenelse{\equal{#2}{}}{}{\@cvcolumns@head@emptyfalse}%
   \expandafter\expandafter\expandafter\def\expandafter\csname cvcolumn\roman{cvcolumnscounter}@content\endcsname{\protect\cvcolumncell{#3}}%
-  \stepcounter{cvcolumnscounter}}
+  \stepcounter{cvcolumnscounter}%
+  \ignorespaces}
 
 % internal cvcolumncell command, that enables a cvcolumn cell to contain paragraph commands (lists, newlines, etc)
 \newcommand*{\cvcolumncell}[1]{{% put cell inside a group, so that command redefinitions are only local
@@ -597,6 +641,10 @@
 \newenvironment{thebibliography}[1]{}{}
 \newcommand*{\newblock}{\hskip .11em\@plus.33em\@minus.07em}
 \let\@openbib@code\@empty
+%% fix a bug (hardcoded bib label) in \@bibitem
+%\renewcommand\@bibitem[1]{%
+%  \item\if@filesw \immediate\write\@auxout
+%    {\string\bibcite{#1}{\theenumiv}}\fi\ignorespaces}% replaced "\the\value{\@listctr}" with "\theenumiv"
 
 % itemize, enumerate and description environment
 \setlength{\leftmargini}   {1em}
@@ -659,11 +707,11 @@
 
 % makes the letter title
 % usage: \makelettertitle
-\newcommand*{\makelettertitle}{}
-
-% makes the letter footer
-% usage: \makeletterfooter
-\newcommand*{\makeletterfooter}{\makefooter}
+\newcommand*{\makelettertitle}{%
+  \makeletterhead%
+  \makeletterfoot}
+\newcommand*{\makeletterhead}{}
+\newcommand*{\makeletterfoot}{}
 
 % makes the letter closing
 % usage: \makeletterclosing

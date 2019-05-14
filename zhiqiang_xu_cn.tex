@@ -1,4 +1,4 @@
-% !TEX TS-program = XeLaTeX
+  % !TEX TS-program = XeLaTeX
 % !TEX encoding = UTF-8 Unicode
 %% start of file `template-zh.tex'.
 %% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
@@ -21,7 +21,7 @@
   \usepackage{devng4ht}
 }{%
   \usepackage{fontspec,xunicode}
-  \setmainfont{Tahoma}
+  \setmainfont{PT Mono}
   \usepackage[slantfont,boldfont]{xeCJK}
   \setCJKmainfont{STXihei}
   \defaultfontfeatures{Mapping=tex-text}
@@ -44,7 +44,7 @@
 % 个人信息
 \firstname{徐}
 \familyname{至强}
-\title{高级软件工程师}                      % 可选项、如不需要可删除本行
+\title{高级软件架构师}                      % 可选项、如不需要可删除本行
 % \address{松江区龙马路185弄25号1401室}{201616，上海}             % 可选项、如不需要可删除本行
 \extrainfo{出生：1983.11 年龄：36 籍贯：甘肃  定西}
 \mobile{+86 13585618661}                         %
@@ -55,7 +55,7 @@
 \homepage{blog.xeonxu.info}                  % 可选项、如不需要可删除本行
 \social[github]{xeonxu}                  % 可选项、如不需要可删除本行
 \social[twitter]{xeonxu}                  % 可选项、如不需要可删除本行
-\photo[80pt][0.8pt]{picture.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+% \photo[80pt][0.8pt]{picture.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
 \quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not want
 
 % 显示索引号;仅用于在简历中使用了引言
@@ -79,8 +79,8 @@
 \cvitem{}{
   \begin{itemize}
   \item 本科毕业，学士学位。软件开发13年，国家软件设计师职称。
-  \item 拥有13年嵌入式软件开发经验：做过2年车载项目，5年手机驱动，5年手机电池管理。3年机器人相关开发经验，3年ROS平台开发，以及1年RT-thread开发。
-  \item 熟悉Linux开发环境，终端工具，gcc工具链。熟悉C语言开发，Bash脚本编写，Git版本管理，Jenkins持续集成以及Docker应用。能够根据需求，实现自动化脚本以及搭建高效开发测试环境。同时还会使用python，elisp，Scheme等。
+  \item 拥有13年嵌入式软件开发经验：2年车载项目，5年手机研发，5年电池管理。3年机器人研发，3年ROS平台开发，1年RT-thread及STM32开发经验。
+  \item 熟悉Linux开发环境，RT-thread开发配置，终端工具，gcc工具链。熟练使用C语言，Bash脚本，Git版本管理，Jenkins持续集成以及Docker应用。能够根据需求，实现自动化脚本以及搭建高效开发测试环境。同时还会使用python，elisp，Scheme等。
   \item 拥有2年管理经验，负责过3款手机驱动的研发工作及机器人软件架构的重构工作。
   \item 积极参与开源项目，包括tmk keyboard，rt-thread，koreader等。
   \item 渴求且敬畏技术。
@@ -102,36 +102,39 @@
 
 \section{语言技能}
 \cvdoubleitem{普通话}{}{}{良好}
-\cvdoubleitem{英语}{}{}{简单交流}
-\cvdoubleitem{日语}{}{}{简单交流}
+\cvdoubleitem{英语}{}{}{工作交流}
+\cvdoubleitem{日语}{}{}{工作交流}
 
 \section{工作履历}
 \cventry{2018.06 -- 至今}{高级软件工程师 架构师}{上海云绅智能科技有限公司}{上海市}{}{
-  工作内容：红星美凯龙“大天使”机器人软件架构设计及实现，研发基础环境的构建
+  工作内容：红星美凯龙“大天使”物联网服务机器人软件架构设计及实现，公司研发环境的构建和维护
   \newline{}
   主要工作：
   \begin{itemize}
-  \item 搭建并维护版本服务器，编译服务器，公司网络漫游以及QOS配置
-  \item 从零构建机器人运行系统
-  \item 单片机程序的标准化和开发以及实现上位机ROS节点开发
-  \item 在线升级功能的设计和实现
-  \item 标准化软件运行环境，标准化软件输出打包，可实现软件发布后，10分钟内部署入目标机。
-  \item Intel realsense驱动环境维护，移植人脸识别算法节点
-  \item 机内Mikrotik路由器配置，支持4G和wifi双上行自动链路切换，VPN拨号公司内网做业务维护，支持和第三方设备不同网段互联互通。
-  \item 标准化工控机生产和部署，开发相关生产工具，实现5分钟生产部署一台工控系统，且过程无需人员干预。
+  \item 实现STM32F4在RT Thread下的CAN驱动，编写并实现CAN分析仪在ROS下的通信节点
+  \item 基于RT Thread开发传感器开发框架，定义通信协议，并开发实现上位机的ROS节点
+  \item 基于CAN总线技术的传感器固件升级方案设计与实现
+  \item 机器人ROS系统程序的在线升级（FOTA）功能的设计与实现
+  \item 机器人系统及软件节点的标准输出和打包，实现软件审核上库后，20分钟内部署入目标机
+  \item 移植配置Intel realsense的驱动和ROS节点，移植人脸识别算法节点，解决摄像头热拔插问题
+  \item 制定机器人内部路由器部署方案，实现4G和wifi双上行自动链路切换功能，同时支持VPN拨号至公司内网做业务维护，另外还支持和不同网段的机内三方设备互联互通
+  \item 为全息项目开发基于UWB的室内定位方案
+  \item 标准化工控机生产和部署，开发相关生产工具，实现无人为干预下5分钟生产部署一台工控系统的能力
+  \item 编译实现ROS的Docker环境镜像，同时搭建公司docker镜像库服务器
+  \item 搭建维护gerrit版本服务器，jenkins编译服务器，基于ROS配置AP漫游以及QOS
   \end{itemize}
 }
-\cventry{2016.07 -- 2018.05}{嵌入式软件工程师 架构师}{上海木爷机器人有限公司}{上海市}{}{
+\cventry{2016.07 -- 2018.05}{软件解决方案专家}{上海木爷机器人有限公司}{上海市}{}{
   工作内容：机器人软件研发，软件架构设计\newline{}
   主要工作：
   \begin{itemize}
-  \item 开发基于RK3288芯片的Android平板，负责充电管理以及优化系统稳定性。
-  \item 基于NVidia TX1工控板开发传感器驱动，接口和主控逻辑，制作生产镜像
-  \item 标准化X86工控板系统
-  \item 探索实现基于Docker环境的机器人运行时
-  \item 标准化的ROS程序编译系统
-  \item 灵活的机器人程序自动升级系统
-  \item 尝试使用RT Thread重构单片机开发架构
+  \item 开发基于RK3288芯片的Android平板，负责RK818的电池管理以及优化改进系统启动流程
+  \item 基于NVidia TX1工控板开发传感器驱动，接口和主控逻辑，研发生产镜像代码管控方案
+  \item 标准化X86工控板系统，提高装机效率
+  \item 探索实现基于Docker下ROS的机器人运行时
+  \item 标准化的ROS程序编译系统及打包流程
+  \item 设计实现灵活的机器人程序自动升级架构
+  \item 调研使用RTOS重构单片机开发架构，降低开发和维护成本，推动使用开源GCC构建目标程序。
   \end{itemize}
 }
 \cventry{2010.06 -- 2016.06}{嵌入式软件工程师}{上海斐讯数据通信技术有限公司}{上海市}{}{
@@ -139,8 +142,12 @@
   主要工作：
   \begin{itemize}
   \item 开发分别基于Marvell平台和Qualcomm平台的Android智能设备项目
-  \item 主要开发传感器，TP以及电源管理芯片驱动
-  \item 特别地在工作中优化改进了电池建模，BMS算法，开发环境和开发工具，极大提高项目效率
+  \item 开发并推广windows和linux下可一键安装配置的高通编译环境
+  \item 开发推广基于ditcc及ccache的android分布缓存编译优化方案
+  \item 开发传感器驱动，实现HAL和相应framework。包括地磁，加速度，距离，光以及TP等传感器设备
+  \item 负责电源管理部分逻辑开发，包括电池建模，充放电策略，多路充电切换等
+  \item 特别地在工作中优化改进了电池建模，BMS算法
+  \item 优化基于控制台的开发环境和开发工具，极大提高项目效率
   \end{itemize}
 }
 \cventry{2009.10 -- 2010.06}{嵌入式软件工程师}{上海品酷网络科技有限公司}{上海市}{}{
@@ -154,45 +161,40 @@
   \item 改进完善手机端的http下载程序，支持断点续传
   \end{itemize}
 }
-\cventry{2008.11 -- 2009.10}{嵌入式软件工程师}{上海腾龙软件公司}{上海市}{}{
-  工作内容：对日项目，主要是嵌入式平台的开发。\newline
-  主要工作：
-  \begin{itemize}
-  \item 在日立公司的数字电视项目中负责界面开发和编码测试
-  \item vxworks到Linux的移植项目。改进开发环境，快速解决问题。
-  \item openvg移植项目，负责主体程序移植以及单元测试编写和回归测试
-  \end{itemize}
+\cventry{2006.07 -- 2009.10}{软件工程师}{上海腾龙集团}{上海市}{}{
+  \cventry{2008.11 -- 2009.10}{嵌入式软件工程师}{上海腾龙软件公司}{上海市}{}{}{}
+    工作内容：对日项目，主要是嵌入式平台的开发。\newline
+    主要工作：
+    \begin{itemize}
+    \item 在日立公司的数字电视项目中负责界面开发和编码测试
+    \item vxworks到Linux的移植项目。改进开发环境，快速解决问题。
+    \item openvg移植项目，负责主体程序移植以及单元测试编写和回归测试
+    \end{itemize}
+  \cventry{2008.06 -- 2008.11}{Java工程师}{京瓷Mita公司}{大阪市}{外派}{}
+    工作内容：开发用于医院的纸质文档的电子化解决方案KMCapture Solution。\newline{}
+    主要工作：
+    \begin{itemize}
+    \item 主要负责Controller，Facade以及部分的Storage模块设计，编码和测试
+    \end{itemize}
+  \cventry{2007.05 -- 2008.06}{嵌入式软件工程师}{日立制造所}{日立市}{外派}{}
+    工作内容：开发基于ARM处理器的车载项目AVCCore。该项目后来为凯迪拉克CTS08,09车型的车载音响。\newline{}
+    主要工作：
+    \begin{itemize}
+    \item iPod集成应用。负责车载电脑中iPod Controller和iPod CoreApp开发和维护
+    \item 负责车载电脑的音频文件头解析处理的开发及维护
+    \end{itemize}
+  \cventry{2006.07 -- 2007.05}{Java工程师}{南大腾龙}{南京市}{}{}
+    工作内容：为三得利公司开发自动售卖机在线维护管理系统。\newline{}
+    主要工作：
+    \begin{itemize}
+    \item 编写数据库的处理代码和测试代码
+    \item 编写自动化部署脚本
+    \item 文档编写和维护
+    \end{itemize}
 }
-\cventry{2008.06 -- 2008.11}{Java工程师}{京瓷公司Mita分公司}{大阪市}{}{
-  工作内容：开发用于医院的纸质文档的电子化解决方案KMCapture Solution。\newline{}
-  主要工作：
-  \begin{itemize}
-  \item 主要负责Controller，Facade以及部分的Storage模块设计，编码和测试
-  \end{itemize}
-}
-\cventry{2007.05 -- 2008.06}{嵌入式软件工程师}{日立制造所}{日立市}{}{
-  工作内容：开发基于ARM处理器的车载项目AVCCore。该项目后来为凯迪拉克CTS08,09车型的车载音响。\newline{}
-  主要工作：
-  \begin{itemize}
-  \item iPod集成应用。负责车载电脑中iPod Controller和iPod CoreApp开发和维护
-  \item 负责车载电脑的音频文件头解析处理的开发及维护
-  \end{itemize}
-}
-\cventry{2006.07 -- 2007.05}{Java工程师}{南大腾龙}{南京市}{}{
-  工作内容：为三得利公司开发自动售卖机在线维护管理系统。\newline{}
-  主要工作：
-  \begin{itemize}
-  \item 编写数据库的处理代码
-  \item 编写自动化部署脚本
-  \item 编写测试代码
-  \item 文档维护
-  \end{itemize}
-}%
 \section{个人兴趣}
-\cvitem{体育}{滑板运动，F1，跑步}
-\cvitem{电影}{纪录片，科幻片}
-\cvitem{制作}{机械键盘，电子小器件}
-\cvitem{看书}{技术书籍，小说}
+\cvdoubleitem{体育}{F1，跑步，滑板运动}{制作}{机械键盘，电子小器件}
+\cvdoubleitem{电影}{纪录片，科幻片}{看书}{技术书籍，小说}
 
 \section{授权专利}
 \cvdoubleitem{201510477097.X}{一种登录认证方法及系统}{发明}{唯一发明人}
@@ -201,14 +203,22 @@
 \cvdoubleitem{201420615063.3}{一种手机进水保护装置}{实用新型}{联合发明人}
 
 \section{开源项目}
-\cvitem{twip}{添加proxy支持}
-\cvitem{ChinaDNS-C}{Bug修复及tomato编译支持}
-\cvitem{Koreader}{Bug修复及编译速度优化}
-\cvitem{battery\_analyzer}{电池电量表自动测算}
-\cvitem{vim\_configs}{维护的用于公司工作的vim配置}
-\cvitem{tmk\_keyboard}{为usb2usb增加蓝牙功能，蓝牙使用rn42模块}
-\cvitem{csr\_tool}{Dump csr芯片的脚本工具}
-\cvitem{RT Thread}{stm32f10x板级支持bug的修复等}
+\cventry{参与项目}{github}{}{}{}{
+  \begin{itemize}
+  \item twip:添加proxy支持
+  \item ChinaDNS-C:Bug修复及tomato编译支持
+  \item Koreader:Bug修复及编译速度优化
+  \item tmk\_keyboard:独立为usb2usb增加蓝牙功能，蓝牙使用rn42模块
+  \item RT Thread:Stm32f1板级支持bug的修复，编写Stm32f4 hal版的CAN驱动
+  \end{itemize}
+}
+\cventry{个人项目}{github}{}{}{}{
+  \begin{itemize}
+  \item battery\_analyzer:电池电量表自动测算
+  \item vim\_configs:维护的用于公司工作的vim配置
+  \item csr\_tool:Dump csr芯片的脚本工具
+  \end{itemize}
+}
 
 \renewcommand{\listitemsymbol}{¤}             % 改变列表符号
 

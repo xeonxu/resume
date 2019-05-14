@@ -50,8 +50,8 @@
 %\renewcommand{\refname}{Articles}
 
 % bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
+\usepackage{multibib}
+\newcites{book,misc}{{Books},{Others}}
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
@@ -127,18 +127,18 @@ Detailed achievements:%
 % Publications from a BibTeX file without multibib
 %  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
 %  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                       % 'publications' is the name of a BibTeX file
 
 % Publications from a BibTeX file using the multibib package
-%\section{Publications}
-%\nocitebook{book1,book2}
-%\bibliographystylebook{plain}
-%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+\section{Publications}
+\nocitebook{book1,book2}
+\bibliographystylebook{plain}
+\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+\nocitemisc{misc1,misc2,misc3}
+\bibliographystylemisc{plain}
+\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
 \clearpage
 %-----       letter       ---------------------------------------------------------

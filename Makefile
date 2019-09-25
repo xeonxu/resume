@@ -1,7 +1,7 @@
 all:resume
 resume:zhiqiang_xu_cn.tex zhiqiang_xu_jp.tex zhiqiang_xu_en.tex
 	xelatex zhiqiang_xu_cn.tex
-	xelatex zhiqiang_xu_jp.tex
+	# xelatex zhiqiang_xu_jp.tex
 	xelatex zhiqiang_xu_en.tex
 
 clean:

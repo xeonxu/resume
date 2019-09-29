@@ -8,7 +8,7 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[10pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 \usepackage{etoolbox}
 \makeatletter
 % 字符编码
@@ -46,16 +46,16 @@
 \title{Senior software architect}                      % 可选项、如不需要可删除本行
 %\address{Room 1401, Blvd. 25, Longma Rd. 185 Nong, Songjiang Dicstrict}{201616，Shanghai}             % 可选项、如不需要可删除本行
 \extrainfo{Birth:1983.11 Age:35}
-\mobile{+86 13585618661}                         % 可选项、如不需要可删除本行
-\mobile{+1 8056698661}                         % 可选项、如不需要可删除本行
-\phone{+86 21 67663700}                          % 可选项、如不需要可删除本行
+\mobile{+86 135 8561 8661}                         % 可选项、如不需要可删除本行
+\mobile{+1 805 669 8661}                         % 可选项、如不需要可删除本行
+\phone{+86 21 6766 3700}                          % 可选项、如不需要可删除本行
 %% \fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
 \email{xeonxu@gmail.com}                    % 可选项、如不需要可删除本行
 \homepage{blog.xeonxu.info}                  % 可选项、如不需要可删除本行
 \social[github]{xeonxu}                  % 可选项、如不需要可删除本行
 \social[twitter]{xeonxu}                  % 可选项、如不需要可删除本行
 % \photo[80pt][0.8pt]{picture.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
-\quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not want
+% \quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not want
 
 % 显示索引号;仅用于在简历中使用了引言
 %\makeatletter
@@ -74,14 +74,18 @@
 
 \section{SUMMARY}
 \cvitem{}{
-  \begin{itemize}
-  \item BA. With 13 years embeded software develop expriences. Including 2yrs on vehicle related projects, 5yrs on mobile phone projects, and 3yrs on robot projects.
-  \item Excellent in C, bash, linux, terminal, git, docker.
-  \item Excellent software design, problem solving and debuging skills.
-  \item Be familiar with Robot Operating System, Router Operating System, RT-thread, and continuous integration systems.
-  \item Be familiar with vi, emacs, elisp, scheme.
-  \item Have 2yrs experience on team management. 
-  \end{itemize}
+  BA. With 13 years embeded software develop expriences. Including 2yrs on vehicle related projects, 5yrs on mobile phone projects, and 3yrs on robot related projects.\newline
+  Excellent in C, bash, linux, rt-thread, version control, docker.\newline
+  Be familiar with software design, problem solving and debuging skills.\newline
+  Experience on refactoring robot control system using ROS and docker technic. Using RTOS to implement STM32 based sensors.\newline
+  2yrs experience on team management. \newline
+  % \begin{itemize}
+  % \item BA. With 13 years embeded software develop expriences. Including 2yrs on vehicle related projects, 5yrs on mobile phone projects, and 3yrs on robot related projects.
+  % \item Excellent in C, bash, linux, rt-thread, version control, docker.
+  % \item Be familiar with software design, problem solving and debuging skills.
+  % \item Experience on refactoring robot control system using ROS and docker technic. Using RTOS to implement STM32 based sensors.
+  % \item 2yrs experience on team management. 
+  % \end{itemize}
 }
 
 \section{PROFESSIONAL EXPERIENCE}
@@ -90,26 +94,25 @@ Main work:
 \begin{itemize}
  \item Sensor development
   \begin{itemize}
-  \item Based on rtthread to develop CAN driver for STM32.
-  \item Develop ultrasonic sensor for robot, and send infomations on CAN bus.
-  \item Implement OTA function. Use CAN bus to receive update datas.
+  \item implement rt-thread's CAN driver for STM32.
+  \item Develop ultrasonic, anti-colllision, anti-falling sensors. Report sensors' infomations by CAN bus.
+  \item Implement CAN bus based OTA function for sensors.
   \end{itemize}
  \item Robot control system
   \begin{itemize}
   \item Use docker image to package ROS enviroment.
   \item Integrate camera driver and CAN adaptor driver in docker image.
   \item Write ROS node to connect between drivers and applications.
-  \item Clone system for factory producing. 
-  \item Router configuration for robot use.
+  \item Export clone system method for producing in factories. 
+  \item Router configuration for robot.
   \item Use repo method to manage robot softwares.
+  \item Implement OTA function for X86 based controller.
   \end{itemize}
  \item System management
   \begin{itemize}
   \item Docker registry server.
-  \item LDAP server.
-  \item Git, gerrit, and jenkins server.
-  \item VPN server.
-  \item QoS configuration on ROS (Router Operating System) for office.
+  \item LDAP, Git, gerrit, vpn and jenkins server management.
+  \item ROS(Router Operating System)'s QoS configuration.
   \end{itemize}
 \end{itemize}
   }
@@ -118,11 +121,13 @@ Main work:
 \begin{itemize}
  \item Android driver development
   \begin{itemize}
-  \item Based on Rockwell 3288 platform. Solving charging issue and stability optimization.
+  \item Based on Rockwell 3288 platform. Solving charging issues.
+  \item Stability optimization.
   \end{itemize}
  \item Robot control system
   \begin{itemize}
-  \item Use ROS (Robot Operating System) to construct control system for robot products.
+  \item Redesign robot control system using ROS.
+  \item Use ROS(Robot Operating System) to construct control system for robotic products.
   \item Integrate OpenCV support on TX1.
   \end{itemize}
 \end{itemize}
@@ -132,7 +137,7 @@ Main work:
 \begin{itemize}
  \item Android Smartphone project
   \begin{itemize}
-  \item Marvell PXA968 platform，sensors，TP and PMIC drivers. Logo file generator.
+  \item Develop on Marvell PXA968 platform. Sensors' and PMIC's drivers. Logo file generator.
   \item Qualcomm MSM7x27/MSM8x25/MSM8x25Q platform. PMIC module, develop enviroment optimize. Mainly, PMIC module development, geomagnetic debug method optimization, TP fw upgrade method and dual-way charging method based on smb358. Batch review tool for gerrit.
   \item Qualcomm MSM8x10/8x12/8x26/8x16/8994/8909 platform. PMIC module, battery charactorization.
   \end{itemize}
@@ -211,15 +216,25 @@ Main work:
 \cvitemwithcomment{Japanese}{}{Normal}
 
 \section{TECHNICAL SKILLS AND KNOWLEDGES}
-\cvdoubleitem{C}{Proficient}{Java}{Low}
-\cvdoubleitem{Objective-C}{Learning}{Swift}{Learning}
+\cvdoubleitem{C}{Proficient}{Java}{Poor}
+% \cvdoubleitem{Objective-C}{Learning}{Swift}{Learning}
 \cvdoubleitem{Linux/Unix}{Proficient}{Hardware}{Ease soldering}
 \cvdoubleitem{Script}{Bash}{Editor}{Emacs/Vim}
 
 \section{HOBBIES}
-\cvitem{Movie}{\small Documentary, Sci-Fi}
-\cvitem{Reading}{\small Technology, Novell}
-\cvitem{Sports}{\small Skate Board, F1, Marathon}
+% \cvitem{Movie}{\small Documentary, Sci-Fi}
+% \cvitem{Reading}{\small Technology, Novell}
+% \cvitem{Sports}{\small Skate Board, F1, Marathon}
+\cvdoubleitem{Reading}{\small Technology, Novell}{Sports}{\small Skate Board, F1, Marathon}
+
+\section{GRANTED PANTENTS}
+\cvitem{201510477097.X}{\small 一种登录认证方法及系统}
+\cvitem{201510612722.7}{\small 一种扩展移动终端运算能力的系统}
+\cvitem{201410613796.8}{\small 一种移动终端及其虚拟光驱的实现方法}
+\cvitem{201210368281.7}{\small 一种耳机接口装置及基于所述耳机接口装置的控制方法}
+\cvitem{201510745100.1}{\small 一种密钥加密方法及系统、电子设备}
+\cvitem{201210585845.2}{\small 硬件固件独立升级系统及方法}
+\cvitem{201420615063.3}{\small 一种手机进水保护装置}
 
 \section{MISCELLANOUS}
 \cvlistitem{twip: Add proxy support.}

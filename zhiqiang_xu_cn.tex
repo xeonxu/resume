@@ -21,9 +21,11 @@
   \usepackage{devng4ht}
 }{%
   \usepackage{fontspec,xunicode}
-  \setmainfont{WenQuanYi Zen Hei Mono}
+%  \setmainfont{WenQuanYi Zen Hei Mono}
+  \setmainfont{PT Mono}
   \usepackage[slantfont,boldfont]{xeCJK}
-  \setCJKmainfont{WenQuanYi Zen Hei}
+%  \setCJKmainfont{WenQuanYi Zen Hei}
+  \setCJKmainfont{STXihei}
   \defaultfontfeatures{Mapping=tex-text}
   \XeTeXlinebreaklocale "zh"
   \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
@@ -31,7 +33,7 @@
 \usepackage{xcolor}                 % replace by the encoding you are using
 
 % moderncv 主题
-\moderncvstyle{banking}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
+\moderncvstyle{classic}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
 \moderncvcolor{green}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
 % \nopagenumbers{}                             % 消除注释以取消自动页码生成功能
 
@@ -73,7 +75,7 @@
 % \begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
 \maketitle
 
-\cofeBm{0.2}{0.7}{180}{0cm}{0cm}
+\cofeAm{0.2}{0.7}{180}{0cm}{0cm}
 % \cofeSplash{}
 \section{简介}
 \cvitem{}{
@@ -106,7 +108,17 @@
 \cvdoubleitem{日语}{}{}{工作交流}
 
 \section{工作履历}
-\cventry{2018.06 -- 至今}{高级软件工程师 架构师}{上海云绅智能科技有限公司}{上海市}{}{
+
+\cventry{2019.10 -- 至今}{驱动系统架构师}{上海上汽集团商用车技术中心}{上海市}{}{
+  工作内容：汽车AVN系统通信及控制架构的设计定义，重构工作。
+  \newline{}
+  主要工作：
+  \begin{itemize}
+  \item SV5101自建项目，开发模块梳理。
+  \end{itemize}  
+}
+\cventry{2018.06 -- 2019.09}{高级软件工程师 架构师}{上海云绅智能科技有限公司}{上海市}{}{
+% \cventry{2018.06 -- 至今}{高级软件工程师 架构师}{上海云绅智能科技有限公司}{上海市}{}{
   工作内容：红星美凯龙“大天使”物联网服务机器人软件架构设计及实现，公司研发环境的构建和维护
   \newline{}
   主要工作：
@@ -117,7 +129,7 @@
   \item 机器人ROS系统程序的在线升级（FOTA）功能的设计与实现
   \item 机器人系统及软件节点的标准输出和打包，实现软件审核上库后，20分钟内部署入目标机
   \item 移植配置Intel realsense的驱动和ROS节点，移植人脸识别算法节点，解决摄像头热拔插问题
-  \item 制定机器人内部路由器部署方案，实现4G和wifi双上行自动链路切换功能，同时支持VPN拨号至公司内网做业务维护，另外还支持和不同网段的机内三方设备互联互通
+  \item 制定机器人内部路由器部署方案，实现4G和wifi双上行自动链路切换功能，同时支持VPN拨号至公司内网做业务维护，另外还支持和不同网段的的机内三方设备互联互通
   \item 为全息项目开发基于UWB的室内定位方案
   \item 标准化工控机生产和部署，开发相关生产工具，实现无人为干预下5分钟生产部署一台工控系统的能力
   \item 编译实现ROS的Docker环境镜像，同时搭建公司docker镜像库服务器

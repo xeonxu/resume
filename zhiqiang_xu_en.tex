@@ -10,6 +10,8 @@
 
 \documentclass[10pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 \usepackage{etoolbox}
+\usepackage{coffee}
+
 \makeatletter
 % 字符编码
 \usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
@@ -20,9 +22,11 @@
 \usepackage{devng4ht}
 }{%
 \usepackage{fontspec,xunicode}
-\setmainfont{DejaVu Serif}
+% \setmainfont{DejaVu Serif}
+\setmainfont{PragmataPro for Powerline}
 \usepackage[slantfont,boldfont]{xeCJK}
-\setCJKmainfont{WenQuanYi Zen Hei}
+% \setCJKmainfont{WenQuanYi Zen Hei}
+\setCJKmainfont{STXihei}
 \defaultfontfeatures{Mapping=tex-text}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
@@ -30,7 +34,7 @@
 \usepackage{xcolor}                 % replace by the encoding you are using
 
 % moderncv 主题
-\moderncvstyle{banking}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
+\moderncvstyle{classic}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
 \moderncvcolor{green}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
 %\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
 
@@ -72,6 +76,7 @@
 % \begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
 \maketitle
 
+\cofeAm{0.2}{0.7}{180}{0cm}{0cm}
 \section{SUMMARY}
 \cvitem{}{
   BA. With 13 years embeded software develop expriences. Including 2yrs on vehicle related projects, 5yrs on mobile phone projects, and 3yrs on robot related projects.\newline

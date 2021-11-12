@@ -192,6 +192,7 @@
 \RequirePackageWithOptions{moderncvcompatibility}
 
 \RequirePackage{l3regex}
+%\RequirePackage{expl3}
 
 %-------------------------------------------------------------------------------
 %                class definition

@@ -48,9 +48,9 @@
 \familyname{至强}
 \title{高级软件架构师}                      % 可选项、如不需要可删除本行
 % \address{松江区龙马路185弄25号1401室}{201616，上海}             % 可选项、如不需要可删除本行
-\extrainfo{出生：1983.11 年龄：37}
+\extrainfo{出生：1983.11 年龄：38}
 \mobile{+86 13585618661}                         %
-\mobile{+1 8056698661}                         % 可选项、如不需要可删除本行
+\mobile{+1 (805) 6698661}                         % 可选项、如不需要可删除本行
 \phone{+86 21 67663700}                          % 可选项、如不需要可删除本行
 %% \fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
 \email{xeonxu@gmail.com}                    % 可选项、如不需要可删除本行
@@ -82,7 +82,7 @@
   \begin{itemize}
   \item 本科毕业，学士学位。软件开发14年，国家软件设计师职称。
   \item 拥有14年嵌入式软件开发经验：3年车载项目，5年手机研发，5年电池管理。3年机器人研发，3年ROS平台开发，1年RT-thread及STM32开发经验。
-  \item 熟悉Linux开发环境，RT-thread开发配置，终端工具，gcc工具链。熟练使用C语言，Bash脚本，Git版本管理，Jenkins持续集成以及Docker应用。能够根据需求，实现自动化脚本以及搭建高效开发测试环境。同时还会使用python，elisp，Scheme等。
+  \item 熟悉Linux开发环境，RT-thread开发配置，终端工具，gcc工具链。熟练使用C语言，Bash脚本，Git版本管理，Jenkins持续集成以及Docker应用。能够根据需求，实现自动化脚本以及搭建高效开发测试环境。同时还会使用python，elisp，scheme等。
   \item 拥有2年管理经验，负责过3款手机驱动的研发工作及机器人软件架构的重构工作。
   \item 积极参与开源项目，包括tmk keyboard，rt-thread，koreader等。
   \item 渴求且敬畏技术。
@@ -114,11 +114,13 @@
   \newline{}
   主要工作：
   \begin{itemize}
-  \item 自建网联OTA协议修订及维护。
-  \item 智能座舱开发团队基础工具链搭建。配置持续集成服务。
-  \item 车身控制机时钟校准策略制定。
-  \item MTK 2712自建项目，开发模块梳理。
-  \item 8155智能座舱项目，功能抽象，开发模块定义。
+  \item 自建网联OTA协议修订及维护工作。
+  \item 智能座舱团队基础开发工具链的搭建，以及持续集成服务的配置工作。
+  \item 车身控制器时钟校准策略的制定。
+  \item SOA 信号矩阵的沟通和定义。
+  \item 高通8155智能座舱项目，QNX+Android 方案中的CAN 信号到系统接口的架构方案。
+  \item “人机共驾”功能中，确认高精地图的编译，匹配，渲染等方面的落地方案和细节。
+  \item 负责前后排地图互动的架构方案和技术细节。
   \end{itemize}  
 }
 \cventry{2018.06 -- 2019.09}{高级软件工程师 架构师}{上海云绅智能科技有限公司}{上海市}{}{
@@ -226,18 +228,21 @@
 \section{开源项目}
 \cventry{参与项目}{github}{}{}{}{
   \begin{itemize}
-  \item twip:添加proxy支持
-  \item ChinaDNS-C:Bug修复及tomato编译支持
-  \item Koreader:Bug修复及编译速度优化
-  \item tmk\_keyboard:独立为usb2usb增加蓝牙功能，蓝牙使用rn42模块
-  \item RT Thread:Stm32f1板级支持bug的修复，编写Stm32f4 hal版的CAN驱动
+  \item twip: 添加proxy支持
+  \item ChinaDNS-C: Bug修复及tomato编译支持
+  \item Koreader: Bug修复及编译速度优化
+  \item tmk\_keyboard: 独立为usb2usb增加蓝牙功能，蓝牙使用rn42模块
+  \item RT Thread: Stm32f1板级支持bug的修复，编写Stm32f4 hal版的CAN驱动
+  \item ChameleonMini-rebooted: 增加NTAG-213、215、216 的支持；增加对泽塔奥特曼变身器的支持和密钥监听。
   \end{itemize}
 }
 \cventry{个人项目}{github}{}{}{}{
   \begin{itemize}
-  \item battery\_analyzer:电池soc表自动测算工具
-  \item vim\_configs:维护的用于公司工作的vim配置
-  \item csr\_tool:Dump csr芯片的脚本工具
+  \item battery\_analyzer: 电池soc表自动测算工具
+  \item vim\_configs: 维护的用于公司工作的vim配置
+  \item csr\_tool: Dump csr芯片的脚本工具
+  \item Ultramanmedal: 使用Proxmark3 制作泽塔奥特曼勋章和身份卡的Lua程序。
+  \item bin2elf: 为bin文件增加elf文件头，从而可以将通过jtag dump出来的固件，方便使用支持elf的烧录程序将其重新写入设备。该工具主要用来备份国内违反GPL 不开源的Proxmark3 私改固件。
   \end{itemize}
 }
 

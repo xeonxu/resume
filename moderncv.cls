@@ -191,6 +191,8 @@
 % compatibility package with older versions of moderncv
 \RequirePackageWithOptions{moderncvcompatibility}
 
+\usepackage{expl3}
+\expandafter\def\csname ver@l3regex.sty\endcsname{}
 \RequirePackage{l3regex}
 %\RequirePackage{expl3}
 

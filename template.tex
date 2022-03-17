@@ -8,6 +8,7 @@
 
 \documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
+
 % moderncv themes
 \moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
@@ -27,12 +28,18 @@
   \usepackage{fontspec}
   \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX}
-  \setmainfont{Latin Modern Roman}
-  \setsansfont{Latin Modern Sans}
-  \setmonofont{Latin Modern Mono}
-  \setmathfont{Latin Modern Math} 
+  \setmainfont{Sarasa Mono SC}
+  \setsansfont{Noto Sans CJK SC}
+  \setmonofont{Sarasa Mono SC}
+  \setmathfont{Latin Modern Math}
+  %\usepackage[slantfont,boldfont]{xeCJK}
+  %\defaultfontfeatures{Mapping=tex-text}
+  \usepackage{xcolor}
+  \XeTeXlinebreaklocale "zh"
+  \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 \else
   \usepackage[utf8]{inputenc}
+  \usepackage{CJKutf8}
   \usepackage[T1]{fontenc}
   \usepackage{lmodern}
 \fi
@@ -95,7 +102,10 @@
 %            content
 %----------------------------------------------------------------------------------
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+\ifxetexorluatex
+\else
+\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+\fi
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
@@ -255,8 +265,10 @@ Albert Einstein discovered that $e=mc^2$ in 1905.
 \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
 
 \makeletterclosing
-
-%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\ifxetexorluatex
+\else
+\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\fi
 \end{document}
 
 

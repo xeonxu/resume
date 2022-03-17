@@ -1,5 +1,5 @@
 %% start of file `template-zh.tex'.
-%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2022 moderncv maintainers (github.com/moderncv).
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
@@ -8,38 +8,55 @@
 
 \documentclass[11pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-\usepackage{fontspec,xunicode}
-\setmainfont{Tahoma}
-\usepackage[slantfont,boldfont]{xeCJK}
-\usepackage{xcolor}                 % replace by the encoding you are using
-\setCJKmainfont{Adobe Song Std L}
-\defaultfontfeatures{Mapping=tex-text}
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
 % moderncv 主题
 \moderncvstyle{casual}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
 \moderncvcolor{blue}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
-%\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
-% 字符编码
-\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
-% 使用xelatex，无需以下设置
-% \usepackage{CJKutf8}
+
 
 % 调整页面出血
 \usepackage[scale=0.75]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}           % 如果你希望改变日期栏的宽度
-% 解决XeLaTex编译时的编码警告
-\usepackage[unicode,pdfencoding=auto]{hyperref}
+\setlength{\footskip}{136.00005pt}                 % depending on the amount of information in the footer, you need to change this value. comment this line out and set it to the size given in the warning
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Sarasa Mono SC}
+  \setsansfont{Noto Sans CJK SC}
+  \setmonofont{Sarasa Mono SC}
+  \setmathfont{Latin Modern Math} 
+  %\usepackage[slantfont,boldfont]{xeCJK}
+  %\defaultfontfeatures{Mapping=tex-text}
+  \usepackage{xcolor}
+  \XeTeXlinebreaklocale "zh"
+  \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage{CJKutf8}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% document language
+\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
 
 % 个人信息
 \firstname{小龙}
 \familyname{李}
+\born{4 July 1776}                                 % optional, remove / comment the line if not wanted
 \title{简历题目 (可选项)}                      % 可选项、如不需要可删除本行
 \address{街道及门牌号}{邮编及城市}             % 可选项、如不需要可删除本行
-\mobile{+1~(234)~567~890}                         % 可选项、如不需要可删除本行
-\phone{+2~(345)~678~901}                          % 可选项、如不需要可删除本行
+\phone[mobile]{+1~(234)~567~890}                         % 可选项、如不需要可删除本行
+\phone[fixed]{+2~(345)~678~901}                          % 可选项、如不需要可删除本行
 \fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
 \email{xiaolong@li.com.cn}                    % 可选项、如不需要可删除本行
 \homepage{www.xialongli.com}                  % 可选项、如不需要可删除本行
@@ -59,8 +76,12 @@
 %            内容
 %----------------------------------------------------------------------------------
 \begin{document}
-% \begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
-\maketitle
+\ifxetexorluatex
+\else
+\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+\fi
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
 
 \section{教育背景}
 \cventry{年 -- 年}{学位}{院校}{城市}{\textit{成绩}}{说明}  % 第3到第6编码可留白
@@ -136,7 +157,11 @@
 %\bibliographystylemisc{plain}
 %\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
 
-% \clearpage\end{CJK}
+\clearpage
+\ifxetexorluatex
+\else
+\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\fi
 \end{document}
 
 

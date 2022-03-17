@@ -1,5 +1,5 @@
 %% start of file `template.tex'.
-%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2022 moderncv maintainers (github.com/moderncv).
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
@@ -8,41 +8,87 @@
 
 \documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
+
 % moderncv themes
 \moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 %\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
-% character encoding
-%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
-
 % adjust the page margins
 \usepackage[scale=0.75]{geometry}
+\setlength{\footskip}{136.00005pt}                 % depending on the amount of information in the footer, you need to change this value. comment this line out and set it to the size given in the warning
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Sarasa Mono SC}
+  \setsansfont{Noto Sans CJK SC}
+  \setmonofont{Sarasa Mono SC}
+  \setmathfont{Latin Modern Math}
+  %\usepackage[slantfont,boldfont]{xeCJK}
+  %\defaultfontfeatures{Mapping=tex-text}
+  \usepackage{xcolor}
+  \XeTeXlinebreaklocale "zh"
+  \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage{CJKutf8}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% document language
+\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
+
 % personal data
 \name{John}{Doe}
-\title{Resumé title}                               % optional, remove / comment the line if not wanted
+\title{Résumé title}                               % optional, remove / comment the line if not wanted
+\born{4 July 1776}                                 % optional, remove / comment the line if not wanted
 \address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
 \phone[mobile]{+1~(234)~567~890}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 \phone[fixed]{+2~(345)~678~901}
 \phone[fax]{+3~(456)~789~012}
 \email{john@doe.org}                               % optional, remove / comment the line if not wanted
 \homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+
+% Social icons
 \social[linkedin]{john.doe}                        % optional, remove / comment the line if not wanted
 \social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
-\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
+
 \social[github]{jdoe}                              % optional, remove / comment the line if not wanted
 \social[gitlab]{jdoe}                              % optional, remove / comment the line if not wanted
+\social[codeberg]{jdoe}                            % optional, remove / comment the line if not wanted
+\social[bitbucket]{jdoe}                           % optional, remove / comment the line if not wanted
+\social[stackoverflow]{0000000/johndoe}            % optional, remove / comment the line if not wanted
+
 \social[skype]{jdoe}                               % optional, remove / comment the line if not wanted
+\social[orcid]{0000-0000-000-000}                  % optional, remove / comment the line if not wanted
+\social[researchgate]{jdoe}                        % optional, remove / comment the line if not wanted
+\social[researcherid]{jdoe}                        % optional, remove / comment the line if not wanted
+\social[googlescholar]{googlescholarid}            % optional, remove / comment the line if not wanted
+
+\social[twitter]{ji\_doe}                          % optional, remove / comment the line if not wanted
+\social[mastodon]{mastodon.social/web/@user}       % optional, remove / comment the line if not wanted
+\social[telegram]{jdoe}                            % optional, remove / comment the line if not wanted
+\social[whatsapp]{12345678901}                     % optional, remove / comment the line if not wanted
+\social[signal]{12345678901}                       % optional, remove / comment the line if not wanted
+\social[matrix]{@johndoe:matrix.org}               % optional, remove / comment the line if not wanted
+
+
+
+
 \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
 \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 \quote{Some quote}                                 % optional, remove / comment the line if not wanted
 
-% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
 %   to show numerical labels in the bibliography (default is to show no labels)
 %\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
 \renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
@@ -56,7 +102,10 @@
 %            content
 %----------------------------------------------------------------------------------
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+\ifxetexorluatex
+\else
+\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+\fi
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
@@ -71,12 +120,12 @@
 
 \section{Experience}
 \subsection{Vocational}
-\cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}%
-Detailed achievements:%
-\begin{itemize}%
-\item Achievement 1;
-\item Achievement 2, with sub-achievements:
-  \begin{itemize}%
+\cventry{year--year}{Job title}{Employer}{City}{}{General description no longer than 1--2 lines.\newline{}
+Detailed achievements:
+\begin{itemize}
+\item Achievement 1
+\item Achievement 2 (with sub-achievements)
+  \begin{itemize}
   \item Sub-achievement (a);
   \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
     \begin{itemize}
@@ -86,9 +135,10 @@ Detailed achievements:%
     \end{itemize}
   \item Sub-achievement (c);
   \end{itemize}
-\item Achievement 3.
+\item Achievement 3
+\item Achievement 4
 \end{itemize}}
-\cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2}
+\cventry{year--year}{Job title}{Employer}{City}{}{Description line 1\newline{}Description line 2\newline{}Description line 3}
 \subsection{Miscellaneous}
 \cventry{year--year}{Job title}{Employer}{City}{}{Description}
 
@@ -96,11 +146,65 @@ Detailed achievements:%
 \cvitemwithcomment{Language 1}{Skill level}{Comment}
 \cvitemwithcomment{Language 2}{Skill level}{Comment}
 \cvitemwithcomment{Language 3}{Skill level}{Comment}
+\cvitemwithcomment{Language 4}{Skill level}{Comment}
 
 \section{Computer skills}
 \cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
 \cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
 \cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+
+\section{Skill matrix}
+\cvitem{Skill matrix}{Alternatively, provide a skill matrix to show off your skills}
+%% Skill matrix as an alternative to rate one's skills, computer or other. 
+
+%% Adjusts width of skill matrix columns. 
+%% Usage \setcvskillcolumns[<width>][<factor>][<exp_width>]
+%% <width>, <exp_width> should be lengths smaller than \textwidth, <factor> needs to be between 0 and 1.
+%% Examples:
+% \setcvskillcolumns[5em][][]%    adjust first column. Same as \setcvskillcolumns[5em]
+% \setcvskillcolumns[][0.45][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
+% \setcvskillcolumns[][][\widthof{``Year''}]%     adjust fourth (years) column.
+% \setcvskillcolumns[][0.45][\widthof{``Year''}]%
+% \setcvskillcolumns[\widthof{``Languag''}][0.48][]
+% \setcvskillcolumns[\widthof{``Languag''}]%
+
+%% Adjusts width of legend columns. Usage \setcvskilllegendcolumns[<width>][<factor>]
+%% <factor> needs to be between 0 and 1. <width> should be a length smaller than \textwidth
+%% Examples:
+% \setcvskilllegendcolumns[][0.45]
+% \setcvskilllegendcolumns[\widthof{``Legend''}][0.45]
+% \setcvskilllegendcolumns[0ex][0.46]% this is usefull for the banking style
+
+%% Add a legend if you are using \cvskill{<1-5>} command or \cvskillentry
+%% Usage \cvskilllegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
+% \cvskilllegend % insert default legend without lines
+\cvskilllegend*[1em]{}% adjust post spacing
+% \cvskilllegend*{Legend}%  Alternatively add a description string
+%% adjust the legend entries for other languages, here German
+% \cvskilllegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte\,/\,Spezialist]{Legende}
+
+%% Alternative legend style with the first three skill levels in one column
+%% Usage \cvskillplainlegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
+% \setcvskilllegendcolumns[][0.6]%  works for classic, casual, banking
+% \setcvskilllegendcolumns[][0.55]%  works better for oldstyle and fancy
+% \cvskillplainlegend{}
+% \cvskillplainlegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte/Guru]{Legende}
+
+%% Add a head of the skill matrix table with descriptions.
+%% Usage \cvskillhead[<post_padding>][<Level>][<Skill>][<Years>][<Comment>]%
+\cvskillhead[-0.1em]%   this inserts the standard legend in english and adjust padding
+%% Adjust head of the skill matrix for other languages
+% \cvskillhead[0.25em][Level][F\"ahigkeit][Jahre][Bemerkung]
+
+%% \cvskillentry[*][<post_padding>]{<skill_cathegory>}{<0-5>}{<skill_name>}{<years_of_experience>}{<comment>}% 
+%% Example usages:
+\cvskillentry*{Language:}{3}{Python}{2}{I'm so experienced in Python and have realised a million projects. At least.}
+\cvskillentry{}{2}{Lilypond}{14}{So much sheet music! Man, I'm the best!}
+\cvskillentry{}{3}{\LaTeX}{14}{Clearly I rock at \LaTeX}
+\cvskillentry*{OS:}{3}{Linux}{2}{I only use Archlinux btw}% notice the use of the starred command and the optional 
+\cvskillentry*[1em]{Methods}{4}{SCRUM}{8}{SCRUM master for 5 years}
+%% \cvskill{<0-5>} command
+% \cvitem{\textbackslash{cvskill}:}{Skills can be visually expressed by the \textbackslash{cvskill} command, e.g. \cvskill{2}}
 
 \section{Interests}
 \cvitem{hobby 1}{Description}
@@ -114,7 +218,7 @@ Detailed achievements:%
 
 \section{Extra 2}
 \cvlistdoubleitem{Item 1}{Item 4}
-\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
+\cvlistdoubleitem{Item 2}{Item 5\cite{book2}}
 \cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
 
 \section{References}
@@ -161,9 +265,12 @@ Albert Einstein discovered that $e=mc^2$ in 1905.
 \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
 
 \makeletterclosing
-
-%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\ifxetexorluatex
+\else
+\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\fi
 \end{document}
 
 
 %% end of file `template.tex'.
+

@@ -7,60 +7,87 @@
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
+\documentclass[10pt,a4paper,mono]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+%\usepackage{etoolbox}
+\usepackage{coffee}
+% 当前日期获取
+\usepackage[useregional]{datetime2}
+\newcommand{\ctoday}{\number\year 年\number\month 月\number\day 日}
 
-\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-\usepackage{etoolbox}
-\makeatletter
-% 字符编码
-%% \usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
-% 使用xelatex，无需以下设置
-% \usepackage{CJKutf8}
-
-\@ifpackageloaded{tex4ht}{
-\usepackage{devng4ht}
-}{%
-\usepackage{fontspec,xunicode}
-\setmainfont{Tahoma}            %For Mac
-%% \setmainfont{DejaVu Sans Mono}            %For Linux
-\usepackage[slantfont,boldfont]{xeCJK}
-\setCJKmainfont{Hiragino Maru Gothic ProN} %For Mac
-%% \setCJKmainfont{Ume Gothic} %For Linux
-\defaultfontfeatures{Mapping=tex-text}
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
-}
-\usepackage{xcolor}                 % replace by the encoding you are using
+\usepackage{ifthen}
+\newcounter{myage}
+\setcounter{myage}{\the\year}
+\addtocounter{myage}{-1983}
+\ifthenelse{\the\month<11}{\addtocounter{myage}{-1}}{}
+\ifthenelse{\the\month=11}{
+  \ifthenelse{\the\day < 14}{\addtocounter{myage}{-1}}{}
+}{}
 
 % moderncv 主题
-\moderncvstyle{classic}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
-\moderncvcolor{green}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
-%\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
+\moderncvstyle{classic}                        % 选项参数是 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{green}                          % 选项参数是 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % 调整页面
-\usepackage[scale=0.75]{geometry}
-\setlength{\hintscolumnwidth}{4cm}           % 如果你希望改变日期栏的宽度
+\usepackage[scale=0.85]{geometry}
+\recomputelengths
+% \setlength{\footskip}{136.00005pt}                 % depending on the amount of information in the footer, you need to change this value. comment this line out and set it to the size given in the warning
+\setlength{\hintscolumnwidth}{3cm}                % 如果你希望改变日期栏的宽度
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
 % 解决XeLaTex编译时的编码警告
-\usepackage[unicode,pdfencoding=auto]{hyperref}
+%\usepackage[unicode,pdfencoding=auto]{hyperref}
+
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Sarasa Term SC}
+  \setsansfont{Sarasa Mono SC}
+  \setmonofont{Sarasa Mono SC}
+  \setmathfont{Latin Modern Math}
+  %\usepackage[slantfont,boldfont]{xeCJK}
+  %\defaultfontfeatures{Mapping=tex-text}
+  \usepackage{xcolor}
+  \XeTeXlinebreaklocale "zh"
+  \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage{CJKutf8}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% document language
+\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
 
 % 个人信息
 \firstname{徐}
 \familyname{至強}
 \title{組込ソフトウェアエンジニア}                      % 可选项、如不需要可删除本行
-\extrainfo{生年月：昭和58年11月 年齢：33 中国}
-\mobile{+86 13585618661}                         % 可选项、如不需要可删除本行
-\phone{+86 21 67663700}                          % 可选项、如不需要可删除本行
+\born{1983.11 -- \themyage{}岁}
+% \address{松江区龙马路185弄25号1401室}{201616，上海}             % 可选项、如不需要可删除本行
+\extrainfo{Last update：\ctoday}
+\phone[mobile]{+86 13585618661}                         %
+\phone[mobile]{+1 (805) 6698661}                         % 可选项、如不需要可删除本行
+\phone[fixed]{+86 21 67663700}                          % 可选项、如不需要可删除本行
 %% \fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
 \email{xeonxu@gmail.com}                    % 可选项、如不需要可删除本行
 \homepage{blog.xeonxu.info}                  % 可选项、如不需要可删除本行
 \social[github]{xeonxu}                  % 可选项、如不需要可删除本行
 \social[twitter]{xeonxu}                  % 可选项、如不需要可删除本行
-\photo[80pt][0.8pt]{picture.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+\photo[80pt][0.8pt]{zhiqiang_xu.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
 \quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not want
 
 % 显示索引号;仅用于在简历中使用了引言
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
 
 % 分类索引
 %\usepackage{multibib}
@@ -69,7 +96,15 @@
 %            内容
 %----------------------------------------------------------------------------------
 \begin{document}
-% \begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
+\ifxetexorluatex
+\else
+\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+\fi
+%-----       resume       ---------------------------------------------------------
+
+\cofeCm{0.2}{0.7}{180}{0cm}{0cm}
+% \cofeSplash{}
+
 \maketitle
 
 \section{学歴}
@@ -299,7 +334,33 @@
 %\bibliographystylemisc{plain}
 %\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
 
-% \clearpage\end{CJK}
+\clearpage
+
+%-----       letter       ---------------------------------------------------------
+% recipient data
+% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+% \date{January 01, 1984}
+% \opening{Dear Sir or Madam,}
+% \closing{Yours faithfully,}
+% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+% \makelettertitle
+
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+
+% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+
+% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+
+% Albert Einstein discovered that $e=mc^2$ in 1905.
+
+% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+
+% \makeletterclosing
+
+\ifxetexorluatex
+\else
+\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\fi
 \end{document}
 
 

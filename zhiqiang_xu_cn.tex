@@ -108,10 +108,10 @@
 \makecvtitle
 
 \section{简介}
-\cvlistitem{本科毕业，学士学位。软件开发16年，国家软件设计师职称。}
-\cvlistitem{拥有 16 年嵌入式软件开发经验：4 年车载项目，7.5 年手机研发， 3.5 年机器人研发；其中，有5 年时间专注手机电池管理，3 年 ROS 平台应用开发，1.5 年 RT-Thread 及 STM32传感器设计开发经验。}
+\cvlistitem{本科毕业，学士学位。软件开发17年，国家软件设计师职称。}
+\cvlistitem{拥有 17 年嵌入式软件开发经验：5 年车载项目，7 年手机研发， 4 年机器人研发；其中，有5 年时间专注手机电池管理，3 年 ROS 平台应用开发，1 年 RT-Thread 及 STM32传感器设计开发经验。}
 \cvlistitem{熟悉 Linux 开发环境，内核驱动开发调试，RT-Thread 开发及配置， Android开发配置， GCC 工具链和GDB调试工具。能够根据需求，编写实现相应脚本进行自动化系统集成并构建高效的开发测试环境。}
-\cvlistitem{熟练使用 C 语言，Bash 脚本，Git 版本管理，Jenkins工具，以及能够基于Docker做一些开发和应用。此外，会使用python，elisp，common lisp 等。}
+\cvlistitem{熟练使用 C 语言，Bash 脚本，Git 版本管理，Jenkins工具，以及能够基于Docker做一些开发和应用。略懂python，elisp，common lisp。}
 \cvlistitem{拥有 2 年管理经验，负责过 3 款手机驱动的研发工作及机器人软件架构的重构工作。}
 \cvlistitem{积极参与开源项目，包括 tmk keyboard，RT-Thread，koreader，proxmark3等。}
 \cvlistitem{渴求且敬畏技术，作为第一发明人有8项已授权专利。}
@@ -141,10 +141,20 @@
   主要工作：
   \begin{itemize}
   \item 极氪智能座舱SOA通信平台中间件架构方案设计。
-  \item 基于开源vsomeip和commonapi组件，集成并实现极氪SOA平台中的通信组件部分。
-  \item 基于PCD移植实现EM运行管理。
-  \item 为工程添加对clangd的支持，自动生成compile commands文件。
-  \item 实现基于Docker的开发环境，支持单机仿真运行和在线单步调试功能。
+    \begin{itemize}
+    \item 基于开源vsomeip和commonapi，实现极氪2.x平台车型项目中对SOA的通信需求，打通座舱控制器域内及域间的SOMEIP 通信能力。
+    \item 设计并实现基于Docker的开发和编译环境，保证每个目标版本编译环境的一致性。同时提供服务的单机仿真运行和在线单步调试能力。提升SOA 组件的开发效率。
+    \item 设计并带领团队实现SOA 通信组件的SDK 化，并开发工具链工具实现对通信矩阵文件的代码化，工具可将矩阵文件转换为C++ 代码和 Java 代码。从而实现在QNX 和Android 上，都能通过转换的模板工程，快速开展服务相关功能的业务开发。
+    \item 基于PCD移植实现EM运行管理。
+    \item SOMEIP 抓包解析工具开发。根据通信矩阵定义，可将SOMEIP 的以太网抓包解析为服务接口数据内容。提高中间件开发工作和服务联调工作中，对服务数据确认工作的便捷程度。
+    \end{itemize}
+  \item 极氪智能座舱ZKOS通信方案业务开发
+    \begin{itemize}
+    \item 验证ZKOS 通信方案的工具能力和通信框架能力。
+    \item 根据3.0车型平台的SOA服务定义编写服务接口测试程序。并验证当前阶段的SOA 服务和对应接口在ZKOS 最新版本中的通信没有异常问题。
+    \item 开发服务验证工具，简化使用ZKOS 开发，编译，部署以及运行测试程序的流程。
+    \item 从ZKOS 原始编译工具链中抽离ZKOS 的SDK，解决多重Docker 环境依赖的问题。
+    \end{itemize}
   \end{itemize}
 }
 \cventry{2019.10 -- 2022.03}{驱动系统架构师}{上海上汽集团商用车技术中心}{上海市}{}{
@@ -162,7 +172,7 @@
     \item 斑马L+L方案中负责空调模块开发和调试工作。
     \item SOA 信号矩阵的沟通和定义。
     \item “人机共驾”功能中，确认高精地图的编译，匹配，渲染等方面的落地方案和细节。
-    \item 负责前后排地图互动的架构方案和技术细节。
+    \item 前后排地图互动的架构方案设计和技术细节沟通。
     \end{itemize}  
   \end{itemize}  
 }
@@ -267,7 +277,7 @@
   \cventry{CN201811304800.7A}{一种活动区域热力图的生成方法和服务器}{发明}{唯一发明人}{已授权}{}
   \cventry{CN201811126148.4A}{一种控制在指定区域活动的方法及机器人}{发明}{唯一发明人}{公示}{}
   \cventry{CN201811126930.6A}{一种磁场发生装置的匹配方法及系统、机器人}{发明}{唯一发明人}{公示}{}
-  \cventry{CN201811126928.9A}{一种坐标校准方法及系统、机器人}{发明}{唯一发明人}{公示}{}
+  \cventry{CN201811126928.9A}{一种坐标校准方法及系统、机器人}{发明}{唯一发明人}{已授权}{}
 
 \section{开源项目}
 \cventry{参与项目}{github}{}{}{}{

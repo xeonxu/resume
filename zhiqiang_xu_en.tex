@@ -110,14 +110,34 @@
 
 
 \section{SUMMARY}
-\cvlistitem{B.E. with 15 years software develop experience. }
-\cvlistitem{Especially, 14 years embedded software develop experience. Including 3 more years on vehicle related projects development, 7.5 years on developing mobile phone, and 3.5 years on robot development.}
+\cvlistitem{B.E. with 17 years software develop experience. }
+\cvlistitem{Especially, 17 years embedded software develop experience. Including 5 more years on vehicle related projects development, 7 years on developing mobile phone, and 3 years on robot development.}
 \cvlistitem{Excellent in C, bash, Linux, rt-thread, version control and docker operation.}
 \cvlistitem{Be familiar with software design, problem-solving and debugging skills.}
 \cvlistitem{Experience on ROS and docker technique. STM32 based sensors implementation.}
 
 \section{PROFESSIONAL EXPERIENCE}
-\cventry{2019.10 -- present}{Software architect}{SAIC MAXUS}{Shanghai}{}{
+\cventry{2022.04 -- Present}{Principal Software Engineer}{Zeekr Automotive (Ningbo Hangzhou Bay New Area)}{Shanghai}{}{
+  Responsibilities: Design and develop the architecture for the car cockpit system's SOA communication platform.
+  \begin{itemize}
+  \item Design the middleware architecture for the Zeekr Intelligent Cockpit SOA communication platform.
+    \begin{itemize}
+    \item Implement SOA communication requirements for the Zeekr 2.x platform vehicle projects based on open-source vsomeip and commonapi, enabling communication within and between cockpit controller domains using SOMEIP.
+    \item Design and implement a development and compilation environment based on Docker to ensure consistency across target version compilation environments. Provide capabilities for single-machine simulation and online step debugging to enhance SOA component development efficiency.
+    \item Lead the team in developing an SDK for the SOA communication component and create a toolchain for generating template code from matrix files. The tools can convert matrix files into C++ and Java code, enabling rapid development of service-related functionalities on QNX and Android using templated projects converted from these files.
+    \item Implement EM (Entity Manager) runtime management by porting it based on PCD (Platform for Connected Data).
+    \item Develop a SOMEIP packet capture and analysis tool that parses Ethernet packets into service interface data based on communication matrix definitions, facilitating middleware development and service integration testing by simplifying service data verification.
+    \end{itemize}
+  \item Business Development for Zeekr Intelligent Cockpit ZKOS Communication Solution
+    Verify the capabilities of the ZKOS communication solution and communication framework tools.
+    \begin{itemize}
+    \item Write service interface test programs based on the SOA service definitions of the 3.0 vehicle platform and validate the communication integrity in the latest version of ZKOS.
+    \item Develop service verification tools to streamline the process of ZKOS development, compilation, deployment, and testing.
+    \item Extract the ZKOS SDK from the original ZKOS compilation toolchain to resolve dependencies on multiple Docker environments.
+    \end{itemize}
+  \end{itemize}
+}
+\cventry{2019.10 -- 2022.03}{Software architect}{SAIC MAXUS}{Shanghai}{}{
   Responsibilities: Software architecture design for next generation cockpit.
   \begin{itemize}
   \item OTA protocol maintenance and revision.
@@ -128,62 +148,62 @@
   \end{itemize}  
 }
 \cventry{2018.06 -- 2019.09}{Senior System architect}{Shanghai Yunshen technologies Co., Ltd. }{Shanghai}{}{Responsibilities: robotic development
-\begin{itemize}
- \item Sensor development
   \begin{itemize}
-  \item rt-thread CAN driver implementation for STM32.
-  \item Ultrasonic, anti-collision, anti-falling sensors development.
-  \item Sensor's firmware upgrading over CAN method implementation.
+  \item Sensor development
+    \begin{itemize}
+    \item rt-thread CAN driver implementation for STM32.
+    \item Ultrasonic, anti-collision, anti-falling sensors development.
+    \item Sensor's firmware upgrading over CAN method implementation.
+    \end{itemize}
+  \item Robot control system
+    \begin{itemize}
+    \item Package ROS running environment by docker image.
+    \item Integrate camera driver and CAN adapter driver into docker image.
+    \item ROS nodes for devices and applications implementation.
+    \item Build system image for x86.
+    \item Mikrotik router configuration.
+    \item FOTA function for X86 based controller implementation.
+    \end{itemize}
+  \item System management
+    \begin{itemize}
+    \item Docker registry server.
+    \item LDAP, Git, Gerrit, VPN and Jenkins server construction and management.
+    \item QoS configuration for ROS (Router Operating System).
+    \end{itemize}
   \end{itemize}
- \item Robot control system
-  \begin{itemize}
-  \item Package ROS running environment by docker image.
-  \item Integrate camera driver and CAN adapter driver into docker image.
-  \item ROS nodes for devices and applications implementation.
-  \item Build system image for x86.
-  \item Mikrotik router configuration.
-  \item FOTA function for X86 based controller implementation.
-  \end{itemize}
- \item System management
-  \begin{itemize}
-  \item Docker registry server.
-  \item LDAP, Git, Gerrit, VPN and Jenkins server construction and management.
-  \item QoS configuration for ROS (Router Operating System).
-  \end{itemize}
-\end{itemize}
-  }
+}
 \cventry{2016.07 -- 2018.05}{Senior Embedded Software Engineer}{Shanghai clever mrobot technologies Co., Ltd. }{Shanghai}{}{Responsibilities: Robotic development
-\begin{itemize}
- \item Android driver development
   \begin{itemize}
-  \item Rockwell 3288 BSP development.
-  \item System stability and charging system optimization.
+  \item Android driver development
+    \begin{itemize}
+    \item Rockwell 3288 BSP development.
+    \item System stability and charging system optimization.
+    \end{itemize}
+  \item Robot control system
+    \begin{itemize}
+    \item Robot control system redesign.
+    \item Construct newly robot control system by ROS (Robot Operating System).
+    \item Porting robot control system from x86 to Nvidia TX1. Integrate OpenCV support into ROS. 
+    \end{itemize}
   \end{itemize}
- \item Robot control system
-  \begin{itemize}
-  \item Robot control system redesign.
-  \item Construct newly robot control system by ROS (Robot Operating System).
-  \item Porting robot control system from x86 to Nvidia TX1. Integrate OpenCV support into ROS. 
-  \end{itemize}
-\end{itemize}
 }
 \cventry{2010.06 -- 2016.06}{Embedded Software Engineer}{Shanghai Phicomm. Inc.}{Shanghai}{}{Responsibilities: Mobile phone development
-\begin{itemize}
- \item Android Smartphone project
   \begin{itemize}
-  \item On Marvell PXA968 platform. Sensor driver and PMIC driver development.
-  \item Qualcomm MSM7x27/MSM8x25/MSM8x25Q platform. PMIC module development. Develop environment optimization: geomagnetic debug method optimization, TP fw upgrade method. Dual-way charging method implementation based on smb358. Batch review tool for gerrit.
-  \item Qualcomm MSM8x10/8x12/8x26/8x16/8994/8909 platform. PMIC module, battery characterization.
-  \item Package all-in-one environment to a single self-uncompressable file for convenient quick setting for newbie developers under windows and linux.
-  \item Package Android compile environment by docker technique to standardize compile environment.
-  \item Optimize android compilation efficiency by using ditcc and ccache.
+  \item Android Smartphone project
+    \begin{itemize}
+    \item On Marvell PXA968 platform. Sensor driver and PMIC driver development.
+    \item Qualcomm MSM7x27/MSM8x25/MSM8x25Q platform. PMIC module development. Develop environment optimization: geomagnetic debug method optimization, TP fw upgrade method. Dual-way charging method implementation based on smb358. Batch review tool for gerrit.
+    \item Qualcomm MSM8x10/8x12/8x26/8x16/8994/8909 platform. PMIC module, battery characterization.
+    \item Package all-in-one environment to a single self-uncompressable file for convenient quick setting for newbie developers under windows and linux.
+    \item Package Android compile environment by docker technique to standardize compile environment.
+    \item Optimize android compilation efficiency by using ditcc and ccache.
+    \end{itemize}
+  \item MStar and MTK feature phone development
+    \begin{itemize}
+    \item MMI customization, SP porting for customer.
+    \item Scripting for auto release.
+    \end{itemize}
   \end{itemize}
-\item MStar and MTK feature phone development
-   \begin{itemize}
-  \item MMI customization, SP porting for customer.
-  \item Scripting for auto release.
-  \end{itemize}
-\end{itemize}
 }
 \cventry{2009.10 -- 2010.06}{Embedded software engineer}{Shanghai iBingo network technology Co., Ltd.}{Shanghai}{}{Responsibilities: Develop dynamic theme and screen saver for feature phone (iShow theme system).
   \begin{itemize}
@@ -275,6 +295,7 @@
 \cvitem{201210585845.2}{硬件固件独立升级系统及方法}
 \cvitem{201420615063.3}{一种手机进水保护装置}
 \cvitem{CN201811304800.7A}{一种活动区域热力图的生成方法和服务器}
+\cventry{CN201811126928.9A}{一种坐标校准方法及系统、机器人}
 
 \section{MISCELLANOUS}
 \cventry{3rd party projects}{github}{}{}{}{
@@ -314,7 +335,7 @@
 % \cvlistdoubleitem{项目 3}{}
 
 % 来自BibTeX文件但不使用multibib包的出版物
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+% \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
 \nocite{*}
 \bibliographystyle{plain}
 \bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
@@ -323,14 +344,14 @@
 % \section{出版物}
 % \nocitebook{book1,book2}
 % \bibliographystylebook{plain}
-%\bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+% \bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+% \nocitemisc{misc1,misc2,misc3}
+% \bibliographystylemisc{plain}
+% \bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
 
 \clearpage
 
-%-----       letter       ---------------------------------------------------------
+% -----       letter       ---------------------------------------------------------
 % recipient data
 % \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
 % \date{January 01, 1984}
@@ -353,7 +374,7 @@
 
 \ifxetexorluatex
 \else
-\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+  \clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \fi
 \end{document}
 

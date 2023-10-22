@@ -108,11 +108,10 @@
 \makecvtitle
 
 \section{简介}
-\cvlistitem{本科毕业，学士学位。软件开发17年，国家软件设计师职称。}
-\cvlistitem{拥有 17 年嵌入式软件开发经验：5 年车载项目，7 年手机研发， 4 年机器人研发；其中，有5 年时间专注手机电池管理，3 年 ROS 平台应用开发，1 年 RT-Thread 及 STM32传感器设计开发经验。}
-\cvlistitem{熟悉 Linux 开发环境，内核驱动开发调试，RT-Thread 开发及配置， Android开发配置， GCC 工具链和GDB调试工具。能够根据需求，编写实现相应脚本进行自动化系统集成并构建高效的开发测试环境。}
-\cvlistitem{熟练使用 C 语言，Bash 脚本，Git 版本管理，Jenkins工具，以及能够基于Docker做一些开发和应用。略懂python，elisp，common lisp。}
-\cvlistitem{拥有 2 年管理经验，负责过 3 款手机驱动的研发工作及机器人软件架构的重构工作。}
+\cvlistitem{本科学士学位。17年工作经验，2 年管理经验}
+\cvlistitem{17 年嵌入式软件开发：6 年车载项目，7 年手机研发， 4 年机器人研发。其中，有5 年时间专注手机电池管理，3 年 ROS 应用开发，1 年 RT-Thread 及 STM32传感器设计开发经验。}
+\cvlistitem{熟悉 Linux 开发环境，内核驱动开发及调试，擅长使用脚本对系统集成和开发环境进行自动化。}
+\cvlistitem{熟练使用 C 语言，Bash 脚本，Git 版本管理，以及能够基于Docker做一些开发和应用。作为爱好，喜欢 lisp 和它的方言语言。}
 \cvlistitem{积极参与开源项目，包括 tmk keyboard，RT-Thread，koreader，proxmark3等。}
 \cvlistitem{渴求且敬畏技术，作为第一发明人有8项已授权专利。}
 \section{教育背景}
@@ -142,18 +141,27 @@
   \begin{itemize}
   \item 极氪智能座舱SOA通信平台中间件架构方案设计。
     \begin{itemize}
-    \item 基于开源vsomeip和commonapi，实现极氪2.x平台车型项目中对SOA的通信需求，打通座舱控制器域内及域间的SOMEIP 通信能力。
-    \item 设计并实现基于Docker的开发和编译环境，保证每个目标版本编译环境的一致性。同时提供服务的单机仿真运行和在线单步调试能力。提升SOA 组件的开发效率。
-    \item 设计并带领团队实现SOA 通信组件的SDK 化，并开发工具链工具实现对通信矩阵文件的代码化，工具可将矩阵文件转换为C++ 代码和 Java 代码。从而实现在QNX 和Android 上，都能通过转换的模板工程，快速开展服务相关功能的业务开发。
-    \item 基于PCD移植实现EM运行管理。
-    \item SOMEIP 抓包解析工具开发。根据通信矩阵定义，可将SOMEIP 的以太网抓包解析为服务接口数据内容。提高中间件开发工作和服务联调工作中，对服务数据确认工作的便捷程度。
+    \item 基于开源vsomeip和commonapi，为极氪2.x平台车型开发SOA通信组件。
+    \item 设计并实现基于Docker的开发和编译环境，保证每个目标版本编译环境的一致性。
+      提供SOMEIP服务的单机通信仿真，以及在线单步调试能力。提升SOA 组件的开发效率。
+    \item 带领团队设计并实现将通信矩阵设计文件转换为C++和Java代码的工具。从而
+      在开发Native程序和Android程序时，能够基于该工具转换的模板工程，快速展开
+      服务业务的开发。
+    \item 带领团队设计并实现SOA 组件的SDK 化，SOA SDK可分别编译适配为支持 Linux
+      ，QNX，Android等操作系统。从而实现通信组件的平台化能力。
+    \item 开发SOMEIP 以太网报文解析工具。该工具根据通信矩阵定义文件，将SOMEIP 的
+      以太网抓包解析为服务接口及对应的数据内容。在中间件开发和服务联调工作中，一
+      定程度上提升了对服务数据确认的工作效率。
+    \item 根据开发样机接口使用不便的痛点，设计多种业务联调方案和自动化工具，结
+      合ADB，ROS路由器，将开发电脑接入样机网络，从而可以很方便地对服务进行仿真联
+      调。
     \end{itemize}
   \item 极氪智能座舱ZKOS通信方案业务开发
     \begin{itemize}
     \item 验证ZKOS 通信方案的工具能力和通信框架能力。
-    \item 根据3.0车型平台的SOA服务定义编写服务接口测试程序。并验证当前阶段的SOA 服务和对应接口在ZKOS 最新版本中的通信没有异常问题。
+    \item 根据3.0车型平台的SOA服务定义编写服务接口测试程序。
     \item 开发服务验证工具，简化使用ZKOS 开发，编译，部署以及运行测试程序的流程。
-    \item 从ZKOS 原始编译工具链中抽离ZKOS 的SDK，解决多重Docker 环境依赖的问题。
+    \item 参与并指导对ZKOS SDK 的剥离方案。
     \end{itemize}
   \end{itemize}
 }
@@ -165,7 +173,7 @@
   \item 自建网联OTA协议修订及维护工作。
   \item 智能座舱团队基础开发工具链的搭建，以及持续集成服务的配置工作。
   \item 车身控制器时钟校准策略的制定。
-  \item 基于容器的单核多系统调研及架构方案设计。
+  \item 基于容器的单核多系统方案调研及架构设计。
   \item 高通8155智能座舱项目
     \begin{itemize}
     \item QNX+Android 方案中的CAN 信号到系统接口的架构方案。
@@ -187,9 +195,11 @@
   \item 机器人ROS系统程序的在线升级（FOTA）功能的设计与实现
   \item 机器人系统及软件节点的标准输出和打包，实现软件审核上库后，20分钟内部署入目标机
   \item 移植配置Intel realsense的驱动和ROS节点，移植人脸识别算法节点，解决摄像头热拔插问题
-  \item 制定机器人内部路由器部署方案，实现4G和wifi双上行自动链路切换功能，同时支持VPN拨号至公司内网做业务维护，另外还支持和不同网段的的机内三方设备互联互通
+  \item 制定机器人内部路由器部署方案，实现4G和wifi双上行自动链路切换功能，同时支
+    持VPN拨号至公司内网做业务维护，另外还支持和不同网段的的机内三方设备互联互通
   \item 为全息项目开发基于UWB的室内定位方案
-  \item 标准化工控机生产和部署，开发相关生产工具，实现无人为干预下5分钟生产部署一台工控系统的能力
+  \item 标准化工控机生产和部署，开发相关生产工具，实现无人为干预下5分钟生产部署一
+    台工控系统的能力
   \item 编译实现ROS的Docker环境镜像，同时搭建公司docker镜像库服务器
   \item 搭建维护gerrit版本服务器，jenkins编译服务器，基于ROS配置AP漫游以及QOS
   \end{itemize}
@@ -288,6 +298,7 @@
   \item tmk\_keyboard: 独立为usb2usb增加蓝牙功能，蓝牙使用rn42模块
   \item RT Thread: Stm32f1板级支持bug的修复，编写Stm32f4 hal版的CAN驱动
   \item ChameleonMini-rebooted: 增加NTAG-213、215、216 的支持；增加对泽塔奥特曼变身器的支持和密钥监听。
+  \item lsp-sonarlint: 使用 sonarlint 作为 lsp 后端，对代码进行规范检查。增加对c/c++ 程序检查的支持。
   \end{itemize}
 }
 \cventry{个人项目}{github}{}{}{}{

@@ -110,30 +110,32 @@
 
 
 \section{SUMMARY}
-\cvlistitem{B.E. with 17 years software develop experience. }
-\cvlistitem{Especially, 17 years embedded software develop experience. Including 5 more years on vehicle related projects development, 7 years on developing mobile phone, and 3 years on robot development.}
-\cvlistitem{Excellent in C, bash, Linux, rt-thread, version control and docker operation.}
-\cvlistitem{Be familiar with software design, problem-solving and debugging skills.}
-\cvlistitem{Experience on ROS and docker technique. STM32 based sensors implementation.}
+\cvlistitem{B.E. with 17 years work experience and 2 years management experience.}
+\cvlistitem{17 years of experience in embedded software development, with a diverse background that includes 6 years in automotive projects. 7 more years in mobile device R\&D, 4 years in robot R\&D. Notably, I spent 5 years specializing in mobile battery management, 3 years in ROS application development, and 1 years in sensor FW development using STM32 with RT-Thread. }
+\cvlistitem{Well-versed in Linux development environments. Familiar with kernel driver development and debugging. Proficient in using scripts for automating system integration and development environments.}
+\cvlistitem{Proficient in C language, bash scripting, version control and docker etc.. Like using lisp and its dialects as hobbies.}
+\cvlistitem{Actively involving in open-source projects, including TMK Keyboard, RT-Thread, KOReader, Proxmark3, etc.}
+\cvlistitem{Passionate and reverent towards technology. 8 granted patents as the first inventor.}
 
 \section{PROFESSIONAL EXPERIENCE}
 \cventry{2022.04 -- Present}{Principal Software Engineer}{Zeekr Automotive (Ningbo Hangzhou Bay New Area)}{Shanghai}{}{
-  Responsibilities: Design and develop the architecture for the car cockpit system's SOA communication platform.
+  Responsibilities: Design and develop SOA communication platform for cockpit system.
   \begin{itemize}
-  \item Design the middleware architecture for the Zeekr Intelligent Cockpit SOA communication platform.
+  \item Design SOA middleware for Zeekr 2nd-Gen platform
     \begin{itemize}
-    \item Implement SOA communication requirements for the Zeekr 2.x platform vehicle projects based on open-source vsomeip and commonapi, enabling communication within and between cockpit controller domains using SOMEIP.
-    \item Design and implement a development and compilation environment based on Docker to ensure consistency across target version compilation environments. Provide capabilities for single-machine simulation and online step debugging to enhance SOA component development efficiency.
-    \item Lead the team in developing an SDK for the SOA communication component and create a toolchain for generating template code from matrix files. The tools can convert matrix files into C++ and Java code, enabling rapid development of service-related functionalities on QNX and Android using templated projects converted from these files.
-    \item Implement EM (Entity Manager) runtime management by porting it based on PCD (Platform for Connected Data).
-    \item Develop a SOMEIP packet capture and analysis tool that parses Ethernet packets into service interface data based on communication matrix definitions, facilitating middleware development and service integration testing by simplifying service data verification.
+    \item Design and implement SOA communication component for Zeekr 2nd-Gen platform based on open-sourced vsomeip and commonapi, enabling communication within and between domain controllers using SOMEIP.
+    \item Design and implement a development and compilation environment based on Docker to ensure consistency across target version compilation environments. Provide capabilities for single-machine simulation and online debugging to enhance SOA component development efficiency.
+    \item Led team to design and implement a tool suit that converts matrix files into C++ and Java template codes. Which enables the rapid development of SOA applications for both native and android programs.
+    \item Led team to implement SOA SDK. Which can be compiled and adapted to supoort various OSs, including Linux, QNX, Android, and more. This initiative successfully achieved platformization of the SOA SDK.
+    \item Implement a tool for generating wireshark dessector plugins from SOA matrix files, which facilitating middleware development and service integration testing by simplifying service data verification.
+    \item Design and implement a solution for connectting prototypes to PCs with ethernet by using usb-ethernet adaptor and a ROS router. This solution is easy to use, scalable and cheaper than T1-Tx adapter method.
     \end{itemize}
-  \item Business Development for Zeekr Intelligent Cockpit ZKOS Communication Solution
-    Verify the capabilities of the ZKOS communication solution and communication framework tools.
+  \item Zeekr 3rd-Gen ZKOS Communication Solution
     \begin{itemize}
+    \item Verify the capabilities of the ZKOS communication solution and communication framework tools.
     \item Write service interface test programs based on the SOA service definitions of the 3.0 vehicle platform and validate the communication integrity in the latest version of ZKOS.
     \item Develop service verification tools to streamline the process of ZKOS development, compilation, deployment, and testing.
-    \item Extract the ZKOS SDK from the original ZKOS compilation toolchain to resolve dependencies on multiple Docker environments.
+    \item Extract the ZKOS SDK from the original ZKOS toolchain.
     \end{itemize}
   \end{itemize}
 }
@@ -145,6 +147,13 @@
   \item Domain controllers' clock sync policy constitution.
   \item Multi-system running on single-core H/W scheme design.
   \item Software modules definition and architecture design for intelligent cockpit controller based on Qualcomm 8155.
+    \begin{itemize}
+    \item Design and review the solution to extract signals from CAN to HLOS.
+    \item Air condition application development for Banma OS.
+    \item SOA matrix design an review.
+    \item HD map compliling, matching, and rendering achitecture for AD.
+    \item Design artitecture for co-operation Navi map between front and rear IVI.
+    \end{itemize} 
   \end{itemize}  
 }
 \cventry{2018.06 -- 2019.09}{Senior System architect}{Shanghai Yunshen technologies Co., Ltd. }{Shanghai}{}{Responsibilities: robotic development
@@ -305,6 +314,8 @@
   \item Koreader: Bug fix and compilation speed optimize.
   \item tmk\_keyboard: Add bluetooth support for usb2usb.
   \item RT Thread: Fix STM32F1 bsp bugs. Write CAN driver for Stm32f4 using hal library.
+  \item ChameleonMini-rebooted: Add NTAG-213、215、216 support.
+  \item lsp-sonarlint: An Emacs plugin from using sonarlint as a lsp backend to help checking codes rules. Add c/c++ checking support.
   \end{itemize}
 }
 

@@ -68,7 +68,7 @@
 % 个人信息
 \firstname{Zhiqiang}
 \familyname{Xu}
-\title{Senior software architect}                      % 可选项、如不需要可删除本行
+\title{Software Architect}                      % 可选项、如不需要可删除本行
 %\address{Room 1401, Blvd. 25, Longma Rd. 185 Nong, Songjiang Dicstrict}{201616，Shanghai}             % 可选项、如不需要可删除本行
 \born{1983.11 -- \themyage{}}
 \extrainfo{Last update：\ctoday}
@@ -109,164 +109,19 @@
 \makecvtitle
 
 
-\section{SUMMARY}
-\cvlistitem{B.E. with 17 years work experience and 2 years management experience.}
-\cvlistitem{17 years of experience in embedded software development, with a diverse background that includes 6 years in automotive projects. 7 more years in mobile device R\&D, 4 years in robot R\&D. Notably, I spent 5 years specializing in mobile battery management, 3 years in ROS application development, and 1 years in sensor FW development using STM32 with RT-Thread. }
-\cvlistitem{Well-versed in Linux development environments. Familiar with kernel driver development and debugging. Proficient in using scripts for automating system integration and development environments.}
-\cvlistitem{Proficient in C language, bash scripting, version control and docker etc.. Like using lisp and its dialects as hobbies.}
-\cvlistitem{Actively involving in open-source projects, including TMK Keyboard, RT-Thread, KOReader, Proxmark3, etc.}
-\cvlistitem{Passionate and reverent towards technology. 8 granted patents as the first inventor.}
+\section{PROFILE}
 
-\section{PROFESSIONAL EXPERIENCE}
-\cventry{2022.04 -- Present}{Principal Software Engineer}{Zeekr Automotive (Ningbo Hangzhou Bay New Area)}{Shanghai}{}{
-  Responsibilities: Design and develop SOA communication platform for cockpit system.
-  \begin{itemize}
-  \item Design SOA middleware for Zeekr 2nd-Gen platform
-    \begin{itemize}
-    \item Design and implement SOA communication component for Zeekr 2nd-Gen platform based on open-sourced vsomeip and commonapi, enabling communication within and between domain controllers using SOMEIP.
-    \item Design and implement a development and compilation environment based on Docker to ensure consistency across target version compilation environments. Provide capabilities for single-machine simulation and online debugging to enhance SOA component development efficiency.
-    \item Led team to design and implement a tool suit that converts matrix files into C++ and Java template codes. Which enables the rapid development of SOA applications for both native and android programs.
-    \item Led team to implement SOA SDK. Which can be compiled and adapted to supoort various OSs, including Linux, QNX, Android, and more. This initiative successfully achieved platformization of the SOA SDK.
-    \item Implement a tool for generating wireshark dessector plugins from SOA matrix files, which facilitating middleware development and service integration testing by simplifying service data verification.
-    \item Design and implement a solution for connectting prototypes to PCs with ethernet by using usb-ethernet adaptor and a ROS router. This solution is easy to use, scalable and cheaper than T1-Tx adapter method.
-    \end{itemize}
-  \item Zeekr 3rd-Gen ZKOS Communication Solution
-    \begin{itemize}
-    \item Verify the capabilities of the ZKOS communication solution and communication framework tools.
-    \item Write service interface test programs based on the SOA service definitions of the 3.0 vehicle platform and validate the communication integrity in the latest version of ZKOS.
-    \item Develop service verification tools to streamline the process of ZKOS development, compilation, deployment, and testing.
-    \item Extract the ZKOS SDK from the original ZKOS toolchain.
-    \end{itemize}
-  \end{itemize}
-}
-\cventry{2019.10 -- 2022.03}{Software architect}{SAIC MAXUS}{Shanghai}{}{
-  Responsibilities: Software architecture design for next generation cockpit.
-  \begin{itemize}
-  \item OTA protocol maintenance and revision.
-  \item CI/CD services deployment.
-  \item Domain controllers' clock sync policy constitution.
-  \item Multi-system running on single-core H/W scheme design.
-  \item Software modules definition and architecture design for intelligent cockpit controller based on Qualcomm 8155.
-    \begin{itemize}
-    \item Design and review the solution to extract signals from CAN to HLOS.
-    \item Air condition application development for Banma OS.
-    \item SOA matrix design an review.
-    \item HD map compliling, matching, and rendering achitecture for AD.
-    \item Design artitecture for co-operation Navi map between front and rear IVI.
-    \end{itemize} 
-  \end{itemize}  
-}
-\cventry{2018.06 -- 2019.09}{Senior System architect}{Shanghai Yunshen technologies Co., Ltd. }{Shanghai}{}{Responsibilities: robotic development
-  \begin{itemize}
-  \item Sensor development
-    \begin{itemize}
-    \item rt-thread CAN driver implementation for STM32.
-    \item Ultrasonic, anti-collision, anti-falling sensors development.
-    \item Sensor's firmware upgrading over CAN method implementation.
-    \end{itemize}
-  \item Robot control system
-    \begin{itemize}
-    \item Package ROS running environment by docker image.
-    \item Integrate camera driver and CAN adapter driver into docker image.
-    \item ROS nodes for devices and applications implementation.
-    \item Build system image for x86.
-    \item Mikrotik router configuration.
-    \item FOTA function for X86 based controller implementation.
-    \end{itemize}
-  \item System management
-    \begin{itemize}
-    \item Docker registry server.
-    \item LDAP, Git, Gerrit, VPN and Jenkins server construction and management.
-    \item QoS configuration for ROS (Router Operating System).
-    \end{itemize}
-  \end{itemize}
-}
-\cventry{2016.07 -- 2018.05}{Senior Embedded Software Engineer}{Shanghai clever mrobot technologies Co., Ltd. }{Shanghai}{}{Responsibilities: Robotic development
-  \begin{itemize}
-  \item Android driver development
-    \begin{itemize}
-    \item Rockwell 3288 BSP development.
-    \item System stability and charging system optimization.
-    \end{itemize}
-  \item Robot control system
-    \begin{itemize}
-    \item Robot control system redesign.
-    \item Construct newly robot control system by ROS (Robot Operating System).
-    \item Porting robot control system from x86 to Nvidia TX1. Integrate OpenCV support into ROS. 
-    \end{itemize}
-  \end{itemize}
-}
-\cventry{2010.06 -- 2016.06}{Embedded Software Engineer}{Shanghai Phicomm. Inc.}{Shanghai}{}{Responsibilities: Mobile phone development
-  \begin{itemize}
-  \item Android Smartphone project
-    \begin{itemize}
-    \item On Marvell PXA968 platform. Sensor driver and PMIC driver development.
-    \item Qualcomm MSM7x27/MSM8x25/MSM8x25Q platform. PMIC module development. Develop environment optimization: geomagnetic debug method optimization, TP fw upgrade method. Dual-way charging method implementation based on smb358. Batch review tool for gerrit.
-    \item Qualcomm MSM8x10/8x12/8x26/8x16/8994/8909 platform. PMIC module, battery characterization.
-    \item Package all-in-one environment to a single self-uncompressable file for convenient quick setting for newbie developers under windows and linux.
-    \item Package Android compile environment by docker technique to standardize compile environment.
-    \item Optimize android compilation efficiency by using ditcc and ccache.
-    \end{itemize}
-  \item MStar and MTK feature phone development
-    \begin{itemize}
-    \item MMI customization, SP porting for customer.
-    \item Scripting for auto release.
-    \end{itemize}
-  \end{itemize}
-}
-\cventry{2009.10 -- 2010.06}{Embedded software engineer}{Shanghai iBingo network technology Co., Ltd.}{Shanghai}{}{Responsibilities: Develop dynamic theme and screen saver for feature phone (iShow theme system).
-  \begin{itemize}
-  \item Dynamic themes development for feature phone.
-    \begin{itemize}
-    \item 3X3 style, Ring style theme.
-    \item Ribbon style screensaver.
-    \item Dandelion screensaver which can distinguish between daylight and night.
-    \item Scripting for auto release.
-    \end{itemize}
-  \item Optimize downloading efficiency. 
-  \end{itemize}
-}
-\cventry{2008.11 -- 2009.10}{Embedded Software Engineer}{Shanghai Dragontec Group}{Shanghai}{}{Responsibilities:Japanese outsourcing job.
-  \begin{itemize}
-  \item Digital TV for Hitachi development.
-    \begin{itemize}
-    \item UI implementation and bug fix.
-    \item Documents composing.
-    \item Coding and testing.
-    \end{itemize}
-  \item System porting from vxworks to Linux.
-  \item Openvg porting project.
-    \begin{itemize}
-    \item Port opencv to SuperH platform for Hitachi television project.
-    \item Unit test cases.
-    \end{itemize}
-  \end{itemize}
-}
-\cventry{2008.06 -- 2008.11}{Java Engineer}{Kyrocera Mita}{Oosaka}{}{Responsibilities: Non-paper solution development for hospital.
-  \begin{itemize}
-  \item Controller module, Facade module and Storage module implementation.
-  \item Documents composing.
-  \item Coding and testing.
-  \end{itemize}
-}
-\cventry{2007.05 -- 2008.06}{Embedded Software Engineer}{Hitachi ICS}{Hitachi}{}{Responsibilities: Development of IVI for Cadillac CTS 08 and 09.
-  \begin{itemize}
-  \item iPod support functions development. In charge of maintenance of coreapp task and controller task.
-  \item Audio file header parser development.
-  \item Documents composing. 
-  \end{itemize}
-}
-\cventry{2006.07 -- 2007.05}{Java Software Engineer}{Nanking University Dragontec}{Nanking}{}{Responsibilities: Suntory vending machine online management system development.
-  \begin{itemize}
-  \item Constructing sql for operating databases under DB2 and PostgreSQL.
-  \item Scripting for software release and deployment.
-  \item Unit test cases.
-  \item Documents composing.
-  \end{itemize}
-}%
+\cvlistitem{Bachelor's degree. 18 years of embedded software development, 2 years of management experience.}
+\cvlistitem{7 years in automotive projects, 7 years in mobile phone R\&D, 4 years in robotics R\&D.}
+\cvlistitem{Proficient in Linux development environment, kernel driver development and debugging.}
+\cvlistitem{Skilled in using scripts to automate system integration and development environment.}
+\cvlistitem{Proficient in C language, Bash script, Git version control, and capable of doing some development and application based on Docker.}
+\cvlistitem{As a hobby, I enjoy Lisp and its dialects.}
+\cvlistitem{Actively participate in open source projects, including tmk keyboard, RT-Thread, koreader, proxmark3, etc.}
+\cvlistitem{Eager to learn and respect technology, with 8 authorized patents as the first inventor.}
 
 \section{EDUCATIONAL QUALIFICATIONS}
-\cventry{2002.09 -- 2006.06}{BA of Traffic engineering}{Hohai University}{Nanking}{}{}  % 第3到第6编码可留白
+\cventry{2002.09 -- 2006.06}{Bachelor of Traffic Engineering}{Hohai University}{Nanjing}{}{}  % 第3到第6编码可留白
 
 % \section{毕业论文}
 % \cvitem{题目}{\emph{地铁机车运行信息收发报模拟器的实现}}
@@ -289,6 +144,133 @@
 \cvdoubleitem{\LaTeX}{\cvskill{2}}{Common Lisp}{\cvskill{2}}
 \cvdoubleitem{Router Operating System}{\cvskill{3}}{Robot Operating System}{\cvskill{3}}
 
+\section{PROFESSIONAL EXPERIENCE}
+
+
+\cventry{2022.04 -- Present}{Senior Software Engineer}{Zeekr Automobile (Ningbo Hangzhou Bay New Area)}{Shanghai}{}{
+  Responsibilities: Design and development of the SOA communication platform architecture for automotive cockpit systems.
+  \begin{itemize}
+  \item Designed the middleware architecture solution for the Zeekr Automotive intelligent cockpit SOA communication platform.
+    \begin{itemize}
+    \item Developed SOA communication components for Zeekr Automotive 2.x platform vehicles based on open-source vsomeip and commonapi.
+    \item Designed and implemented a Docker-based development and compilation environment to ensure consistency in compilation environments for each target version. Provided single-machine communication simulation for SOMEIP services and online step debugging capabilities to enhance the development efficiency of SOA components.
+    \item Led the team to design and implement tools for converting communication matrix design files into C++ and Java code. This allowed for quick initiation of service business development based on template projects converted by the tool during the development of native and Android programs.
+    \item Led the team to design and implement the SDK of SOA components, allowing the SOA SDK to be compiled and adapted to support Linux, QNX, Android, and other operating systems, thereby achieving platformization of communication components.
+    \item Developed a SOMEIP Ethernet packet parsing tool, which parsed SOMEIP Ethernet packets into service interfaces and corresponding data content based on communication matrix definition files. This tool improved the efficiency of service data confirmation to some extent during middleware development and service integration.
+    \item Designed various business integration and automation tools based on the inconvenience of using development prototype interfaces. Combined with ADB and ROS routers, these tools enabled the development computer to access the prototype network, facilitating simulation integration and debugging of services.
+    \end{itemize}
+  \item Developed business integration tools for the ZKOS communication solution
+    \begin{itemize}
+    \item Verified its tool capabilities and communication framework capabilities.
+    \item Wrote service interface testing programs based on the SOA service definitions of the 3.0 platform models.
+    \item Developed service validation tools to simplify the process of using ZKOS for development, compilation, deployment, and running test programs.
+    \item Participated in and guided the detachment solution of the ZKOS SDK.
+    \end{itemize}
+  \item Developed the Ethernet diagnostic architecture for the 3.0 platform and implemented its prototype. Developed Ethernet diagnostic services for the 3.0 platform.
+  \end{itemize}
+}
+\cventry{2019.10 -- 2022.03}{Software Architect}{SAIC MAXUS}{Shanghai}{}{
+  Responsibilities: Revision and maintenance of OTA protocols for automotive networking systems, design and definition of intelligent cockpit software architecture, and refactoring work.
+  \begin{itemize}
+  \item Self-built networking OTA protocol revision and maintenance work.
+  \item Establishment of the basic development toolchain for the intelligent cockpit team and configuration of continuous integration services.
+  \item Formulation of clock calibration strategies for domain controllers.
+  \item Research and architectural design of container-based single-core multi-system solutions.
+  \item Qualcomm 8155 intelligent cockpit project
+    \begin{itemize}
+    \item Architectural design of CAN signal to system interface in the QNX+Android solution.
+    \item Responsible for the development and debugging of the air conditioning module in the Zebra L+L solution.
+    \item Communication and definition of SOA signal matrices.
+    \item Confirmation of design details of HD map compilation, matching, rendering, etc.
+    \item Architectural design and technical details communication for co-operating navimap between front IVI and rear IVI.
+    \end{itemize} 
+  \end{itemize}  
+}
+\cventry{2018.06 -- 2019.09}{Senior Software Engineer}{Shanghai Yunshen technology Co., Ltd. }{Shanghai}{}{Responsibilities: Robot software architecture design and implementation, and construction and maintenance of company R\&D environment.
+  \begin{itemize}
+  \item Sensor development
+    \begin{itemize}
+    \item Implemented CAN driver for STM32F4 under RT Thread, and wrote and implemented communication nodes for CAN analyzer under ROS.
+    \item Developed a sensor development framework based on RT Thread, defined communication protocols, and developed ROS nodes for the host computer.
+    \item Designed and implemented a sensor firmware upgrade solution based on CAN bus technology.
+    \item Developed a UWB-based indoor positioning solution for holographic projects.
+    \end{itemize}
+  \item Robot control system
+    \begin{itemize}
+    \item Standardized output and packaging of robot system and software nodes, enabling deployment into target machines within 20 minutes after software update and approval.
+    \item Ported and configured Intel Realsense drivers and ROS nodes, ported facial recognition algorithm nodes, and resolved camera hot plug issues.
+    \item Construct system image for central controller, which is also used for factory production.
+    \item Formulated deployment plans for internal routers of robots, implemented automatic link switching between 4G and Wi-Fi uplinks, and supported VPN dialing to the company's intranet for business maintenance. Additionally, supported interconnection between internal third-party devices with different sub-network settings.
+    \item Designed and implemented the online upgrade (FOTA) function of robot ROS system programs.
+    \end{itemize}
+  \item System management
+    \begin{itemize}
+    \item Compiled and implemented ROS Docker environment images, and built a company Docker image library server.
+    \item Established and maintained Gerrit version servers, Jenkins compilation servers.
+    \item Configured AP roaming and QoS based on ROS (Router Operating System).
+    \end{itemize}
+  \end{itemize}
+}
+\cventry{2016.07 -- 2018.05}{Software Solution Expert}{Shanghai clever mrobot technologies Co., Ltd. }{Shanghai}{}{Responsibilities: Robot software development and software architecture design.
+  \begin{itemize}
+  \item Developed Android tablets based on RK3288 chips, responsible for RK818 battery management and optimizing system startup processes.
+  \item Developed sensor drivers, interfaces, and main control logic based on the NVidia TX1 industrial control board.
+  \item Standardized system install method for control board to improve installation efficiency.
+  \item Explored the implementation of robot runtime based on ROS under Docker.
+  \item Standardized ROS program compilation systems and packaging processes.
+  \item Designed and implemented a flexible architecture for automatic robot program upgrades.
+  \item Researched and used RTOS to refactor MCU development architectures, reducing development and maintenance costs, and promoting the use of open-source GCC to build target programs.
+  \end{itemize}
+}
+\cventry{2010.06 -- 2016.06}{Embedded Software Engineer}{Shanghai Phicomm. Inc.}{Shanghai}{}{Responsibilities: Mobile phone development
+  \begin{itemize}
+  \item Developed Android smart device projects based on Marvell and Qualcomm platforms.
+  \item Developed and promoted one-click installation and configuration of Qualcomm compilation environments for both Windows and Linux.
+  \item Implemented Docker packaging for a complete Android compilation environment to provide consistent compilation configuration and environment.
+  \item Developed and promoted Android distributed caching compilation optimization solutions based on ditcc and ccache.
+  \item Developed sensor drivers and implemented HAL and corresponding frameworks. This includes gyroscope, magnetic, gsensor, psensor, lsensor, and touch panel (TP) sensor devices.
+  \item Responsible for the logic development of power management, including battery modeling, charging and discharging strategies, and multi-channel charging switching.
+  \item Optimized and improved battery modeling and BMS algorithms in particular during work.
+  \item Optimized console-based development environments and development tools, greatly improving project efficiency.
+  \end{itemize}
+}
+\cventry{2009.10 -- 2010.06}{Embedded Software Engineer}{Shanghai iBingo network technology Co., Ltd.}{Shanghai}{}{Responsibilities: Development of dynamic mobile phone themes and special effects (iShow theme system).
+  \begin{itemize}
+  \item Developed dynamic themes and menu effects for mobile phones based on the MTK platform.
+  \item Implemented a dynamic screensaver with unlimited color-changing streamer effects.
+  \item Created a dynamic screensaver with dandelion effects that distinguish between day and night.
+  \item Developed scripts for auto compiling, auto packaging, and auto releasing.
+  \item Improved and perfected the HTTP download program on mobile phones, supporting resume downloads.
+  \end{itemize}
+}
+\cventry{2008.11 -- 2009.10}{Embedded Software Engineer}{Shanghai Dragontec Group}{Shanghai}{}{Responsibilities:Japanese outsourcing job.
+  \begin{itemize}
+  \item Digital TV for Hitachi development.
+    \begin{itemize}
+    \item Responsible for interface development and code testing in Hitachi's digital TV project.
+    \item Ported from VxWorks to Linux. Improved development environment and quickly resolved issues.
+    \item Ported OpenVG project, responsible for main program porting, unit test code writing, and regression testing.
+    \end{itemize}
+  \end{itemize}
+}
+\cventry{2008.06 -- 2008.11}{Java Engineer}{Kyrocera Mita}{Oosaka}{}{Responsibilities: Developed KMCapture Solution, an electronic document solution for hospitals.
+  \begin{itemize}
+  \item Designed, coded, and tested Controller, Facade, and part of the Storage module.
+  \end{itemize}
+}
+\cventry{2007.05 -- 2008.06}{Embedded Software Engineer}{Hitachi ICS}{Hitachi}{}{Responsibilities: Developed AVCCore, a vehicle project based on ARM processors, later used in the Cadillac CTS 08, 09 models' car audio systems.
+  \begin{itemize}
+  \item Integrated iPod application, responsible for developing and maintaining iPod Controller and iPod CoreApp in the vehicle computer.
+  \item Developed and maintained audio file header parsing in the vehicle computer.
+  \end{itemize}
+}
+\cventry{2006.07 -- 2007.05}{Java Software Engineer}{Nanking University Dragontec}{Nanking}{}{Responsibilities: Developed an online maintenance management system for vending machines for Suntory.
+  \begin{itemize}
+  \item Wrote database processing code and testing code.
+  \item Wrote automation deployment scripts.
+  \end{itemize}
+}%
+
 \section{HOBBIES}
 % \cvitem{Movie}{\small Documentary, Sci-Fi}
 % \cvitem{Reading}{\small Technology, Novell}
@@ -296,35 +278,33 @@
 \cvdoubleitem{Reading}{\small Technology, Novell}{Sports}{\small Skate Board, F1, Marathon}
 
 \section{GRANTED PATENTS}
-\cvitem{201510477097.X}{一种登录认证方法及系统}
-\cvitem{201510612722.7}{一种扩展移动终端运算能力的系统}
-\cvitem{201410613796.8}{一种移动终端及其虚拟光驱的实现方法}
-\cvitem{201210368281.7}{一种耳机接口装置及基于所述耳机接口装置的控制方法}
-\cvitem{201510745100.1}{一种密钥加密方法及系统、电子设备}
-\cvitem{201210585845.2}{硬件固件独立升级系统及方法}
-\cvitem{201420615063.3}{一种手机进水保护装置}
-\cvitem{CN201811304800.7A}{一种活动区域热力图的生成方法和服务器}
-\cventry{CN201811126928.9A}{一种坐标校准方法及系统、机器人}
+\cvitem{201510477097.X}{Login authentication method and system}
+\cvitem{201510612722.7}{System for expanding operational capability of mobile terminal}
+\cvitem{201410613796.8}{Mobile terminal and achievement method of virtual drive of same}
+\cvitem{201210368281.7}{Headphone interface device and control method based on the headphone interface device}
+\cvitem{201510745100.1}{A kind of key encryption method and system, electronic equipment}
+\cvitem{201210585845.2}{Hardware and firmware independently updating system and method thereof}
+\cvitem{201420615063.3}{A kind of mobile phone water enter preventing device}
+\cvitem{CN201811304800.7A}{Generation method of thermodynamic diagram of active area and server}
+\cventry{CN201811126928.9A}{Coordinate calibration method and system and robot}
 
 \section{MISCELLANOUS}
-\cventry{3rd party projects}{github}{}{}{}{
+\cventry{Contributed 3rd party projects}{github}{}{}{}{
   \begin{itemize}
-  \item twip: Add proxy support.
-  \item ChinaDNS-C: Fix bug and port to tomato.
-  \item Koreader: Bug fix and compilation speed optimize.
-  \item tmk\_keyboard: Add bluetooth support for usb2usb.
-  \item RT Thread: Fix STM32F1 bsp bugs. Write CAN driver for Stm32f4 using hal library.
-  \item ChameleonMini-rebooted: Add NTAG-213、215、216 support.
-  \item lsp-sonarlint: An Emacs plugin from using sonarlint as a lsp backend to help checking codes rules. Add c/c++ checking support.
+  \item twip: Added proxy support.
+  \item ChinaDNS-C: Fixed bugs and ported to tomato.
+  \item Koreader: Fixed bugs and optimized compilation speed.
+  \item tmk\_keyboard: Added bluetooth support for usb2usb.
+  \item RT Thread: Fixed STM32F1 bsp bugs. Wrote CAN driver for Stm32f4 using hal library.
+  \item ChameleonMini-rebooted: Added NTAG-213、215、216 support.
+  \item lsp-sonarlint: An Emacs plugin from using sonarlint as a lsp backend to help checking codes rules. Added c/c++ checking support.
   \end{itemize}
 }
 
-\cventry{Own projects}{github}{}{}{}{
+\cventry{My projects}{github}{}{}{}{
   \begin{itemize}
-  \item battery\_analyzer: Use spline method to generate battery SOC table.
   \item vim\_configs: Vim configure used for co-workers.
-  \item ChameleonMini-rebooted: Add support for NTAG-213、215、216.
-  \item battery\_analyzer: A tool that can auto sampling and calculate SOC table for battery.
+  \item battery\_analyzer:  A tool that auto sampling and use spline method to generate SOC table for battery driver
   \item csr\_tool: Script which can dump firmware from CSR chips.
   \item Ultramanmedal: A lua script which can generate tags for zeta ultraman.
   \item bin2elf: Add elf header for bin file.

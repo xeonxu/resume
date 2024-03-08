@@ -54,7 +54,7 @@
   %\defaultfontfeatures{Mapping=tex-text}
   \usepackage{xcolor}
   \XeTeXlinebreaklocale "zh"
-  \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+  \XeTeXlinebreakskip=0pt plus 1pt minus 0.1pt
 \else
   \usepackage[utf8]{inputenc}
   \usepackage{CJKutf8}
@@ -67,7 +67,7 @@
 
 % 个人信息
 \name{徐}{至强}
-\title{高级软件架构师}                      % 可选项、如不需要可删除本行
+\title{软件架构师}                      % 可选项、如不需要可删除本行
 \born{1983.11 -- \themyage{}岁}
 % \address{松江区龙马路185弄25号1401室}{201616，上海}             % 可选项、如不需要可删除本行
 \extrainfo{简历更新日期：\ctoday}
@@ -108,8 +108,8 @@
 \makecvtitle
 
 \section{简介}
-\cvlistitem{本科学士学位。17年工作经验，2 年管理经验}
-\cvlistitem{17 年嵌入式软件开发：6 年车载项目，7 年手机研发， 4 年机器人研发。其中，有5 年时间专注手机电池管理，3 年 ROS 应用开发，1 年 RT-Thread 及 STM32传感器设计开发经验。}
+\cvlistitem{本科学士学位。18 年嵌入式软件开发，2 年管理经验}
+\cvlistitem{7 年车载项目，7 年手机研发， 4 年机器人研发。}
 \cvlistitem{熟悉 Linux 开发环境，内核驱动开发及调试，擅长使用脚本对系统集成和开发环境进行自动化。}
 \cvlistitem{熟练使用 C 语言，Bash 脚本，Git 版本管理，以及能够基于Docker做一些开发和应用。作为爱好，喜欢 lisp 和它的方言语言。}
 \cvlistitem{积极参与开源项目，包括 tmk keyboard，RT-Thread，koreader，proxmark3等。}
@@ -163,6 +163,12 @@
     \item 开发服务验证工具，简化使用ZKOS 开发，编译，部署以及运行测试程序的流程。
     \item 参与并指导对ZKOS SDK 的剥离方案。
     \end{itemize}
+  \item 极氪智能座舱3.0平台诊断功能开发
+    \begin{itemize}
+    \item 3.0平台以太网诊断架构设计
+    \item 3.0平台以太网诊断架构原型实现
+    \item 3.0平台以太网诊断服务开发
+    \end{itemize}
   \end{itemize}
 }
 \cventry{2019.10 -- 2022.03}{驱动系统架构师}{上海上汽集团商用车技术中心}{上海市}{}{
@@ -184,7 +190,7 @@
     \end{itemize}  
   \end{itemize}  
 }
-\cventry{2018.06 -- 2019.09}{高级软件工程师 架构师}{上海云绅智能科技有限公司}{上海市}{}{
+\cventry{2018.06 -- 2019.09}{高级软件工程师}{上海云绅智能科技有限公司}{上海市}{}{
   工作内容：红星美凯龙“大天使”物联网服务机器人软件架构设计及实现，公司研发环境的构建和维护
   \newline{}
   主要工作：
@@ -297,7 +303,7 @@
   \item Koreader: Bug修复及编译速度优化
   \item tmk\_keyboard: 独立为usb2usb增加蓝牙功能，蓝牙使用rn42模块
   \item RT Thread: Stm32f1板级支持bug的修复，编写Stm32f4 hal版的CAN驱动
-  \item ChameleonMini-rebooted: 增加NTAG-213、215、216 的支持；增加对泽塔奥特曼变身器的支持和密钥监听。
+  \item \href{https://github.com/iceman1001/ChameleonMini-rebooted/commit/d33eca6dcea4f39e569321471c1679b96e580c50}{ChameleonMini-rebooted}: 增加NTAG-213、215、216 的支持；增加对泽塔奥特曼变身器的支持和密钥监听。
   \item lsp-sonarlint: 使用 sonarlint 作为 lsp 后端，对代码进行规范检查。增加对c/c++ 程序检查的支持。
   \end{itemize}
 }
@@ -307,7 +313,7 @@
   \item vim\_configs: 维护的用于公司工作的vim配置
   \item csr\_tool: Dump csr芯片的脚本工具
   \item Ultramanmedal: 使用Proxmark3 制作泽塔奥特曼勋章和身份卡的Lua程序。
-  \item bin2elf: 为bin文件增加elf文件头，从而可以将通过jtag dump出来的固件，方便使用支持elf的烧录程序将其重新写入设备。该工具主要用来备份国内违反GPL 不开源的Proxmark3 私改固件。
+  \item bin2elf: 为jtag dump的bin文件增加elf文件头，方便只支持elf文件的烧录程序使用。该工具主要用来备份国内部分违反GPL的Proxmark3 私改固件。
   \item wintoolset: Windows上运行工具脚本的环境。
   \item trc2asc：将PCAN抓包的TRC文件转为通用的ASC文件。
   \item asc2blf：将ASC文件转换为BLF文件。

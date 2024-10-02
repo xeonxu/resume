@@ -22,6 +22,8 @@
 \ifthenelse{\the\month=11}{
   \ifthenelse{\the\day < 14}{\addtocounter{myage}{-1}}{}
 }{}
+%% \usepackage{indentfirst}
+%% \setlength{\parindent}{2em}
 
 % moderncv 主题
 \moderncvstyle{classic}                        % 选项参数是 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
@@ -96,7 +98,7 @@
 % 内容
 % ----------------------------------------------------------------------------------
 \begin{document}
-\ifxetexorluatex
+\ifxetexorluatex{}
 \else
 \begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 \fi
@@ -105,177 +107,223 @@
 \cofeCm{0.2}{0.7}{180}{0cm}{0cm}
 % \cofeSplash{}
 
-\makecvtitle
+\makecvtitle{}
 
 \section{简介}
-\cvlistitem{本科学士学位。18 年嵌入式软件开发，2 年管理经验}
-\cvlistitem{7 年车载项目，7 年手机研发， 4 年机器人研发。}
-\cvlistitem{熟悉 Linux 开发环境，内核驱动开发及调试，擅长使用脚本对系统集成和开发环境进行自动化。}
-\cvlistitem{熟练使用 C 语言，Bash 脚本，Git 版本管理，以及能够基于Docker做一些开发和应用。作为爱好，喜欢 lisp 和它的方言语言。}
-\cvlistitem{积极参与开源项目，包括 tmk keyboard，RT-Thread，koreader，proxmark3等。}
-\cvlistitem{渴求且敬畏技术，作为第一发明人有8项已授权专利。}
-\section{教育背景}
-\cventry{2002.09 -- 2006.06}{交通工程学士学位}{河海大学}{南京}{}{}
+学士学位，具有18年的嵌入式软件开发经验和2年的管理经验，专注于系统架构设计，覆盖汽车、机器人和移动设备平台。在实时嵌入式系统的全生命周期软件开发方面具有丰富的经验，包括系统设计、需求捕捉、软件实现和测试验证。擅长领导跨职能团队，创建模块化和可扩展的架构，并能高效地交付复杂项目。
 
-\section{IT技能}
-\setcvskilllegendcolumns[][0.61]
-\cvskillplainlegend*[0.2em][了解][可操作][熟练操作][高效操作][精通]{等级指标}
-\cvdoubleitem{C语言}{\cvskill{5}}{Java}{\cvskill{3}}
-\cvdoubleitem{内核驱动}{\cvskill{4}}{RT-Thread}{\cvskill{4}}
-\cvdoubleitem{Linux/Unix}{\cvskill{5}}{Android BSP}{\cvskill{4}}
-\cvdoubleitem{Git/Repo}{\cvskill{5}}{Docker}{\cvskill{4}}
-\cvdoubleitem{Bash}{\cvskill{5}}{Python}{\cvskill{3}}
-\cvdoubleitem{Emacs}{\cvskill{5}}{Vim}{\cvskill{3}}
-\cvdoubleitem{\LaTeX}{\cvskill{2}}{Common Lisp}{\cvskill{2}}
-\cvdoubleitem{Router Operating System}{\cvskill{3}}{Robot Operating System}{\cvskill{3}}
+\section{核心能力}
+\cvlistitem{实时嵌入式系统的系统架构设计}
+\cvlistitem{丰富的 UML 系统设计和建模经验}
+\cvlistitem{嵌入式系统的全生命周期开发（设计、实现、测试与集成）}
+\cvlistitem{精通 C、Bash、Git 和 Docker}
+\cvlistitem{在地理分散的团队中领导开发，并促进跨职能协作}
+\cvlistitem{有效沟通复杂技术概念，向非技术人员传达清晰}
 
-\section{语言技能}
-\cvdoubleitem{英语}{\cvskill{3}}{日语}{\cvskill{3}}
+%% \section{教育背景}
+%% \cventry{2002.09 -- 2006.06}{交通工程学士学位}{河海大学}{南京}{}{}
+
+%% \section{IT技能}
+%% \setcvskilllegendcolumns[][0.61]
+%% \cvskillplainlegend*[0.2em][了解][可操作][熟练操作][高效操作][精通]{等级指标}
+%% \cvcomputer{C/C++}{\cvskill{5}}{UML}{\cvskill{3}}
+%% \cvcomputer{Linux/Unix}{\cvskill{5}}{Emacs/Vim}{\cvskill{4}}
+%% \cvcomputer{BSP}{\cvskill{4}}{RT-Thread}{\cvskill{4}}
+%% \cvcomputer{Router Operating System}{\cvskill{3}}{Robot Operating System}{\cvskill{3}}
+%% \cvcomputer{Git/Repo}{\cvskill{5}}{Docker}{\cvskill{4}}
+%% \cvcomputer{Shell script}{\cvskill{5}}{Python}{\cvskill{3}}
+%% \cvcomputer{\LaTeX}{\cvskill{2}}{Common Lisp}{\cvskill{2}}
+
+%% \section{语言技能}
+%% \cvdoubleitem{英语}{\cvskill{3}}{日语}{\cvskill{3}}
 
 \section{工作履历}
 
 \cventry{2022.04 -- 至今}{系统软件主任工程师}{上海极氪蓝色新能源技术有限公司}{上海市}{}{
-  工作内容：座舱系统SOA通信中间件软件架构及诊断中间件软件架构设计和开发
-  \newline{}
-  主要工作：
   \begin{itemize}
-  \item 极氪智能座舱SOA通信平台中间件架构设计和开发
-    \begin{itemize}
-    \item 基于开源套件，为极氪2.x平台车型开发SOA通信组件。
-    \item 基于Docker构建统一的开发编译及运行环境，确保目标版本编译生成时的一致性。
-    \item 完成单机下仿真SOMEIP 跨设备通信的能力及单步调试代码的能力。
-    \item 完成可以将excel 格式服务矩阵文件转换为对应服务的软件工程模板，减小人为干预，极大提高SOA 服务的工程化效率。
-    \item 完成SOA 组件的SDK 化，并实现多操作系统（ Linux ，QNX，Android等）的支持。从而实现SOA通信组件的平台化能力，以及服务并行开发的能力。
-    \item 完成Wireshark的SOMEIP 服务以太网报文解析插件。该插件通过导入矩阵定义文件，将SOMEIP 的以太网抓包报文解析为服务接口及对应的数据内容。该能力在SOA 服务开发和联调工作中，极大地提升了对手件双方在服务数据确认上的效率。
-    \item 设计多种业务联调方案和自动化工具，结
-      合ADB，ROS路由器，等跨领域民用产品，可实现测试台架的快速搭建和联调能力。
-    \end{itemize}
-  \item 极氪智能座舱诊断服务平台中间件架构设计和开发
-    \begin{itemize}
-    \item 3.0平台以太网诊断中间件架构设计
-    \item 3.0平台以太网诊断中间件功能开发
-    \item 3.0平台以太网诊断服务开发
-    \item 基于Docker实现多平台支持的以太网诊断中间件开发平台，包括提供SDK输出，单机联调验证，抓包分析等功能。
-    \end{itemize}
-  \item 极氪智能座舱以太网诊断升级服务设计和开发
-    \begin{itemize}
-    \item 以太网诊断升级应用的架构设计及软件工程搭建
-    \item 移植之前项目中升级服务的相关逻辑，并基于新架构完成对应重构工作。实现更清晰的功能抽象和模块划分，并提高可维护性。
-    \end{itemize}
+  \item 负责基于高通8295及QNX 系统，进行极氪智能座舱 SOA 通信中间件及诊断中间件开发。
+  \item 使用 Docker 构建统一的开发环境，提升开发和生产环境一致性。
+  \item 完成 Wireshark 的 SOMEIP 以太网报文解析插件的开发，提升联调效率。
+  \item 负责开发 SOA 通信矩阵代码框架转换工具，并支持 SDK 形式的编译和发布。
   \end{itemize}
 }
 \cventry{2019.10 -- 2022.03}{驱动系统架构师}{上海上汽集团商用车技术中心}{上海市}{}{
-  工作内容：汽车网联系统OTA协议修订及维护，智能座舱软件架构的设计定义，重构工作。
-  \newline{}
-  主要工作：
   \begin{itemize}
-  \item 自建网联OTA协议修订及维护工作。
-  \item 智能座舱团队基础开发工具链的搭建，以及持续集成服务的配置工作。
-  \item 车身控制器时钟校准策略的制定。
-  \item 基于容器的单核多系统方案调研及架构设计。
-  \item 高通8155智能座舱项目
-    \begin{itemize}
-    \item QNX+Android 方案中的CAN 信号到系统接口的架构方案。
-    \item 斑马L+L方案中负责空调模块开发和调试工作。
-    \item SOA 信号矩阵的沟通和定义。
-    \item “人机共驾”功能中，确认高精地图的编译，匹配，渲染等方面的落地方案和细节。
-    \item 前后排地图互动的架构方案设计和技术细节沟通。
-    \end{itemize}  
+  \item 负责商用车智能座舱系统的架构设计与开发。
+  \item 修订并维护了商用车车联网系统的 OTA 协议，确保老项目的支持与新需求的适配。
+  \item 参与设计并集成高精度地图渲染及舱内前后排智能导航方案，确保IVI系统的协作。
   \end{itemize}  
 }
 \cventry{2018.06 -- 2019.09}{高级软件工程师}{上海云绅智能科技有限公司}{上海市}{}{
-  工作内容：红星美凯龙“大天使”物联网服务机器人软件架构设计及实现，公司研发环境的构建和维护
-  \newline{}
-  主要工作：
   \begin{itemize}
-  \item 实现STM32F4在RT Thread下的CAN驱动，编写并实现CAN分析仪在ROS下的通信节点
-  \item 基于RT Thread开发传感器开发框架，定义通信协议，并开发实现上位机的ROS节点
-  \item 基于CAN总线技术的传感器固件升级方案设计与实现
-  \item 机器人ROS系统程序的在线升级（FOTA）功能的设计与实现
-  \item 机器人系统及软件节点的标准输出和打包，实现软件审核上库后，20分钟内部署入目标机
-  \item 移植配置Intel realsense的驱动和ROS节点，移植人脸识别算法节点，解决摄像头热拔插问题
-  \item 制定机器人内部路由器部署方案，实现4G和wifi双上行自动链路切换功能，同时支
-    持VPN拨号至公司内网做业务维护，另外还支持和不同网段的的机内三方设备互联互通
-  \item 为全息项目开发基于UWB的室内定位方案
-  \item 标准化工控机生产和部署，开发相关生产工具，实现无人为干预下5分钟生产部署一
-    台工控系统的能力
-  \item 编译实现ROS的Docker环境镜像，同时搭建公司docker镜像库服务器
-  \item 搭建维护gerrit版本服务器，jenkins编译服务器，基于ROS配置AP漫游以及QOS
+  \item 服务型机器人项目的系统架构设计与开发
+  \item 设计并开发了基于 CAN 总线的传感器节点系统，支持多个传感器与中央控制器的实时通信。
+  \item 使用 Docker 构建了 ROS 环境的镜像，搭建并实现自动化部署。
+  \item 开发并完成机器人系统的 OTA 升级功能，实现系统的在线更新与维护。
   \end{itemize}
 }
 \cventry{2016.07 -- 2018.05}{软件解决方案专家}{上海木爷机器人有限公司}{上海市}{}{
-  工作内容：机器人软件研发，软件架构设计\newline{}
-  主要工作：
   \begin{itemize}
-  \item 开发基于RK3288芯片的Android平板，负责RK818的电池管理以及优化改进系统启动流程
-  \item 基于NVidia TX1工控板开发传感器驱动，接口和主控逻辑，研发生产镜像代码管控方案
-  \item 标准化X86工控板系统，提高装机效率
-  \item 探索实现基于Docker下ROS的机器人运行时
-  \item 标准化的ROS程序编译系统及打包流程
-  \item 设计实现灵活的机器人程序自动升级架构
-  \item 调研使用RTOS重构单片机开发架构，降低开发和维护成本，推动使用开源GCC构建目标程序。
+  \item 负责机器人软件系统的研发与架构设计，主导基于 RK3288 平台的 Android 平板的开发。
+  \item 优化 ROS 程序编译打包流程，设计了灵活的自动升级架构。
+  \item 在项目中探索并实现基于 ROS 和 Docker 的机器人运行环境，提升了系统部署的效率与灵活性。
   \end{itemize}
 }
 \cventry{2010.06 -- 2016.06}{嵌入式软件工程师}{上海斐讯数据通信技术有限公司}{上海市}{}{
-  工作内容：手机研发\newline{}
-  主要工作：
   \begin{itemize}
-  \item 开发分别基于Marvell平台和Qualcomm平台的Android智能设备项目
-  \item 开发并推广windows和linux下可一键安装配置的高通编译环境
-  \item 开发推广基于ditcc及ccache的android分布缓存编译优化方案
-  \item 开发传感器驱动，实现HAL和相应framework。包括地磁，加速度，距离，光以及TP等传感器设备
-  \item 负责电源管理部分逻辑开发，包括电池建模，充放电策略，多路充电切换等
-  \item 特别地在工作中优化改进了电池建模，BMS算法
-  \item 优化基于控制台的开发环境和开发工具，极大提高项目效率
+  \item 负责基于 Marvell 和 Qualcomm 平台的 Android 智能设备开发项目。
+  \item 简化 Qualcomm 编译环境的快速安装和配置部署。
+  \item 实现 Android 编译环境 Docker 化封装，确保了编译环境的一致性。
+  \item 开发传感器驱动与电池管理系统。
   \end{itemize}
 }
 \cventry{2009.10 -- 2010.06}{嵌入式软件工程师}{上海品酷网络科技有限公司}{上海市}{}{
-  工作内容：开发动态手机主题及手机特效（iShow主题系统）\newline{}
-  主要工作：
   \begin{itemize}
-  \item 开发基于mtk平台手机的动态主题和菜单特效
-  \item 可无极变色的飘带效果动态屏保
-  \item 可区分昼夜的蒲公英效果动态屏保
-  \item 编写研发自动化脚本工具
-  \item 改进完善手机端的http下载程序，支持断点续传
+  \item 负责基于mtk平台移植allegro 图形库并开发适用于功能手机的动态特效主题。
+  \item 开发多种动态主题及特效屏保。
+  \item 负责手机端的下载程序的断点续传功能开发，并编写自动化发布工具。
   \end{itemize}
 }
 \cventry{2006.07 -- 2009.10}{软件工程师}{上海腾龙集团}{上海市}{}{
-  \cventry{2008.11 -- 2009.10}{嵌入式软件工程师}{上海腾龙软件公司}{上海市}{}{}{}
-    工作内容：对日项目，主要是嵌入式平台的开发。\newline{}
-    主要工作：
     \begin{itemize}
-    \item 在日立公司的数字电视项目中负责界面开发和编码测试
-    \item vxworks到Linux的移植项目。改进开发环境，快速解决问题。
-    \item openvg移植项目，负责主体程序移植以及单元测试编写和回归测试
-    \end{itemize}
-  \cventry{2008.06 -- 2008.11}{Java工程师}{京瓷Mita公司}{大阪市}{外派}{}
-    工作内容：开发用于医院的纸质文档的电子化解决方案KMCapture Solution。\newline{}
-    主要工作：
-    \begin{itemize}
-    \item 主要负责Controller，Facade以及部分的Storage模块设计，编码和测试
-    \end{itemize}
-  \cventry{2007.05 -- 2008.06}{嵌入式软件工程师}{日立制造所}{日立市}{外派}{}
-    工作内容：开发基于ARM处理器的车载项目AVCCore。该项目后来为凯迪拉克CTS 08,09 车型的车载音响。\newline{}
-    主要工作：
-    \begin{itemize}
-    \item iPod集成应用。负责车载电脑中iPod Controller和iPod CoreApp开发和维护
-    \item 负责车载电脑的音频文件头解析处理的开发及维护
-    \end{itemize}
-  \cventry{2006.07 -- 2007.05}{Java工程师}{南大腾龙}{南京市}{}{}
-    工作内容：为三得利公司开发自动售卖机在线维护管理系统。\newline{}
-    主要工作：
-    \begin{itemize}
-    \item 编写数据库的处理代码和测试代码
-    \item 编写自动化部署脚本
-    \item 文档编写和维护
+    \item 外派日本日立参与凯迪拉克HU项目开发工作。
+    %% \item 外派日本京瓷参与纸质档案电子化项目的开发工作。
+    %% \item 负责日立 (Hitachi) 数字电视的外包开发工作，包括接口开发、代码测试、以及从 VxWorks 到 Linux 系统的移植。
+    %% \item 参与了 OpenVG 项目的移植，负责主程序的移植、单元测试代码的编写及回归测试。
     \end{itemize}
 }
+
+\section{项目经验}
+
+\cventry{2023.09 -- 至今}{EX1E/EX1H/DX1H}{上海极氪蓝色新能源技术有限公司}{}{}{
+  \textbf{项目背景}：为极氪智能座舱3.0平台座舱控制器开发诊断服务。\newline{}
+  \textbf{职责}：负责不同车型项目座舱控制器的诊断服务开发和设计，包括完成DID,DTC及诊断刷写的功能实现。\newline{}
+  \textbf{技术贡献}：
+  \begin{itemize}
+  \item 基于恒润UDS诊断协议栈，完成极氪座舱控制器的诊断服务开发中间件的设计和实现。
+  \item
+    使用UML 完成上述中间件的系统框图，组件图，时序图的设计。完成座舱诊断服务中间件平台方案的概要设计。
+  \item 设计并开发供应商诊断配置系统的平替工具。
+  \item 完成不同车型Basetech的开发和验证。
+  \item 基于诊断服务中间件平台SDK，开发完成不同车型的诊断服务。
+  \item 设计并定义座舱域私有节点的刷写方案。
+  \item 开发并重构诊断刷写功能，支持座舱域所有器件的诊断刷写。
+  \end{itemize}
+  \textbf{成果}： 平台化极氪座舱诊断服务的开发方案。通过封装第三方诊断协议栈，向开发者提供与协议栈供应商无关的诊断开发接口。有效减少诊断服务开发的人力投入。平替工具的导入，可以更进一步降低对供应商配置工具授权的依赖。
+}
+
+\cventry{2022.04 -- 2023.10}{CS1E/CM2E/DC1E}{上海极氪蓝色新能源技术有限公司}{}{}{
+  \textbf{项目背景}：为极氪智能座舱2.0平台开发SOA通信中间件，旨在支持DHU和ADCU之间的高效通信需求。\newline{}
+  \textbf{职责}：负责SOA通信平台的系统架构设计，与对手件硬件工程师和软件架构师协作，定义智能座舱平台的SOA模块化设计，确保未来版本可扩展和维护。\newline{}
+  \textbf{技术贡献}：
+  \begin{itemize}
+  \item 使用UML 完成系统框图，组件图，用例图，时序图等的设计工作。并依此完成座舱SOA平台方案的概要设计文档的编写。
+  \item 基于开源的vsomeip和commonapi，开发了SOA通信组件，支持Linux、QNX和Android等操作系统。
+  \item 使用Docker构建统一的开发环境，实现跨平台的编译和测试。
+  \item 设计并开发了基于Wireshark的SOMEIP数据包解析插件，显著提高了开发和测试的效率。
+  \end{itemize}
+  \textbf{成果}： 该平台成功应用于极氪2.x平台车型，依赖良好的设计，高效地完成了落地联调工作。在之后的维护中，也印证了该系统拥有良好的模块化设计和高可维护性。
+}
+
+\cventry{2019.10 -- 2022.03}{MIFA}{上海上汽集团商用车技术中心}{}{}{
+  \textbf{项目背景}：Qualcomm 8155智能座舱项目。该项目的目标是为SAIC的下一代商用车座舱系统设计嵌入式架构，基于QNX和Android双操作系统及Linux单操作系统两套方案进行CAN信号和SOA通信的集成。\newline{}
+  \textbf{职责}：作为软件架构师，负责CAN信号接口的设计和SOA信号矩阵的定义，并确保高精度地图渲染功能的集成。\newline{}
+  \textbf{技术贡献}：
+  \begin{itemize}
+  \item OTA 对空协议的修订和维护工作。
+  \item 搭建基于LDAP 权限控制的代码管理及CI/CD 系统。
+  \item 设计基于容器的单核多系统方案。
+  \item 针对座舱前后排双主机结构，设计了前后排导航功能的实现架构。
+  \item 针对智驾高精地图导航功能，沟通并确认高精地图从前期编译，到中期对接不同标精地图供应商进行信息同步，再到通过分片加载编译后的高精地图数据提高车端应用效率等整套链路及落地方案。
+  \item 完成域集中控制器中域间以太网SOA 服务的设计和评审工作。
+  \end{itemize}
+  \textbf{成果}：
+  按期实现设计功能，项目按时交付。
+}
+
+\cventry{2018.06 -- 2019.09}{大天使机器人}{上海云绅智能科技有限公司}{}{}{
+  \textbf{项目背景}：为红星美凯龙开发适用于家具商超场景下的服务机器人。\newline{}
+  \textbf{职责}：负责设计控制系统架构，实现多传感器节点和中央控制器之间的实时通信。\newline{}
+  \textbf{技术贡献}：
+  \begin{itemize}
+  \item 使用UML完成机器人的整体控制方案的设计，对系统组件，用例，组件件活动，时序等进行设计和定义。
+  \item 基于RT-Thread 实现STM32 的CAN 驱动开发，并构建传感器的平台化开发框架。
+  \item 设计并实现基于 CAN 总线的传感器节点系统，实现多传感器的实时数据传输和处理。
+  \item 完整搭建了公司的开发与测试环境，并实现了CI/CD系统的部署。
+  \item 实现了传感器的远程固件升级功能，降低了硬件维护成本。
+  \item 使用基于 Docker 构建的 ROS 镜像，极大提升了问题故障的回归效率和新功能部署上线的效率。
+  \item 使用虚拟机方案，完成机器人中央控制电脑操作系统的配置及镜像制作。提升效率的同时，提高操作一致性，降低问题发生风险。
+  \item 完成将Intel realsense 驱动整合进Docker 镜像的功能，解决摄像头热拔插问题，彻底实现机器人ROS运行时的Docker 镜像化。
+  \item 移植人脸识别算法，并封装为ROS节点。
+  \end{itemize}
+  \textbf{成果}：
+  一人饰多角，高度参与大天使机器人的整个开发过程。攻克多个技术难点，并在最后实现机器人整机OTA 升级的功能。为机器人系统提供了在线更新和维护的能力，提高了后期维护的便利性。
+}
+
+\cventry{2016.07 -- 2018.05}{诺亚机器人}{上海木爷机器人技术有限公司}{}{}{
+  \textbf{项目背景}：开发适用于医院场景的物流机器人。\newline{}
+  \textbf{职责}：负责集成各功能组开发的最新算法，整备POC 演示样机，调查解决现场出现的技术问题，设计下一代控制系统。\newline{}
+  \textbf{技术贡献}：
+  \begin{itemize}
+  \item 优化基于 RK3288 平台 Android 平板系统的启动时间与电源管理。
+  \item 负责基于ROS的机器人控制系统架构的设计与实现
+  \item 为确保一致性和可重复性，突破性采用 Docker 镜像对系统环境进行封装，并取得成功。
+  \item 标准化了 ROS 程序的编译和打包流程，并实现了通过 USB 进行自动升级的能力。
+  \end{itemize}
+  \textbf{成果}：
+  项目成功交付，极大提高了机器人控制系统的稳定性与性能。
+}
+
+\cventry{2010.06 -- 2016.06}{C630/C830/F320/P680}{上海斐讯通信技术有限公司}{}{}{
+  \textbf{项目背景}：斐讯自有品牌智能手机开发项目。\newline{}
+  \textbf{职责}：为不同芯片方案的BSP 基础包上，进行设备驱动的移植，调优以及移动设备电源管理系统的开发。\newline{}
+  \textbf{技术贡献}：
+  \begin{itemize}
+  \item 通过开发自动化工具，实现了 Qualcomm 平台编译环境的快速安装和配置部署，同时简化了开发环境配置的复杂性。
+  \item 实现了编译环境的 Docker 化，实现了编译系统目标物生成的一致性能力。
+  \item 通过distcc 和 ccache 实现了Android 的分布式编译和编译缓存的能力。大幅提升编译Android 版本的效率。
+  \item 设计并实现基于SOC 表的电池驱动的数据建模工具，并通过改善系统充放电驱动的策略，大幅改善手机电池的使用感受。
+  \item 实现基于SMB358 的多通道充电功能。
+  \item 设计并实现高效的传感器驱动开发方案，驱动移植和调优效率提升6倍及以上。
+  \end{itemize}
+  \textbf{成果}：
+  通过开发过程中积累和总结的方式方法，在提升驱动开发和调优效率的同时，也大幅提高了编译版本回归验证的效率。确保项目能够在预定节点前能够顺利完成。
+}
+
+\cventry{2009.10 -- 2010.06}{品酷iShow主题系统}{上海品酷网络科技有限公司}{}{}{
+  \textbf{项目背景}：为基于MTK 芯片方案的功能手机开发动效系统。\newline{}
+  \textbf{职责}：基于图形开发库开发功能机的动态主题和动态屏保。\newline{}
+  \textbf{技术贡献}：
+  \begin{itemize}
+  \item 移植部分allegro 图形库的图形算法
+  \item 开发多款动态主题桌面。
+  \item 开发无极变换色彩的飘带效果屏保。
+  \item 开发可随时间切换白天黑夜的动态风景屏保。
+  \item 设计实现模板化系统。使得同类型主题只需要更换不同图资就可以自动生成。
+  \item 负责手机端的下载程序的断点续传功能开发，并编写自动化发布工具。
+  \item 基于Actionscript 开发制作公司的宣传光碟。
+  \end{itemize}
+  \textbf{成果}：
+  在不到一年的时间里，从公司初创到开发出多款主题桌面和屏保系统，以及生产发布工具。
+}
+
+\cventry{2008.11 -- 2009.10}{08, 09款凯迪拉克CTS 车型 HU 开发}{上海腾龙集团}{}{}{
+  \textbf{项目背景}：外派日立进行外包协作开发工作。\newline{}
+  \textbf{职责}：车机iPod 应用接口的开发工作。\newline{}
+  \textbf{技术贡献}：
+  \begin{itemize}
+  \item 通过改进算法，提升iPod 歌单读取效率。实际效果感受由20秒提升到0.5秒，可用性提升40倍。
+  \item 开发歌曲信息解析功能库。实现从各种格式的音频文件中抽取解码参数，并提供给解码器，从而可以正确的播放各种格式的音频文件。
+  \end{itemize}
+  \textbf{成果}：
+  项目按时交付，系统兼容性问题得以解决，提升了系统的稳定性。
+}
+
 \section{个人兴趣}
 \cvdoubleitem{体育}{F1，跑步，滑板运动}{制作}{机械键盘，电子小器件}
 \cvdoubleitem{电影}{纪录片，科幻片}{看书}{技术书籍，小说}
 
-\section{专利}
+\section{授权专利}
   \cventry{201510477097.X}{一种登录认证方法及系统}{发明}{唯一发明人}{已授权}{}
   \cventry{201510612722.7}{一种扩展移动终端运算能力的系统}{发明}{唯一发明人}{已授权}{}
   \cventry{201410613796.8}{一种移动终端及其虚拟光驱的实现方法}{发明}{唯一发明人}{已授权}{}
@@ -284,8 +332,8 @@
   \cventry{201210585845.2}{硬件固件独立升级系统及方法}{发明}{唯一发明人}{已授权}{}
   \cventry{201420615063.3}{一种手机进水保护装置}{实用新型}{联合发明人}{已授权}{}
   \cventry{CN201811304800.7A}{一种活动区域热力图的生成方法和服务器}{发明}{唯一发明人}{已授权}{}
-  \cventry{CN201811126148.4A}{一种控制在指定区域活动的方法及机器人}{发明}{唯一发明人}{公示}{}
-  \cventry{CN201811126930.6A}{一种磁场发生装置的匹配方法及系统、机器人}{发明}{唯一发明人}{公示}{}
+  %% \cventry{CN201811126148.4A}{一种控制在指定区域活动的方法及机器人}{发明}{唯一发明人}{公示}{}
+  %% \cventry{CN201811126930.6A}{一种磁场发生装置的匹配方法及系统、机器人}{发明}{唯一发明人}{公示}{}
   \cventry{CN201811126928.9A}{一种坐标校准方法及系统、机器人}{发明}{唯一发明人}{已授权}{}
 
 \section{开源项目}
@@ -322,9 +370,9 @@
 
 % 来自BibTeX文件但不使用multibib包的出版物
 % \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
+%% \nocite{*}
+%% \bibliographystyle{plain}
+%% \bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
 
 % 来自BibTeX文件并使用multibib包的出版物
 % \section{出版物}
@@ -339,30 +387,30 @@
 
 %-----       letter       ---------------------------------------------------------
 % recipient data
-% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-% \date{January 01, 1984}
-% \opening{Dear Sir or Madam,}
-% \closing{Yours faithfully,}
-% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-% \makelettertitle
+%% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+%% \date{January 01, 1984}
+%% \opening{Dear Sir or Madam,}
+%% \closing{Yours faithfully,}
+%% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+%% \makelettertitle{}
 
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+%% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
 
-% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+%% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
 
-% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+%% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
 
-% Albert Einstein discovered that $e=mc^2$ in 1905.
+%% Albert Einstein discovered that $e=mc^2$ in 1905.
 
-% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+%% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right){}^n \]
 
-% \makeletterclosing
+%% \makeletterclosing{}
 
-\ifxetexorluatex
-\else
-\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
-\fi
-\end{document}
+%% \ifxetexorluatex{}
+%% \else
+%% \clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+%% \fi
+%% \end{document}
 
 
 %% 文件结尾 `template-zh.tex'.

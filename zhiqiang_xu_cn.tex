@@ -8,7 +8,7 @@
 % available at http://www.latex-project.org/lppl/.
 
 \documentclass[10pt,a4paper,mono]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-%\usepackage{etoolbox}
+% \usepackage{etoolbox}
 \usepackage{coffee}
 % 当前日期获取
 \usepackage[useregional]{datetime2}
@@ -28,18 +28,18 @@
 % moderncv 主题
 \moderncvstyle{classic}                        % 选项参数是 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{green}                          % 选项参数是 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+% \renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+% \nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % 调整页面
 \usepackage[scale=0.85]{geometry}
 \recomputelengths
 % \setlength{\footskip}{136.00005pt}                 % depending on the amount of information in the footer, you need to change this value. comment this line out and set it to the size given in the warning
 \setlength{\hintscolumnwidth}{3cm}                % 如果你希望改变日期栏的宽度
-%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% \setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % 解决XeLaTex编译时的编码警告
-%\usepackage[unicode,pdfencoding=auto]{hyperref}
+% \usepackage[unicode,pdfencoding=auto]{hyperref}
 
 % font loading
 % for luatex and xetex, do not use inputenc and fontenc
@@ -52,8 +52,8 @@
   \setsansfont{Sarasa Mono SC}
   \setmonofont{Sarasa Mono SC}
   \setmathfont{Latin Modern Math}
-  %\usepackage[slantfont,boldfont]{xeCJK}
-  %\defaultfontfeatures{Mapping=tex-text}
+  % \usepackage[slantfont,boldfont]{xeCJK}
+  % \defaultfontfeatures{Mapping=tex-text}
   \usepackage{xcolor}
   \XeTeXlinebreaklocale "zh"
   \XeTeXlinebreakskip=0pt plus 1pt minus 0.1pt
@@ -82,14 +82,14 @@
 \social[telegram]{xeonxu}                  % 可选项、如不需要可删除本行
 \social[github]{xeonxu}                  % 可选项、如不需要可删除本行
 \social[twitter]{xeonxu}                  % 可选项、如不需要可删除本行
-\photo[80pt][0.8pt]{zhiqiang_xu.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+%% \photo[80pt][0.8pt]{zhiqiang_xu.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
 \quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not want
 
 % 显示索引号;仅用于在简历中使用了引言
-%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+% \makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
 \renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
-%   to redefine the bibliography heading string ("Publications")
-%\renewcommand{\refname}{Articles}
+% to redefine the bibliography heading string ("Publications")
+% \renewcommand{\refname}{Articles}
 
 % 分类索引
 % \usepackage{multibib}
@@ -100,241 +100,241 @@
 \begin{document}
 \ifxetexorluatex{}
 \else
-\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
-\fi
-%-----       resume       ---------------------------------------------------------
+  \begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+  \fi
+  % -----       resume       ---------------------------------------------------------
 
-\cofeCm{0.2}{0.7}{180}{0cm}{0cm}
-% \cofeSplash{}
+  \cofeCm{0.2}{0.7}{180}{0cm}{0cm}
+  % \cofeSplash{}
 
-\makecvtitle{}
+  \makecvtitle{}
 
-\section{简介}
-交通工程学士学位，19年工作经历，专注于嵌入式软件设计和开发工作，横跨汽车、机器人和移动设备多种领域。拥有实时嵌入式系统软件全生命周期的开发经验，包括从需求分析、系统设计、到软件实现，测试验证和集成。擅长从零搭建和简化工作流，创建模块化和可扩展的软件架构，并能高效地交付复杂项目。
+  \section{简介}
+  交通工程学士学位，19年工作经历，专注于嵌入式软件设计和开发工作，在汽车、机器人和移动设备等领域拥有多年研发经验。熟悉嵌入式系统软件全生命周期的开发流程，包括从需求分析、系统设计，到软件实现、测试验证和集成等工作。擅长从零搭建和简化工作流，创建模块化和可扩展的软件架构，实现高质量的交付工作。
 
-\section{核心能力}
-\cvlistitem{嵌入式系统软件架构设计，开发，排错，集成}
-\cvlistitem{精通 Linux, C、Bash、Git 和 Docker}
-\cvlistitem{高效改善工作流，提高整体效率}
-\cvlistitem{有效沟通}
+  \section{核心能力}
+  \cvlistitem{嵌入式系统软件架构设计，开发，排错，集成}
+  \cvlistitem{精通 Linux, C、Bash、Git 和 Docker}
+  \cvlistitem{高效改善工作流，提高整体效率}
+  \cvlistitem{有效沟通}
 
-%% \section{教育背景}
-%% \cventry{2002.09 -- 2006.06}{交通工程学士学位}{河海大学}{南京}{}{}
+  %% \section{教育背景}
+  %% \cventry{2002.09 -- 2006.06}{交通工程学士学位}{河海大学}{南京}{}{}
 
-%% \section{IT技能}
-%% \setcvskilllegendcolumns[][0.61]
-%% \cvskillplainlegend*[0.2em][了解][可操作][熟练操作][高效操作][精通]{等级指标}
-%% \cvcomputer{C/C++}{\cvskill{5}}{UML}{\cvskill{3}}
-%% \cvcomputer{Linux/Unix}{\cvskill{5}}{Emacs/Vim}{\cvskill{4}}
-%% \cvcomputer{BSP}{\cvskill{4}}{RT-Thread}{\cvskill{4}}
-%% \cvcomputer{Router Operating System}{\cvskill{3}}{Robot Operating System}{\cvskill{3}}
-%% \cvcomputer{Git/Repo}{\cvskill{5}}{Docker}{\cvskill{4}}
-%% \cvcomputer{Shell script}{\cvskill{5}}{Python}{\cvskill{3}}
-%% \cvcomputer{\LaTeX}{\cvskill{2}}{Common Lisp}{\cvskill{2}}
+  %% \section{IT技能}
+  %% \setcvskilllegendcolumns[][0.61]
+  %% \cvskillplainlegend*[0.2em][了解][可操作][熟练操作][高效操作][精通]{等级指标}
+  %% \cvcomputer{C/C++}{\cvskill{5}}{UML}{\cvskill{3}}
+  %% \cvcomputer{Linux/Unix}{\cvskill{5}}{Emacs/Vim}{\cvskill{4}}
+  %% \cvcomputer{BSP}{\cvskill{4}}{RT-Thread}{\cvskill{4}}
+  %% \cvcomputer{Router Operating System}{\cvskill{3}}{Robot Operating System}{\cvskill{3}}
+  %% \cvcomputer{Git/Repo}{\cvskill{5}}{Docker}{\cvskill{4}}
+  %% \cvcomputer{Shell script}{\cvskill{5}}{Python}{\cvskill{3}}
+  %% \cvcomputer{\LaTeX}{\cvskill{2}}{Common Lisp}{\cvskill{2}}
 
-%% \section{语言技能}
-%% \cvdoubleitem{英语}{\cvskill{3}}{日语}{\cvskill{3}}
+  %% \section{语言技能}
+  %% \cvdoubleitem{英语}{\cvskill{3}}{日语}{\cvskill{3}}
 
-\section{工作履历}
+  \section{工作履历}
 
-\cventry{2022.04 -- 至今}{系统软件主任工程师}{上海极氪蓝色新能源技术有限公司}{上海市}{}{
-  \begin{itemize}
-  \item 主导座舱 SOA 通信中间件的设计和开发工作。
-  \item 负责开发 SOA 通信矩阵代码框架转换工具，并支持多平台 SDK 的编译和发布。
-  \item 主导基于 Wireshark 完成 SOMEIP 以太网报文解析插件的开发，提升联调效率。
-  \item 主导使用 Docker 构建统一开发环境，提升开发和生产环境一致性。
-  \item 主导座舱诊断平台化中间件及诊断服务的设计和开发工作。
-  \item 负责座舱控制器诊断升级模块的开发工作。
-  \item 主导设计座舱外设升级方案并落地。
-  \end{itemize}
-}
-\cventry{2019.10 -- 2022.03}{驱动系统架构师}{上海上汽集团商用车技术中心}{上海市}{}{
-  \begin{itemize}
-  \item 负责商用车车联网系统 OTA 协议的修订维护工作。
-  \item 主导完成智能网联部门持续集成服务的建设。
-  \item 主导MTK 座舱方案的PoC 验证和台架搭建。
-  \item 负责域控功能信号 SOMEIP 服务化的设计与评审。
-  \item 主导前后排导航联动方案架构设计。
-  \item 主导基于容器和lxc 的轻量化单机复用方案的设计。
-  \end{itemize}  
-}
-\cventry{2018.06 -- 2019.09}{高级软件工程师}{上海云绅智能科技有限公司}{上海市}{}{
-  \begin{itemize}
-  \item 负责大天使服务型机器人的整体系统架构设计与开发
-  \item 主导基于 CAN 总线和RTThread的通用实时系统的设计和开发。
-  \item 主导基于 Docker 的 ROS 开发，编译和运行时环境。
-  \item 主导完成机器人系统的 OTA 功能。
-  \item 人员招聘及技术商务对接
-  \end{itemize}
-}
-\cventry{2016.07 -- 2018.05}{软件解决方案专家}{上海木爷机器人有限公司}{上海市}{}{
-  \begin{itemize}
-  \item 负责机器人软件系统的研发与架构设计。
-  \item 主导 RK3288 平台 Android 平板的BSP开发。
-  \item 主导完成 ROS 程序编译打包流程的优化，并设计实现了灵活的自动升级架构。
-  \item 主导使用Docker 技术统一 ROS 系统的开发和运行环境。
-  \end{itemize}
-}
-\cventry{2010.06 -- 2016.06}{嵌入式软件工程师}{上海斐讯数据通信技术有限公司}{上海市}{}{
-  \begin{itemize}
-  \item 负责 Marvell 芯片的 Android 智能设备的开发工作。
-  \item 负责 Qualcomm 芯片的 Android 智能设备的开发工作。
-  \item 主导 Qualcomm 编译环境的快速安装和部署配置。
-  \item 主导 Android 编译环境的 Docker 化封装，确保了编译环境的一致性。
-  \item 负责传感器外设驱动开发及电池管理系统开发。
-  \end{itemize}
-}
-\cventry{2009.10 -- 2010.06}{嵌入式软件工程师}{上海品酷网络科技有限公司}{上海市}{}{
-  \begin{itemize}
-  \item 负责基于mtk平台移植allegro 图形库并开发适用于功能手机的动态特效主题。
-  \item 负责开发多种动态主题及特效屏保。
-  \item 主导手机端的下载程序的断点续传功能开发
-  \item 主导编写并完成自动化编译打包和发布工具。
-  \end{itemize}
-}
-\cventry{2006.07 -- 2009.10}{软件工程师}{上海腾龙集团}{上海市}{}{
+  \cventry{2022.04 -- 至今}{系统软件主任工程师}{上海极氪蓝色新能源技术有限公司}{上海市}{}{
+    \begin{itemize}
+    \item 主导座舱 SOA 通信中间件的设计和开发工作。
+    \item 负责开发 SOA 通信矩阵代码框架转换工具，并支持多平台 SDK 的编译和发布。
+    \item 主导基于 Wireshark 完成 SOMEIP 以太网报文解析插件的开发，提升联调效率。
+    \item 主导使用 Docker 构建统一开发环境，提升开发和生产环境一致性。
+    \item 主导座舱诊断平台化中间件及诊断服务的设计和开发工作。
+    \item 负责座舱控制器诊断升级模块的开发工作。
+    \item 主导设计座舱外设升级方案并落地。
+    \end{itemize}
+  }
+  \cventry{2019.10 -- 2022.03}{驱动系统架构师}{上海上汽集团商用车技术中心}{上海市}{}{
+    \begin{itemize}
+    \item 负责商用车车联网系统 OTA 协议的修订维护工作。
+    \item 主导完成智能网联部门持续集成服务的建设。
+    \item 主导MTK 座舱方案的PoC 验证和台架搭建。
+    \item 负责域控功能信号 SOMEIP 服务化的设计与评审。
+    \item 主导前后排导航联动方案架构设计。
+    \item 主导基于容器和lxc 的轻量化单机复用方案的设计。
+    \end{itemize}  
+  }
+  \cventry{2018.06 -- 2019.09}{高级软件工程师}{上海云绅智能科技有限公司}{上海市}{}{
+    \begin{itemize}
+    \item 负责大天使服务型机器人的整体系统架构设计与开发
+    \item 主导基于 CAN 总线和RTThread的通用实时系统的设计和开发。
+    \item 主导基于 Docker 的 ROS 开发，编译和运行时环境。
+    \item 主导完成机器人系统的 OTA 功能。
+    \item 人员招聘及技术商务对接
+    \end{itemize}
+  }
+  \cventry{2016.07 -- 2018.05}{软件解决方案专家}{上海木爷机器人有限公司}{上海市}{}{
+    \begin{itemize}
+    \item 负责机器人软件系统的研发与架构设计。
+    \item 主导 RK3288 平台 Android 平板的BSP开发。
+    \item 主导完成 ROS 程序编译打包流程的优化，并设计实现了灵活的自动升级架构。
+    \item 主导使用Docker 技术统一 ROS 系统的开发和运行环境。
+    \end{itemize}
+  }
+  \cventry{2010.06 -- 2016.06}{嵌入式软件工程师}{上海斐讯数据通信技术有限公司}{上海市}{}{
+    \begin{itemize}
+    \item 负责 Marvell 芯片的 Android 智能设备的开发工作。
+    \item 负责 Qualcomm 芯片的 Android 智能设备的开发工作。
+    \item 主导 Qualcomm 编译环境的快速安装和部署配置。
+    \item 主导 Android 编译环境的 Docker 化封装，确保了编译环境的一致性。
+    \item 负责传感器外设驱动开发及电池管理系统开发。
+    \end{itemize}
+  }
+  \cventry{2009.10 -- 2010.06}{嵌入式软件工程师}{上海品酷网络科技有限公司}{上海市}{}{
+    \begin{itemize}
+    \item 负责基于mtk平台移植allegro 图形库并开发适用于功能手机的动态特效主题。
+    \item 负责开发多种动态主题及特效屏保。
+    \item 主导手机端的下载程序的断点续传功能开发
+    \item 主导编写并完成自动化编译打包和发布工具。
+    \end{itemize}
+  }
+  \cventry{2006.07 -- 2009.10}{软件工程师}{上海腾龙集团}{上海市}{}{
     \begin{itemize}
     \item 负责凯迪拉克车机系统的iPod 接口及应用的开发工作。（日立ICS）
-    % \item 外派日本京瓷参与纸质档案电子化项目的开发工作。
+      % \item 外派日本京瓷参与纸质档案电子化项目的开发工作。
     \item 负责日立数字电视从 VxWorks 到 Linux 的一部分移植工作。
     \item 参与 OpenVG 的移植项目，负责单元测试编写及回归测试工作。
     \end{itemize}
-}
+  }
 
-\section{项目经验}
+  \section{项目经验}
 
-\cventry{2023.09 -- 至今}{EX1E/EX1H/DX1H}{上海极氪蓝色新能源技术有限公司}{}{}{
-  \textbf{项目背景}：极氪3.0平台座舱控制器UXC（高通8295）\newline{}
-  \textbf{职责}：主导3.0 平台座舱控制器的诊断服务及诊断升级的设计和开发。\newline{}
-  \textbf{技术贡献}：
-  \begin{itemize}
-  \item 基于恒润UDS诊断协议栈，完成极氪3.0 平台座舱控制器诊断中间件开发。
-  \item
-    使用UML 完成上述中间件的系统框图，组件图，时序图的设计，完成方案的概要设计。
-  \item 设计并开发原协议栈供应商诊断配置系统的平替工具。
-  \item 负责不同项目Basetech的开发并完成验证工作。
-  \item 基于自研诊断中间件平台SDK，完成多种车型诊断服务的开发。
-  \item 座舱域私有节点平台化升级方案的设计与实现。
-  \item 主导完成诊断升级模块的完全优化和重构，增加并行刷写能力，由原40 分钟的全量升级时间缩短到15 分钟。
-  \end{itemize}
-  \textbf{成果}： 实现平台化的座舱诊断开发框架。通过封装第三方诊断协议栈，向功能开发者提供与协议栈无关的诊断开发接口，有效减少诊断服务开发的人力投入。平替工具的导入，更进一步降低对供应商配置工具授权的依赖。优化后的诊断升级模块，体现了高内聚低耦合的设计思路，降低故障率的同时提高了升级效率。
-}
+  \cventry{2023.09 -- 至今}{EX1E/EX1H/DX1H}{上海极氪蓝色新能源技术有限公司}{}{}{
+    \textbf{项目背景}：极氪3.0平台座舱控制器UXC（高通8295）\newline{}
+    \textbf{职责}：主导3.0 平台座舱控制器的诊断服务及诊断升级的设计和开发。\newline{}
+    \textbf{技术贡献}：
+    \begin{itemize}
+    \item 基于恒润UDS诊断协议栈，完成极氪3.0 平台座舱控制器诊断中间件开发。
+    \item
+      使用UML 完成上述中间件的系统框图，组件图，时序图的设计，完成方案的概要设计。
+    \item 设计并开发原协议栈供应商诊断配置系统的平替工具。
+    \item 负责不同项目Basetech的开发并完成验证工作。
+    \item 基于自研诊断中间件平台SDK，完成多种车型诊断服务的开发。
+    \item 座舱域私有节点平台化升级方案的设计与实现。
+    \item 主导完成诊断升级模块的完全优化和重构，增加并行刷写能力，由原40 分钟的全量升级时间缩短到15 分钟。
+    \end{itemize}
+    \textbf{成果}： 实现平台化的座舱诊断开发框架。通过封装第三方诊断协议栈，向功能开发者提供与协议栈无关的诊断开发接口，有效减少诊断服务开发的人力投入。平替工具的导入，更进一步降低对供应商配置工具授权的依赖。优化后的诊断升级模块，体现了高内聚低耦合的设计思路，降低故障率的同时提高了升级效率。
+  }
 
-\cventry{2022.04 -- 2023.10}{CS1E/CM2E/DC1E}{上海极氪蓝色新能源技术有限公司}{}{}{
-  \textbf{项目背景}：极氪2.0平台座舱控制器（高通8295）\newline{}
-  \textbf{职责}：主导SOA通信平台的系统和软件架构设计\newline{}
-  \textbf{技术贡献}：
-  \begin{itemize}
-  \item 基于开源的vsomeip 和 commonapi，完成支持多种操作系统（Android,QNX,Linux）SOA通信中间件的开发。
-  \item 使用UML 完成上述中间件的系统框图，组件图，用例图，时序图的设计，完成方案的概要设计。
-  \item 基于Docker 构建统一的开发环境，实现一致的开发体验。
-  \item 基于Docker 实现单机进行服务跨域通信的仿真。
-  \item 主导设计并开发完成基于Wireshark的SOMEIP数据包解析插件，显著提高了开发和测试的效率。
-  \end{itemize}
-  \textbf{成果}： 该自研SOA 通信平台成功应用于极氪2.x平台车型，依赖其良好的设计，借助配套的自研工具，高效地完成了智驾相关服务的开发和联调工作。在之后的维护中，也印证了该系统拥有良好的模块化设计和高可维护性。
-}
+  \cventry{2022.04 -- 2023.10}{CS1E/CM2E/DC1E}{上海极氪蓝色新能源技术有限公司}{}{}{
+    \textbf{项目背景}：极氪2.0平台座舱控制器（高通8295）\newline{}
+    \textbf{职责}：主导SOA通信平台的系统和软件架构设计\newline{}
+    \textbf{技术贡献}：
+    \begin{itemize}
+    \item 基于开源的vsomeip 和 commonapi，完成支持多种操作系统（Android,QNX,Linux）SOA通信中间件的开发。
+    \item 使用UML 完成上述中间件的系统框图，组件图，用例图，时序图的设计，完成方案的概要设计。
+    \item 基于Docker 构建统一的开发环境，实现一致的开发体验。
+    \item 基于Docker 实现单机进行服务跨域通信的仿真。
+    \item 主导设计并开发完成基于Wireshark的SOMEIP数据包解析插件，显著提高了开发和测试的效率。
+    \end{itemize}
+    \textbf{成果}： 该自研SOA 通信平台成功应用于极氪2.x平台车型，依赖其良好的设计，借助配套的自研工具，高效地完成了智驾相关服务的开发和联调工作。在之后的维护中，也印证了该系统拥有良好的模块化设计和高可维护性。
+  }
 
-\cventry{2019.10 -- 2022.03}{MIFA}{上海上汽集团商用车技术中心}{}{}{
-  \textbf{项目背景}：Qualcomm 8155智能座舱项目，基于QNX和Android双操作系统及Linux单操作系统两套方案进行CAN信号和SOA 服务的设计开发。\newline{}
-  \textbf{职责}：负责CAN信号的接口设计，SOA信号矩阵的定义及相关功能落地。\newline{}
-  \textbf{技术贡献}：
-  \begin{itemize}
-  \item OTA 对空协议的修订和维护工作。
-  \item 基于LDAP 权限控制的代码管理及CI/CD 系统的建设。
-  \item 基于容器的单核多系统方案设计。
-  \item 前后排导航功能的实现架构设计。
-  \item 高精地图功能落地相关技术沟通和落地推动。
-  \item 域间以太网SOA 服务的设计和评审工作。
-  \end{itemize}
-  \textbf{成果}：
-  按期实现设计功能，项目按时交付。
-}
+  \cventry{2019.10 -- 2022.03}{MIFA}{上海上汽集团商用车技术中心}{}{}{
+    \textbf{项目背景}：Qualcomm 8155智能座舱项目，基于QNX和Android双操作系统及Linux单操作系统两套方案进行CAN信号和SOA 服务的设计开发。\newline{}
+    \textbf{职责}：负责CAN信号的接口设计，SOA信号矩阵的定义及相关功能落地。\newline{}
+    \textbf{技术贡献}：
+    \begin{itemize}
+    \item OTA 对空协议的修订和维护工作。
+    \item 基于LDAP 权限控制的代码管理及CI/CD 系统的建设。
+    \item 基于容器的单核多系统方案设计。
+    \item 前后排导航功能的实现架构设计。
+    \item 高精地图功能落地相关技术沟通和落地推动。
+    \item 域间以太网SOA 服务的设计和评审工作。
+    \end{itemize}
+    \textbf{成果}：
+    按期实现设计功能，项目按时交付。
+  }
 
-\cventry{2018.06 -- 2019.09}{大天使机器人}{上海云绅智能科技有限公司}{}{}{
-  \textbf{项目背景}：家具商超场景下服务机器人的开发\newline{}
-  \textbf{职责}：机器人整体控制方案的系统架构设计与实现\newline{}
-  \textbf{技术贡献}：
-  \begin{itemize}
-  \item 基于RT-Thread 完成通用实时系统的平台化开发框架。
-  \item 完成 RT-Thread 中STM32 的CAN 驱动开发。
-  \item 使用UML完成机器人的整体控制方案的设计，对系统组件，用例，组件件活动，时序等进行设计和定义。
-  \item 设计并实现基于 CAN 总线的传感器节点系统，实现多传感器的实时数据传输和处理。
-  \item 基于jenkins 和 gerrit 完成CI/CD系统的部署。
-  \item 基于Docker 完成统一开发与测试环境的搭建
-  \item 实现了传感器的远程固件升级功能，降低了硬件维护成本。
-  \item 使用 Docker 构建 ROS 的运行时镜像，极大提升了故障问题的回归效率与新功能部署上线的效率。
-  \item 使用虚拟机方案，完成机器人中央控制电脑操作系统的配置及镜像制作。提升效率的同时，提高操作一致性，降低问题发生风险。
-  \item 完成Intel realsense 驱动整合进Docker 镜像的功能，解决摄像头热拔插问题，彻底实现机器人ROS运行时的Docker 镜像化。
-  \item 移植人脸识别算法，并实现ROS节点。
-  \end{itemize}
-  \textbf{成果}：
-  一人多角，高度参与大天使机器人的整个开发过程。攻克多个技术难点，并在最后实现机器人整机OTA 升级的功能。为机器人系统提供了在线更新和维护的能力，提高了后期维护的便利性。
-}
+  \cventry{2018.06 -- 2019.09}{大天使机器人}{上海云绅智能科技有限公司}{}{}{
+    \textbf{项目背景}：家具商超场景下服务机器人的开发\newline{}
+    \textbf{职责}：机器人整体控制方案的系统架构设计与实现\newline{}
+    \textbf{技术贡献}：
+    \begin{itemize}
+    \item 基于RT-Thread 完成通用实时系统的平台化开发框架。
+    \item 完成 RT-Thread 中STM32 的CAN 驱动开发。
+    \item 使用UML完成机器人的整体控制方案的设计，对系统组件，用例，组件件活动，时序等进行设计和定义。
+    \item 设计并实现基于 CAN 总线的传感器节点系统，实现多传感器的实时数据传输和处理。
+    \item 基于jenkins 和 gerrit 完成CI/CD系统的部署。
+    \item 基于Docker 完成统一开发与测试环境的搭建
+    \item 实现了传感器的远程固件升级功能，降低了硬件维护成本。
+    \item 使用 Docker 构建 ROS 的运行时镜像，极大提升了故障问题的回归效率与新功能部署上线的效率。
+    \item 使用虚拟机方案，完成机器人中央控制电脑操作系统的配置及镜像制作。提升效率的同时，提高操作一致性，降低问题发生风险。
+    \item 完成Intel realsense 驱动整合进Docker 镜像的功能，解决摄像头热拔插问题，彻底实现机器人ROS运行时的Docker 镜像化。
+    \item 移植人脸识别算法，并实现ROS节点。
+    \end{itemize}
+    \textbf{成果}：
+    一人多角，高度参与大天使机器人的整个开发过程。攻克多个技术难点，并在最后实现机器人整机OTA 升级的功能。为机器人系统提供了在线更新和维护的能力，提高了后期维护的便利性。
+  }
 
-\cventry{2016.07 -- 2018.05}{诺亚机器人}{上海木爷机器人技术有限公司}{}{}{
-  \textbf{项目背景}：开发医院场景的物流机器人。\newline{}
-  \textbf{职责}：负责集成各功能组开发的最新算法，整备POC 演示样机，调查解决现场出现的技术问题，设计下一代控制系统。\newline{}
-  \textbf{技术贡献}：
-  \begin{itemize}
-  \item 优化基于 RK3288 平台 Android 平板系统的启动时间与电源管理。
-  \item 负责基于ROS的机器人控制系统架构的设计与实现
-  \item 为确保一致性和可重复性，突破性采用 Docker 镜像对系统环境进行封装，并取得成功。
-  \item 标准化 ROS 程序的编译和打包流程，并实现通过 USB 进行自动升级的能力。
-  \end{itemize}
-  \textbf{成果}：
-  项目成功交付，极大提高了机器人控制系统的稳定性与性能。
-}
+  \cventry{2016.07 -- 2018.05}{诺亚机器人}{上海木爷机器人技术有限公司}{}{}{
+    \textbf{项目背景}：开发医院场景的物流机器人。\newline{}
+    \textbf{职责}：负责集成各功能组开发的最新算法，整备POC 演示样机，调查解决现场出现的技术问题，设计下一代控制系统。\newline{}
+    \textbf{技术贡献}：
+    \begin{itemize}
+    \item 优化基于 RK3288 平台 Android 平板系统的启动时间与电源管理。
+    \item 负责基于ROS的机器人控制系统架构的设计与实现
+    \item 为确保一致性和可重复性，突破性采用 Docker 镜像对系统环境进行封装，并取得成功。
+    \item 标准化 ROS 程序的编译和打包流程，并实现通过 USB 进行自动升级的能力。
+    \end{itemize}
+    \textbf{成果}：
+    项目成功交付，极大提高了机器人控制系统的稳定性与性能。
+  }
 
-\cventry{2010.06 -- 2016.06}{C630/C830/F320/P680}{上海斐讯通信技术有限公司}{}{}{
-  \textbf{项目背景}：斐讯自有品牌智能手机开发项目。\newline{}
-  \textbf{职责}：设备驱动的移植和调优，移动设备电源管理系统的开发。\newline{}
-  \textbf{技术贡献}：
-  \begin{itemize}
-  \item 开发自动化工具，实现 Qualcomm 编译环境的快速安装和配置，免除了 Qualcomm复杂的开发环境配置工作。
-  \item 编译环境的 Docker 化，提高编译目标物的一致性，减小风险。
-  \item 导入distcc 和 ccache 实现Android 编译的分布式和缓存能力。大幅提升Android 发版效率。
-  \item 设计并实现SOC 表电池驱动的数据建模工具，并通过改善系统充放电驱动的策略，大幅改善手机电池的使用感受。
-  \item 实现基于SMB358 的多通道充电功能。
-  \item 设计并实现高效的传感器驱动开发方案，驱动移植和调优效率提升6倍及以上。
-  \end{itemize}
-  \textbf{成果}：
-  通过开发过程中积累和总结的方式方法，在提升驱动开发和调优效率的同时，也大幅提高了编译版本回归验证的效率。
-}
+  \cventry{2010.06 -- 2016.06}{C630/C830/F320/P680}{上海斐讯通信技术有限公司}{}{}{
+    \textbf{项目背景}：斐讯自有品牌智能手机开发项目。\newline{}
+    \textbf{职责}：设备驱动的移植和调优，移动设备电源管理系统的开发。\newline{}
+    \textbf{技术贡献}：
+    \begin{itemize}
+    \item 开发自动化工具，实现 Qualcomm 编译环境的快速安装和配置，免除了 Qualcomm复杂的开发环境配置工作。
+    \item 编译环境的 Docker 化，提高编译目标物的一致性，减小风险。
+    \item 导入distcc 和 ccache 实现Android 编译的分布式和缓存能力。大幅提升Android 发版效率。
+    \item 设计并实现SOC 表电池驱动的数据建模工具，并通过改善系统充放电驱动的策略，大幅改善手机电池的使用感受。
+    \item 实现基于SMB358 的多通道充电功能。
+    \item 设计并实现高效的传感器驱动开发方案，驱动移植和调优效率提升6倍及以上。
+    \end{itemize}
+    \textbf{成果}：
+    通过开发过程中积累和总结的方式方法，在提升驱动开发和调优效率的同时，也大幅提高了编译版本回归验证的效率。
+  }
 
-\cventry{2009.10 -- 2010.06}{品酷iShow主题系统}{上海品酷网络科技有限公司}{}{}{
-  \textbf{项目背景}：为基于MTK 芯片方案的功能手机开发动效系统。\newline{}
-  \textbf{职责}：基于图形开发库开发功能机的动态主题和动态屏保。\newline{}
-  \textbf{技术贡献}：
-  \begin{itemize}
-  \item 移植allegro 图形库的图形算法
-  \item 开发多款动态主题桌面。
-  \item 开发无极变换色彩的飘带效果屏保。
-  \item 开发可随时间切换白天黑夜的动态风景屏保。
-  \item 设计实现模板化系统。使得同类型主题只需要更换不同图资就可以自动生成。
-  \item 负责手机端的下载程序的断点续传功能开发，并编写自动化发布工具。
-  \item 基于Actionscript 开发制作公司的宣传光碟。
-  \end{itemize}
-  \textbf{成果}：
-  在不到一年的时间里，从公司初创到开发出多款主题桌面和屏保系统，以及生产发布工具。
-}
+  \cventry{2009.10 -- 2010.06}{品酷iShow主题系统}{上海品酷网络科技有限公司}{}{}{
+    \textbf{项目背景}：为基于MTK 芯片方案的功能手机开发动效系统。\newline{}
+    \textbf{职责}：基于图形开发库开发功能机的动态主题和动态屏保。\newline{}
+    \textbf{技术贡献}：
+    \begin{itemize}
+    \item 移植allegro 图形库的图形算法
+    \item 开发多款动态主题桌面。
+    \item 开发无极变换色彩的飘带效果屏保。
+    \item 开发可随时间切换白天黑夜的动态风景屏保。
+    \item 设计实现模板化系统。使得同类型主题只需要更换不同图资就可以自动生成。
+    \item 负责手机端的下载程序的断点续传功能开发，并编写自动化发布工具。
+    \item 基于Actionscript 开发制作公司的宣传光碟。
+    \end{itemize}
+    \textbf{成果}：
+    在不到一年的时间里，从公司初创到开发出多款主题桌面和屏保系统，以及生产发布工具。
+  }
 
-\cventry{2008.11 -- 2009.10}{08, 09款凯迪拉克CTS 车型 HU 开发}{上海腾龙集团}{}{}{
-  \textbf{项目背景}：外派日立进行外包协作开发工作。\newline{}
-  \textbf{职责}：车机iPod 应用接口的开发工作。\newline{}
-  \textbf{技术贡献}：
-  \begin{itemize}
-  \item 通过改进算法，提升iPod 歌单读取效率。实际效果由20秒提升到0.5秒，极大提升用户体验。
-  \item 音频文件头信息解析库开发。实现从不同格式音频文件中抽取解码参数，并提供给解码器，从而可以正确的播放各种格式的音频文件。
-  \end{itemize}
-  \textbf{成果}：
-  项目按时交付，从iPod 功能和音频文件头信息库的开发中学到很多。
-}
+  \cventry{2008.11 -- 2009.10}{08, 09款凯迪拉克CTS 车型 HU 开发}{上海腾龙集团}{}{}{
+    \textbf{项目背景}：外派日立进行外包协作开发工作。\newline{}
+    \textbf{职责}：车机iPod 应用接口的开发工作。\newline{}
+    \textbf{技术贡献}：
+    \begin{itemize}
+    \item 通过改进算法，提升iPod 歌单读取效率。实际效果由20秒提升到0.5秒，极大提升用户体验。
+    \item 音频文件头信息解析库开发。实现从不同格式音频文件中抽取解码参数，并提供给解码器，从而可以正确的播放各种格式的音频文件。
+    \end{itemize}
+    \textbf{成果}：
+    项目按时交付，从iPod 功能和音频文件头信息库的开发中学到很多。
+  }
 
-\section{个人兴趣}
-\cvdoubleitem{体育}{F1，跑步，滑板运动}{制作}{机械键盘，电子小器件}
-\cvdoubleitem{电影}{纪录片，科幻片}{看书}{技术书籍，小说}
+  \section{个人兴趣}
+  \cvdoubleitem{体育}{F1，跑步，滑板运动}{DIY}{机械键盘，电子小器件}
+  \cvdoubleitem{电影}{纪录片，科幻片}{看书}{技术书籍，小说}
 
-\section{授权专利}
+  \section{授权专利}
   \cventry{201510477097.X}{一种登录认证方法及系统}{发明}{唯一发明人}{已授权}{}
   \cventry{201510612722.7}{一种扩展移动终端运算能力的系统}{发明}{唯一发明人}{已授权}{}
   \cventry{201410613796.8}{一种移动终端及其虚拟光驱的实现方法}{发明}{唯一发明人}{已授权}{}
@@ -347,81 +347,81 @@
   %% \cventry{CN201811126930.6A}{一种磁场发生装置的匹配方法及系统、机器人}{发明}{唯一发明人}{公示}{}
   \cventry{CN201811126928.9A}{一种坐标校准方法及系统、机器人}{发明}{唯一发明人}{已授权}{}
 
-\section{开源项目}
-\cventry{参与项目}{github}{}{}{}{
-  \begin{itemize}
-  \item twip: 添加proxy支持
-  \item ChinaDNS-C: Bug修复及tomato编译支持
-  \item Koreader: Bug修复及编译速度优化
-  \item tmk\_keyboard: 独立为usb2usb增加蓝牙功能，蓝牙使用rn42模块
-  \item RT Thread: Stm32f1板级支持bug的修复，编写Stm32f4 hal版的CAN驱动
-  \item \href{https://github.com/iceman1001/ChameleonMini-rebooted/commit/d33eca6dcea4f39e569321471c1679b96e580c50}{ChameleonMini-rebooted}: 增加NTAG-213、215、216 的支持；增加对泽塔奥特曼变身器的支持和密钥监听。
-  \item lsp-sonarlint: 使用 sonarlint 作为 lsp 后端，对代码进行规范检查。增加对c/c++ 程序检查的支持。
-  \end{itemize}
-}
-\cventry{个人项目}{github}{}{}{}{
-  \begin{itemize}
-  \item battery\_analyzer: 电池soc表自动测算工具
-  \item vim\_configs: 维护的用于公司工作的vim配置
-  \item csr\_tool: Dump csr芯片的脚本工具
-  \item Ultramanmedal: 使用Proxmark3 制作泽塔奥特曼勋章和身份卡的Lua程序。
-  \item bin2elf: 为jtag dump的bin文件增加elf文件头，方便只支持elf文件的烧录程序使用。该工具主要用来备份国内部分违反GPL的Proxmark3 私改固件。
-  \item wintoolset: Windows上运行工具脚本的环境。
-  \item trc2asc：将PCAN抓包的TRC文件转为通用的ASC文件。
-  \item asc2blf：将ASC文件转换为BLF文件。
-  \item exportdrawio：将Drawio文件中所有sheet页一键导出为PNG或者SVG，PDF等文件的工具。
-  \item crackmfkey：一键获取ChameleonMini的监听数据，并计算得到对应扇区的密钥
-  \end{itemize}
-}
+  \section{开源项目}
+  \cventry{参与项目}{github}{}{}{}{
+    \begin{itemize}
+    \item twip: 添加proxy支持
+    \item ChinaDNS-C: Bug修复及tomato编译支持
+    \item Koreader: Bug修复及编译速度优化
+    \item tmk\_keyboard: 独立为usb2usb增加蓝牙功能，蓝牙使用rn42模块
+    \item RT Thread: Stm32f1板级支持bug的修复，编写Stm32f4 hal版的CAN驱动
+    \item \href{https://github.com/iceman1001/ChameleonMini-rebooted/commit/d33eca6dcea4f39e569321471c1679b96e580c50}{ChameleonMini-rebooted}: 增加NTAG-213、215、216 的支持；增加对泽塔奥特曼变身器的支持和密钥监听。
+    \item lsp-sonarlint: 使用 sonarlint 作为 lsp 后端，对代码进行规范检查。增加对c/c++ 程序检查的支持。
+    \end{itemize}
+  }
+  \cventry{个人项目}{github}{}{}{}{
+    \begin{itemize}
+    \item battery\_analyzer: 电池soc表自动测算工具
+    \item vim\_configs: 维护的用于公司工作的vim配置
+    \item csr\_tool: Dump csr芯片的脚本工具
+    \item Ultramanmedal: 使用Proxmark3 制作泽塔奥特曼勋章和身份卡的Lua程序。
+    \item bin2elf: 为jtag dump的bin文件增加elf文件头，方便只支持elf文件的烧录程序使用。该工具主要用来备份国内部分违反GPL的Proxmark3 私改固件。
+    \item wintoolset: Windows上运行工具脚本的环境。
+    \item trc2asc：将PCAN抓包的TRC文件转为通用的ASC文件。
+    \item asc2blf：将ASC文件转换为BLF文件。
+    \item exportdrawio：将Drawio文件中所有sheet页一键导出为PNG或者SVG，PDF等文件的工具。
+    \item crackmfkey：一键获取ChameleonMini的监听数据，并计算得到对应扇区的密钥
+    \end{itemize}
+  }
 
-% \section{其他 2}
-% \cvlistdoubleitem{项目 1}{项目 4}
-% \cvlistdoubleitem{项目 2}{项目 5\cite{book1}}
-% \cvlistdoubleitem{项目 3}{}
+  % \section{其他 2}
+  % \cvlistdoubleitem{项目 1}{项目 4}
+  % \cvlistdoubleitem{项目 2}{项目 5\cite{book1}}
+  % \cvlistdoubleitem{项目 3}{}
 
-% 来自BibTeX文件但不使用multibib包的出版物
-% \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
-%% \nocite{*}
-%% \bibliographystyle{plain}
-%% \bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
+  % 来自BibTeX文件但不使用multibib包的出版物
+  % \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+  %% \nocite{*}
+  %% \bibliographystyle{plain}
+  %% \bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
 
-% 来自BibTeX文件并使用multibib包的出版物
-% \section{出版物}
-% \nocitebook{book1,book2}
-% \bibliographystylebook{plain}
-% \bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
-% \nocitemisc{misc1,misc2,misc3}
-% \bibliographystylemisc{plain}
-% \bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+  % 来自BibTeX文件并使用multibib包的出版物
+  % \section{出版物}
+  % \nocitebook{book1,book2}
+  % \bibliographystylebook{plain}
+  % \bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+  % \nocitemisc{misc1,misc2,misc3}
+  % \bibliographystylemisc{plain}
+  % \bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
 
-\clearpage
+  \clearpage
 
-%-----       letter       ---------------------------------------------------------
-% recipient data
-%% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-%% \date{January 01, 1984}
-%% \opening{Dear Sir or Madam,}
-%% \closing{Yours faithfully,}
-%% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-%% \makelettertitle{}
+  % -----       letter       ---------------------------------------------------------
+  % recipient data
+  %% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+  %% \date{January 01, 1984}
+  %% \opening{Dear Sir or Madam,}
+  %% \closing{Yours faithfully,}
+  %% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+  %% \makelettertitle{}
 
-%% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+  %% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
 
-%% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+  %% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
 
-%% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+  %% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
 
-%% Albert Einstein discovered that $e=mc^2$ in 1905.
+  %% Albert Einstein discovered that $e=mc^2$ in 1905.
 
-%% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right){}^n \]
+  %% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right){}^n \]
 
-%% \makeletterclosing{}
+  %% \makeletterclosing{}
 
-%% \ifxetexorluatex{}
-%% \else
-%% \clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
-%% \fi
-%% \end{document}
+  %% \ifxetexorluatex{}
+  %% \else
+  %%   \clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+  %% \fi
+  %% \end{document}
 
 
-%% 文件结尾 `template-zh.tex'.
+  %% 文件结尾 `template-zh.tex'.

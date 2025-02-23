@@ -2,13 +2,13 @@
 % !TEX encoding = UTF-8 Unicode
 %% start of file `template-en.tex'.
 %% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
-%
+% 
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
 \documentclass[10pt,a4paper,mono,final]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-%\usepackage{etoolbox}
+% \usepackage{etoolbox}
 \usepackage{coffee}
 % 当前日期获取
 \usepackage[useregional]{datetime2}
@@ -26,18 +26,18 @@
 % moderncv 主题
 \moderncvstyle{classic}                        % 选项参数是 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvcolor{green}                          % 选项参数是 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+% \renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+% \nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % 调整页面
 \usepackage[scale=0.85]{geometry}
 \recomputelengths
 \setlength{\footskip}{136.00005pt}                 % depending on the amount of information in the footer, you need to change this value. comment this line out and set it to the size given in the warning
 \setlength{\hintscolumnwidth}{3cm}                % 如果你希望改变日期栏的宽度
-%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% \setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % 解决XeLaTex编译时的编码警告
-%\usepackage[unicode,pdfencoding=auto]{hyperref}
+% \usepackage[unicode,pdfencoding=auto]{hyperref}
 
 % font loading
 % for luatex and xetex, do not use inputenc and fontenc
@@ -50,8 +50,8 @@
   \setsansfont{Sarasa Mono SC}
   \setmonofont{Sarasa Mono SC}
   \setmathfont{Latin Modern Math}
-  %\usepackage[slantfont,boldfont]{xeCJK}
-  %\defaultfontfeatures{Mapping=tex-text}
+  % \usepackage[slantfont,boldfont]{xeCJK}
+  % \defaultfontfeatures{Mapping=tex-text}
   \usepackage{xcolor}
   \XeTeXlinebreaklocale "zh"
   \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
@@ -69,7 +69,7 @@
 \firstname{Zhiqiang}
 \familyname{Xu}
 \title{Software Architect}                      % 可选项、如不需要可删除本行
-%\address{Room 1401, Blvd. 25, Longma Rd. 185 Nong, Songjiang Dicstrict}{201616，Shanghai}             % 可选项、如不需要可删除本行
+% \address{Room 1401, Blvd. 25, Longma Rd. 185 Nong, Songjiang Dicstrict}{201616，Shanghai}             % 可选项、如不需要可删除本行
 \born{1983.11 -- \themyage{}}
 \extrainfo{Last update：\ctoday}
 \phone[mobile]{+86~13585618661}                         %
@@ -81,334 +81,346 @@
 \social[telegram]{xeonxu}                  % 可选项、如不需要可删除本行
 \social[github]{xeonxu}                  % 可选项、如不需要可删除本行
 \social[twitter]{xeonxu}                  % 可选项、如不需要可删除本行
-\photo[80pt][0.8pt]{zhiqiang_xu.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+%% \photo[80pt][0.8pt]{zhiqiang_xu.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
 \quote{Work as a hacker. Hack as an artist.}                 % optional, remove the line if not want
 
 % 显示索引号;仅用于在简历中使用了引言
-%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+% \makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
 \renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
-%   to redefine the bibliography heading string ("Publications")
-%\renewcommand{\refname}{Articles}
+% to redefine the bibliography heading string ("Publications")
+% \renewcommand{\refname}{Articles}
 
 % 分类索引
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            内容
-%----------------------------------------------------------------------------------
+% \usepackage{multibib}
+% \newcites{book,misc}{{Books},{Others}}
+% ----------------------------------------------------------------------------------
+% 内容
+% ----------------------------------------------------------------------------------
 \begin{document}
 \ifxetexorluatex
 \else
-\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
-\fi
-%-----       resume       ---------------------------------------------------------
+  \begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+  \fi
+  % -----       resume       ---------------------------------------------------------
 
-\cofeCm{0.2}{0.7}{180}{0cm}{0cm}
-% \cofeSplash{}
+  \cofeCm{0.2}{0.7}{180}{0cm}{0cm}
+  % \cofeSplash{}
 
-\makecvtitle
+  \makecvtitle
 
 
-\section{SUMMARY}
-Bachelor's degree with 18 years of experience in embedded software development and 2 years of management experience. Specialized in system architecture design across automotive, robotics, and mobile device platforms. Extensive experience in full lifecycle software development of real-time embedded systems, including system design, requirements capture, software implementation, and testing/validation. Skilled at leading cross-functional teams, building modular and scalable architectures, and delivering complex projects efficiently.
+  \section{SUMMARY}
+  Bachelor's degree in Traffic Engineering with 19 years of experience in embedded software design and development across automotive, robotics, and mobile devices.
+  Experienced in the full lifecycle of embedded system software development, from requirement analysis and system design to software implementation, testing, verification, and integration. Skilled in building workflows from scratch, simplifying processes, creating modular and scalable software architectures, and delivering high-quality solutions.
+  \section{CORE SKILLS}
+  \cvlistitem{Embedded system software architecture design, development, debugging, and integration}
+  \cvlistitem{Expertise in Linux, C, Bash, Git, and Docker}
+  \cvlistitem{Efficient workflow improvement to enhance overall productivity}
+  \cvlistitem{Strong communication skills}
 
-\section{CORE SKILLS}
-\cvlistitem{System architecture design for real-time embedded systems}
-\cvlistitem{Extensive experience with UML system design and modeling}
-\cvlistitem{Full lifecycle development of embedded systems (design, implementation, testing, and integration)}
-\cvlistitem{Proficient in C, Bash, Git, and Docker}
-\cvlistitem{Leading development teams across geographically dispersed locations}
-\cvlistitem{Effective communicator of complex technical concepts to non-technical stakeholders}
-%% \section{EDUCATIONAL QUALIFICATIONS}
-%% \cventry{2002.09 -- 2006.06}{Bachelor of Traffic Engineering}{Hohai University}{Nanjing}{}{}  % 第3到第6编码可留白
+  %% \section{EDUCATIONAL QUALIFICATIONS}
+  %% \cventry{2002.09 -- 2006.06}{Bachelor of Traffic Engineering}{Hohai University}{Nanjing}{}{}  % 第3到第6编码可留白
 
-% \section{毕业论文}
-% \cvitem{题目}{\emph{地铁机车运行信息收发报模拟器的实现}}
-% \cvitem{导师}{徐鹏}
+  % \section{毕业论文}
+  % \cvitem{题目}{\emph{地铁机车运行信息收发报模拟器的实现}}
+  % \cvitem{导师}{徐鹏}
 
-%% \section{LANGUAGE SKILLS}
-%% \cvitemwithcomment{English}{CET4}{Normal}
-%% \cvitemwithcomment{Japanese}{}{Normal}
+  %% \section{LANGUAGE SKILLS}
+  %% \cvitemwithcomment{English}{CET4}{Normal}
+  %% \cvitemwithcomment{Japanese}{}{Normal}
 
-%% \section{TECHNICAL SKILLS AND KNOWLEDGE}
-%% \setcvskilllegendcolumns[][0.61]
-%% \cvskillplainlegend*[0.2em]
+  %% \section{TECHNICAL SKILLS AND KNOWLEDGE}
+  %% \setcvskilllegendcolumns[][0.61]
+  %% \cvskillplainlegend*[0.2em]
 
-%% \cvdoubleitem{C}{\cvskill{5}}{Java}{\cvskill{3}}
-%% \cvdoubleitem{Kernel Driver}{\cvskill{4}}{RT-Thread}{\cvskill{4}}
-%% \cvdoubleitem{Linux/Unix}{\cvskill{5}}{Android BSP}{\cvskill{4}}
-%% \cvdoubleitem{Git/Repo}{\cvskill{5}}{Docker}{\cvskill{4}}
-%% \cvdoubleitem{Bash}{\cvskill{5}}{Python}{\cvskill{3}}
-%% \cvdoubleitem{Emacs}{\cvskill{5}}{Vim}{\cvskill{3}}
-%% \cvdoubleitem{\LaTeX}{\cvskill{2}}{Common Lisp}{\cvskill{2}}
-%% \cvdoubleitem{Router Operating System}{\cvskill{3}}{Robot Operating System}{\cvskill{3}}
+  %% \cvdoubleitem{C}{\cvskill{5}}{Java}{\cvskill{3}}
+  %% \cvdoubleitem{Kernel Driver}{\cvskill{4}}{RT-Thread}{\cvskill{4}}
+  %% \cvdoubleitem{Linux/Unix}{\cvskill{5}}{Android BSP}{\cvskill{4}}
+  %% \cvdoubleitem{Git/Repo}{\cvskill{5}}{Docker}{\cvskill{4}}
+  %% \cvdoubleitem{Bash}{\cvskill{5}}{Python}{\cvskill{3}}
+  %% \cvdoubleitem{Emacs}{\cvskill{5}}{Vim}{\cvskill{3}}
+  %% \cvdoubleitem{\LaTeX}{\cvskill{2}}{Common Lisp}{\cvskill{2}}
+  %% \cvdoubleitem{Router Operating System}{\cvskill{3}}{Robot Operating System}{\cvskill{3}}
 
-\section{WORK EXPERIENCE}
+  \section{WORK EXPERIENCE}
 
-\cventry{2022.04 -- Present}{Senior Software Engineer}{Shanghai Zeekr Blue New Energy Technology Co., Ltd}{Shanghai}{}{
-  \begin{itemize}
-  \item Responsible for the development of SOA communication middleware and diagnostic middleware for Zeekr intelligent cockpit systems based on Qualcomm 8295 and QNX.
-  \item Used Docker to build a unified development environment, improving consistency across development and production environments.
-  \item Developed the SOMEIP Ethernet packet parsing plugin for Wireshark, increasing debugging efficiency.
-  \item Led the development of SOA communication matrix code framework conversion tools and provided SDK-based compilation and release support.
-  \end{itemize}
-}
-\cventry{2019.10 -- 2022.03}{Software Architect}{SAIC Commercial Vehicle Technology Center}{Shanghai}{}{
-  \begin{itemize}
-  \item Responsible for the architecture design and development of the intelligent cockpit system for commercial vehicles.
-  \item Revised and maintained the OTA protocol for the commercial vehicle network system, ensuring support for legacy projects and adaptation to new requirements.
-  \item Participated in the design and integration of high-precision map rendering and intelligent navigation for the interior IVI system, ensuring coordination between front and rear IVI systems.
-  \end{itemize}
-}
-\cventry{2018.06 -- 2019.09}{Senior Software Engineer}{Shanghai Yunshen technology Co., Ltd. }{Shanghai}{}{
-  \begin{itemize}
-  \item System architecture design and development for the service robot project.
-  \item Designed and developed a sensor node system based on CAN bus, supporting real-time communication between multiple sensors and the central controller.
-  \item Built a ROS environment using Docker, implementing automated deployment.
-  \item Developed and completed the OTA upgrade functionality for the robot system, enabling online updates and maintenance.
-  \end{itemize}
-}
+  \cventry{2022.04 -- Present}{Senior Software Engineer}{Zeekr Automotive}{Shanghai}{}{
+    \begin{itemize}
+    \item Led the design and development of cockpit SOA communication middleware.
+    \item Responsible for developing a tool for SOA communication matrix code framework conversion and supporting multi-platform SDK compilation and release.
+    \item Led the development of a Wireshark-based plugin for SOMEIP Ethernet message parsing, enhancing debugging efficiency.
+    \item Led the use of Docker to build a unified development environment, ensuring consistency between development and production environments.
+    \item Led the design and development of cockpit diagnostic middleware and services.
+    \item Responsible for developing the cockpit controller diagnostic upgrade module.
+    \item Led the design and implementation of a peripheral upgrade solution for the cockpit.
+    \end{itemize}
+  }
+  \cventry{2019.10 -- 2022.03}{Software Architect}{SAIC Commercial Vehicle Technology Center}{Shanghai}{}{
+    \begin{itemize}
+    \item Responsible for revising and maintaining OTA protocols for the commercial vehicle IoT system.
+    \item Led the establishment of continuous integration services for the smart connected vehicle department.
+    \item Led PoC verification and bench setup for MTK cockpit solutions.
+    \item Responsible for the design and review of the serviceization of domain controller function signals via SOMEIP.
+    \item Led the design of the navigation synchronization solution for front and rear seats.
+    \item Led the design of a lightweight single-core multi-system solution based on containers and LXC.
+    \end{itemize}
+  }
+  \cventry{2018.06 -- 2019.09}{Senior Software Engineer}{Shanghai Yunshen technology Co., Ltd. }{Shanghai}{}{
+    \begin{itemize}
+    \item Led the overall system architecture design and development of a service robot.
+    \item Responsible for developing a general-purpose real-time system based on CAN bus and RTThread.
+    \item Led the development of Docker-based ROS development, compilation, and runtime environments.
+    \item Led the completion of OTA functionality for the robot system.
+    \item Responsible for recruitment and technical business coordination.
+    \end{itemize}
+  }
 
-\cventry{2016.07 -- 2018.05}{Software Solution Expert}{Shanghai clever mrobot technologies Co., Ltd. }{Shanghai}{}{
-  \begin{itemize}
-  \item Responsible for the development and architecture design of the robot software system, leading the development of the Android tablet based on the RK3288 platform.
-  \item Optimized the ROS program compilation and packaging process, designing a flexible automated upgrade architecture.
-  \item Explored and implemented a robot runtime environment based on ROS and Docker, improving system deployment efficiency and flexibility.
-  \end{itemize}
-}
-\cventry{2010.06 -- 2016.06}{Embedded Software Engineer}{Shanghai Phicomm. Inc.}{Shanghai}{}{
-  \begin{itemize}
-  \item Responsible for the development of Android smart device projects based on Marvell and Qualcomm platforms.
-  \item Simplified fast installation and configuration deployment of the Qualcomm compilation environment.
-  \item Implemented Dockerized packaging for the Android compilation environment, ensuring consistency across compilation setups.
-  \item Developed sensor drivers and battery management systems.
-  \end{itemize}
-}
-\cventry{2009.10 -- 2010.06}{Embedded Software Engineer}{Shanghai iBingo network technology Co., Ltd.}{Shanghai}{}{
-  \begin{itemize}
-  \item Responsible for porting the Allegro graphics library to the MTK platform and developing dynamic effect themes for feature phones.
-  \item Developed a variety of dynamic themes and screen savers.
-  \item Developed breakpoint-resume functionality for the mobile phone download program and wrote automated publishing tools.
-  \end{itemize}
-}
-\cventry{2008.11 -- 2009.10}{Embedded Software Engineer}{Shanghai Dragontec Group}{Shanghai}{}{
-  \begin{itemize}
-  \item Dispatched to Japan Hitachi to participate in the development of the Cadillac HU project.
-  \end{itemize}
-}
+  \cventry{2016.07 -- 2018.05}{Software Solution Expert}{Shanghai clever mrobot technologies Co., Ltd. }{Shanghai}{}{
+    \begin{itemize}
+    \item Led the development and architecture design of robot software systems.
+    \item Led BSP development for Android tablets based on RK3288 platform.
+    \item Led the optimization and design of flexible auto-upgrade architecture for ROS programs.
+    \item Led the unification of the development and runtime environment for ROS using Docker technology.
+    \end{itemize}
+  }
+  \cventry{2010.06 -- 2016.06}{Embedded Software Engineer}{Shanghai Phicomm. Inc.}{Shanghai}{}{
+    \begin{itemize}
+    \item Responsible for the development of Android smart devices based on Marvell and Qualcomm chips.
+    \item Led fast installation and deployment configuration of Qualcomm compilation environments.
+    \item Led Dockerization of Android compilation environments to ensure consistency.
+    \item Responsible for developing sensor drivers and battery management systems.
+    \end{itemize}
+  }
+  \cventry{2009.10 -- 2010.06}{Embedded Software Engineer}{Shanghai iBingo network technology Co., Ltd.}{Shanghai}{}{
+    \begin{itemize}
+    \item Responsible for developing dynamic effect themes for feature phones based on the MTK platform.
+    \item Developed multiple dynamic themes and screensavers.
+    \item Led the development of breakpoint-resumed download functionality for mobile phones.
+    \end{itemize}
+  }
+  \cventry{2008.11 -- 2009.10}{Embedded Software Engineer}{Shanghai Dragontec Group}{Shanghai}{}{
+    \begin{itemize}
+    \item Responsible for developing iPod interface and applications for Cadillac's IVI systems.
+    \item Assisted in the porting of Hitachi's digital TV software from VxWorks to Linux.
+    \item Participated in the OpenVG porting project, responsible for unit testing and regression testing.
+    \end{itemize}
+  }
 
-\section{PROJECT EXPERIENCE}
+  \section{PROJECT EXPERIENCE}
 
-\cventry{2023.09 -- Present}{EX1E/EX1H/DX1H}{Zeekr Blue New Energy Technology Co., Ltd.}{}{}{
-  \textbf{Project Background}: Development of diagnostic services for the cockpit controller of the Zeekr 3.0 platform.\newline{}
-  \textbf{Responsibilities}: Responsible for the development and design of diagnostic services for cockpit controllers in different vehicle projects, including the implementation of DID, DTC, and diagnostic flashing functions.\newline{}
-  \textbf{Technical Contributions}:
-  \begin{itemize}
-  \item Designed and implemented the diagnostic service middleware for Zeekr's cockpit controller, based on the Hongrun UDS diagnostic protocol stack.
-  \item Utilized UML to design system diagrams, component diagrams, and sequence diagrams for the middleware. Completed the preliminary design of the cockpit diagnostic service middleware platform.
-  \item Designed and developed an alternative tool for the vendor's diagnostic configuration system.
-  \item Developed and validated Basetech for various models.
-  \item Developed diagnostic services for different models based on the SDK of the diagnostic service middleware platform.
-  \item Designed and defined flashing schemes for private nodes in the cockpit domain.
-  \item Developed and refactored the diagnostic flashing functionality, supporting diagnostic flashing for all devices in the cockpit domain.
-  \end{itemize}
-  \textbf{Outcome}: Platformized Zeekr's cockpit diagnostic service development. By encapsulating the third-party diagnostic protocol stack, a vendor-independent diagnostic development interface was provided to developers. This effectively reduced the manpower required for diagnostic service development. The introduction of the alternative tool further reduced reliance on vendor configuration tool licensing.
-}
+  \cventry{2023.09 -- Present}{EX1E/EX1H/DX1H}{Zeekr Automotive}{}{}{
+    \textbf{Project Background}: Zeekr 3.0 platform cockpit controller UXC (Qualcomm 8295)\newline{}
+    \textbf{Responsibilities}: Led the design and development of diagnostic services and diagnostic upgrades for the 3.0 platform cockpit controller.\newline{}
+    \textbf{Technical Contributions}:
+    \begin{itemize}
+    \item Developed the diagnostic middleware for the Zeekr 3.0 platform cockpit controller based on Hengrun UDS diagnostic protocol stack.
+    \item Used UML to design system architecture, component diagrams, and sequence diagrams for the middleware and completed the overall design.
+    \item Designed and developed a replacement tool for the original protocol stack vendor's diagnostic configuration system.
+    \item Responsible for the development and validation of various Basetech projects.
+    \item Developed diagnostic services for various vehicle models based on the self-developed diagnostic middleware platform SDK.
+    \item Designed and implemented the platformized upgrade solution for cockpit domain private nodes.
+    \item Led the complete optimization and reconstruction of the diagnostic upgrade module, adding parallel flashing capability, reducing the full upgrade time from 40 minutes to 15 minutes.
+    \end{itemize}
+    \textbf{Achievements}: Successfully implemented a platformized cockpit diagnostic development framework. By encapsulating third-party diagnostic protocol stacks, it provides protocol-stack-independent diagnostic development interfaces for functional developers, significantly reducing the labor required for diagnostic service development. The introduction of the replacement tool further decreased the dependency on vendor configuration tool licensing. The optimized diagnostic upgrade module embodied a high cohesion, low coupling design philosophy, reducing failure rates and improving upgrade efficiency.
+  }
 
-\cventry{2022.04 -- 2023.10}{CS1E/CM2E/DC1E}{Zeekr Blue New Energy Technology Co., Ltd.}{}{}{
-  \textbf{Project Background}: Development of SOA communication middleware for Zeekr's 2.0 platform, aimed at supporting efficient communication between the DHU and ADCU.\newline{}
-  \textbf{Responsibilities}: Responsible for the system architecture design of the SOA communication platform, collaborating with hardware engineers and software architects to define the modular design of the intelligent cockpit platform, ensuring scalability and maintainability for future versions.\newline{}
-  \textbf{Technical Contributions}:
-  \begin{itemize}
-  \item Utilized UML to complete the design of system diagrams, component diagrams, use case diagrams, and sequence diagrams, which guided the writing of the cockpit SOA platform preliminary design documentation.
-  \item Developed SOA communication components based on open-source vsomeip and commonapi, supporting Linux, QNX, and Android operating systems.
-  \item Used Docker to build a unified development environment, achieving cross-platform compilation and testing.
-  \item Designed and developed a SOMEIP packet parsing plugin for Wireshark, significantly improving development and testing efficiency.
-  \end{itemize}
-  \textbf{Outcome}: The platform was successfully applied to Zeekr 2.x platform vehicles. With its well-structured design, the system was efficiently integrated and debugged. The system's modular design and high maintainability were later verified during subsequent maintenance phases.
-}
+  \cventry{2022.04 -- 2023.10}{CS1E/CM2E/DC1E}{Zeekr Automotive}{}{}{
+    \textbf{Project Background}: Zeekr 2.0 platform cockpit controller (Qualcomm 8295)\newline{}
+    \textbf{Responsibilities}: Led the system and software architecture design for the SOA communication platform.\newline{}
+    \textbf{Technical Contributions}:
+    \begin{itemize}
+    \item Developed the SOA communication middleware that supports multiple operating systems (Android, QNX, Linux) based on open-source vsomeip and commonapi.
+    \item Used UML to design system architecture diagrams, component diagrams, use case diagrams, and sequence diagrams for the middleware and completed the overall design.
+    \item Built a unified development environment using Docker to ensure a consistent development experience.
+    \item Implemented a simulation of service cross-domain communication on a single machine using Docker.
+    \item Led the design and development of a Wireshark-based SOMEIP data packet parsing plugin, significantly improving development and testing efficiency.
+    \end{itemize}
+    \textbf{Achievements}: The self-developed SOA communication platform was successfully applied to Zeekr 2.x platform vehicle models. Its solid design, combined with supporting self-developed tools, enabled the efficient development and integration of smart driving-related services. In subsequent maintenance, the system proved to have excellent modularity and high maintainability.
+  }
 
-\cventry{2019.10 -- 2022.03}{MIFA}{SAIC Commercial Vehicle Technology Center}{}{}{
-  \textbf{Project Background}: Qualcomm 8155 smart cockpit project. The goal of the project was to design an embedded architecture for SAIC's next-generation commercial vehicle cockpit system, integrating CAN signals and SOA communication using both QNX and Android dual operating systems, as well as a Linux single operating system.\newline{}
-  \textbf{Responsibilities}: As a software architect, responsible for the design of CAN signal interfaces and the definition of SOA signal matrices, ensuring the integration of high-precision map rendering functions.\newline{}
-  \textbf{Technical Contributions}:
-  \begin{itemize}
-  \item Revised and maintained the OTA protocol for air interface communication.
-  \item Built a code management and CI/CD system based on LDAP access control.
-  \item Designed a container-based single-core multi-system solution.
-  \item Designed the architecture for implementing navigation functionality for front and rear cockpit dual-host structures.
-  \item Coordinated the entire chain and implementation plan for high-precision map navigation, from initial map compilation, to syncing data with different precision map suppliers, to loading and compiling high-precision maps in fragments for car-end applications.
-  \item Completed the design and review of inter-domain Ethernet SOA services within domain centralized controllers.
-  \end{itemize}
-  \textbf{Outcome}: Successfully implemented the design functionality, and the project was delivered on schedule.
-}
+  \cventry{2019.10 -- 2022.03}{MIFA}{SAIC Commercial Vehicle Technology Center}{}{}{
+    \textbf{Project Background}: Qualcomm 8155 intelligent cockpit project, based on dual operating systems QNX and Android, and Linux single operating system, for the design and development of CAN signals and SOA services.\newline{}
+    \textbf{Responsibilities}: Responsible for CAN signal interface design, SOA services matrix definition, and related feature implementation.\newline{}
+    \textbf{Technical Contributions}:
+    \begin{itemize}
+    \item Revised and maintained the OTA air protocol.
+    \item Managed code with LDAP-based access control and built the CI/CD system.
+    \item Designed a container-based single-core multi-system solution.
+    \item Led the architecture design for the implementation of front and rear seat navigation synchronization.
+    \item Led technical discussions and drove the implementation of high-precision map functionalities.
+    \item Responsible for the design and review of inter-domain Ethernet SOA services.
+    \end{itemize}
+    \textbf{Achievements}: Successfully delivered the designed functionality on schedule, with the project being completed on time.
+  }
 
-\cventry{2018.06 -- 2019.09}{Archangel Robot}{Shanghai Yunshen Technology Co., Ltd.}{}{}{
-  \textbf{Project Background}: Developed service robots for the Red Star Macalline furniture supermarket scenario.\newline{}
-  \textbf{Responsibilities}: Responsible for designing the control system architecture to achieve real-time communication between multiple sensor nodes and the central controller.\newline{}
-  \textbf{Technical Contributions}:
-  \begin{itemize}
-  \item Utilized UML to design the overall control scheme for the robot, including system components, use cases, component activities, and sequences.
-  \item Developed CAN drivers for STM32 based on RT-Thread, and built a platformized sensor development framework.
-  \item Designed and implemented a CAN bus-based sensor node system, enabling real-time data transmission and processing for multiple sensors.
-  \item Set up the company's development and testing environment and implemented a CI/CD system.
-  \item Implemented remote firmware upgrades for sensors, reducing hardware maintenance costs.
-  \item Used Docker-based ROS images to significantly improve bug regression efficiency and new feature deployment speed.
-  \item Used a virtual machine solution to configure and create images for the robot's central control computer, improving operational consistency and reducing risks of issues.
-  \item Integrated Intel Realsense drivers into the Docker image, solving the camera hot-plugging problem, and fully Dockerized the ROS runtime of the robot.
-  \item Ported a facial recognition algorithm and encapsulated it as a ROS node.
-  \end{itemize}
-  \textbf{Outcome}: Played multiple roles and was deeply involved in the entire development process of the Archangel robot. Overcame several technical challenges, and ultimately achieved the functionality for full OTA upgrades for the robot. This provided the robot system with the ability to be updated and maintained online, improving post-launch maintenance convenience.
-}
+  \cventry{2018.06 -- 2019.09}{Astrid Robot}{Shanghai Yunshen Technology Co., Ltd.}{}{}{
+    \textbf{Project Background}: Development of service robots for the furniture retail and supermarket scenarios. \newline{}
+    \textbf{Responsibilities}: Led the system architecture design and implementation of the robot’s overall control solution.\newline{}
+    \textbf{Technical Contributions}:
+    \begin{itemize}
+    \item Completed the platformized development framework for the general-purpose real-time system based on RT-Thread.
+    \item Developed CAN driver support for STM32 in RT-Thread.
+    \item Used UML to design the overall control solution for the robot, including system components, use cases, component activities, and sequence diagrams.
+    \item Designed and implemented a sensor node system based on CAN bus, enabling real-time data transmission and processing from multiple sensors.
+    \item Deployed the CI/CD system using Jenkins and Gerrit.
+    \item Built a unified development and testing environment using Docker.
+    \item Implemented remote firmware upgrade capabilities for sensors, reducing hardware maintenance costs.
+    \item Built Docker runtime images for ROS, improving debugging and feature deployment efficiency.
+    \item Used a virtual machine solution to configure and create images for the robot's central control computer operating system, improving consistency and reducing operational risks.
+    \item Integrated Intel RealSense drivers into the Docker image, resolving hot-plug issues with cameras, and fully implemented Docker image-based operation for ROS.
+    \item Ported a facial recognition algorithm and implemented a ROS node.
+    \end{itemize}
+    \textbf{Achievements}: Played a key role in the overall development of the Da Tian Shi robot, overcoming various technical challenges, and ultimately enabling OTA upgrades for the robot system. This provided the robot with the ability for online updates and maintenance, improving post-launch support.
+  }
 
-\cventry{2016.07 -- 2018.05}{Noah Robot}{Shanghai Mrobot Technologies Co., Ltd.}{}{}{
-  \textbf{Project Background}: Developed logistics robots for hospital scenarios.\newline{}
-  \textbf{Responsibilities}: Integrated the latest algorithms from different functional groups, prepared POC demonstration prototypes, investigated and solved on-site technical issues, and designed the next-generation control system.\newline{}
-  \textbf{Technical Contributions}:
-  \begin{itemize}
-  \item Optimized startup time and power management for the Android tablet system based on the RK3288 platform.
-  \item Designed and implemented the robot control system architecture based on ROS.
-  \item Pioneered the use of Docker images for system environment encapsulation to ensure consistency and repeatability, achieving success.
-  \item Standardized the ROS program compilation and packaging process, and implemented the ability to automatically upgrade via USB.
-  \end{itemize}
-  \textbf{Outcome}: The project was successfully delivered, greatly improving the stability and performance of the robot control system.
-}
+  \cventry{2016.07 -- 2018.05}{Noah Robot}{Shanghai Mrobot Technologies Co., Ltd.}{}{}{
+    \textbf{Project Background}: Development of logistics robots for hospital scenarios.\newline{}
+    \textbf{Responsibilities}: Responsible for integrating the latest algorithms developed by each function team, preparing POC demonstration prototypes, investigating and resolving on-site technical issues, and designing the next-generation control system. \newline{}
+    \textbf{Technical Contributions}:
+    \begin{itemize}
+    \item Optimized the startup time and power management for Android tablets based on the RK3288 platform.
+    \item Designed and implemented the robot control system architecture based on ROS.
+    \item Used Docker images to encapsulate the system environment for consistency and repeatability, achieving success.
+    \item Standardized the compilation and packaging process for ROS programs and implemented USB-based auto-upgrade functionality.
+    \end{itemize}
+    \textbf{Achievements}: Successfully delivered the project, greatly improving the stability and performance of the robot control system.
+  }
 
-\cventry{2010.06 -- 2016.06}{C630/C832/F320/P680}{Shanghai Phicomm Technology Co., Ltd.}{}{}{
-  \textbf{Project Background}: Phicomm's self-branded smartphone development project.\newline{}
-  \textbf{Responsibilities}: Worked on the BSP base package for different chipsets, ported and optimized device drivers, and developed power management systems for mobile devices.\newline{}
-  \textbf{Technical Contributions}:
-  \begin{itemize}
-  \item Developed automated tools for the fast installation and configuration deployment of Qualcomm platforms, simplifying the complexity of setting up development environments.
-  \item Dockerized the compilation environment, ensuring consistency across build outputs.
-  \item Achieved distributed compilation and compilation caching for Android through distcc and ccache, significantly improving Android version compilation efficiency.
-  \item Designed and implemented a battery driver data modeling tool based on SOC tables, greatly improving the user experience for charging and discharging.
-  \item Developed a multi-channel charging function based on SMB358.
-  \item Designed and implemented an efficient sensor driver development scheme, improving driver porting and tuning efficiency by six times or more.
-  \end{itemize}
-  \textbf{Outcome}: The accumulated methods and approaches significantly improved driver development and tuning efficiency, while also greatly improving compilation version regression testing efficiency. Ensured the project could be completed on time ahead of scheduled milestones.
-}
+  \cventry{2010.06 -- 2016.06}{C630/C832/F320/P680}{Shanghai Phicomm Technology Co., Ltd.}{}{}{
+    \textbf{Project Background}: Phicomm’s proprietary brand of smartphone development.\newline{}
+    \textbf{Responsibilities}: Responsible for device driver porting and tuning, and the development of the mobile device power management system.\newline{}
+    \textbf{Technical Contributions}:
+    \begin{itemize}
+    \item Developed automation tools to achieve fast installation and configuration of Qualcomm compilation environments, eliminating the need for complex Qualcomm development environment setup.
+    \item Dockerized the compilation environment to ensure consistency and reduce risks.
+    \item Introduced distcc and ccache to enable distributed and cached Android compilation, greatly enhancing Android release efficiency.
+    \item Designed and implemented a data modeling tool for SOC battery drivers, and significantly improved the user experience by optimizing the system's charge and discharge strategy.
+    \item Implemented multi-channel charging functionality based on SMB358.
+    \item Designed and implemented an efficient sensor driver development scheme, improving driver porting and tuning efficiency by over 6 times.
+    \end{itemize}
+    \textbf{Achievements}: Through the accumulation and summary of development methods and practices, improved driver development and tuning efficiency, while also significantly enhancing the efficiency of version regression verification for compiled builds.
+  }
 
-\cventry{2009.10 -- 2010.06}{iBingo iShow Theme System}{Shanghai iBingo Network Technology Co., Ltd.}{}{}{
-  \textbf{Project Background}: Developed an effects system for feature phones based on MTK chipsets.\newline{}
-  \textbf{Responsibilities}: Developed dynamic themes and dynamic screensavers for feature phones using a graphics development library.\newline{}
-  \textbf{Technical Contributions}:
-  \begin{itemize}
-  \item Ported some graphics algorithms from the Allegro graphics library.
-  \item Developed multiple dynamic theme desktops.
-  \item Developed a flowing ribbon effect screensaver with seamless color transitions.
-  \item Developed a dynamic landscape screensaver that changes between day and night based on the time of day.
-  \item Designed and implemented a templating system that automatically generates similar themes by replacing different graphical assets.
-  \item Developed a breakpoint-resume functionality for the mobile download program and wrote an automated publishing tool.
-  \item Developed the company's promotional DVD using Actionscript.
-  \end{itemize}
-  \textbf{Outcome}: In less than a year, the company went from startup to successfully developing multiple theme desktops and screensaver systems, as well as production and publishing tools.
-}
+  \cventry{2009.10 -- 2010.06}{iBingo iShow Theme System}{Shanghai iBingo Network Technology Co., Ltd.}{}{}{
+    \textbf{Project Background}: Developed dynamic effect systems for feature phones based on MTK chipsets.\newline{}
+    \textbf{Responsibilities}: Responsible for developing dynamic themes and screensavers for feature phones based on a graphic development library.\newline{}
+    \textbf{Technical Contributions}:
+    \begin{itemize}
+    \item Ported the Allegro graphics library and its graphical algorithms.
+    \item Developed multiple dynamic theme desktops.
+    \item Developed a dynamic screensaver with an infinitely changing color ribbon effect.
+    \item Developed a dynamic landscape screensaver that switches between day and night.
+    \item Designed and implemented a templated system, enabling the automatic generation of themes by simply swapping graphic assets for the same theme type.
+    \item Responsible for the development of the download program’s breakpoint-resumed download feature for mobile phones and created an automated publishing tool.
+    \item Developed a company promotional CD using Actionscript.
+    \end{itemize}
+    \textbf{Achievements}: In under a year, from the company's inception, successfully developed multiple theme desktops and screensaver systems, along with production and publishing tools.
+  }
 
-\cventry{2008.11 -- 2009.10}{'08, '09 Cadillac CTS HU Development}{Shanghai Dragontec Group}{}{}{
-  \textbf{Project Background}: Dispatched to Hitachi for outsourced collaborative development.\newline{}
-  \textbf{Responsibilities}: Responsible for developing the iPod application interface for the head unit system.\newline{}
-  \textbf{Technical Contributions}:
-  \begin{itemize}
-  \item Improved iPod playlist reading efficiency through algorithm optimization. The actual performance improved from 20 seconds to 0.5 seconds, increasing usability by 40 times.
-  \item Developed a song information parsing library to extract decoding parameters from various audio file formats and provide them to the decoder, ensuring the correct playback of various audio formats.
-  \end{itemize}
-  \textbf{Outcome}: The project was delivered on time, system compatibility issues were resolved, and system stability was improved.
-}
+  \cventry{2008.11 -- 2009.10}{'08, '09 Cadillac CTS HU Development}{Shanghai Dragontec Group}{}{}{
+    \textbf{Project Background}: Outsourced to Hitachi for collaboration on automotive development.\newline{}
+    \textbf{Responsibilities}: Responsible for the development of the iPod interface and applications for Cadillac’s IVI systems. \newline{}
+    \textbf{Technical Contributions}:
+    \begin{itemize}
+    \item Improved the algorithm for reading iPod playlists, reducing the time from 20 seconds to 0.5 seconds, significantly enhancing the user experience.
+    \item Developed an audio file header information parsing library, enabling the extraction of decoding parameters from audio files of different formats and providing them to the decoder, ensuring correct playback of various audio formats.
+    \end{itemize}
+    \textbf{Achievements}: Delivered the project on time and gained extensive experience from the development of the iPod functionality and audio file header parsing library.
+  }
 
-\section{HOBBIES}
-\cvdoubleitem{Sports}{\small F1, Running, Skateboarding}{DIY}{\small Mechanical Keyboards, Electronic Gadgets}
-\cvdoubleitem{Movies}{\small Documentaries, Sci-Fi Movies}{Reading}{\small Technical Books, Novels}
+  \section{HOBBIES}
+  \cvdoubleitem{Sports}{\small F1, Running, Skateboarding}{DIY}{\small Mechanical Keyboards, Electronic Gadgets}
+  \cvdoubleitem{Movies}{\small Documentaries, Sci-Fi Movies}{Reading}{\small Technical Books, Novels}
 
-\section{GRANTED PATENTS}
-\cvitem{201510477097.X}{Login authentication method and system}
-\cvitem{201510612722.7}{System for expanding operational capability of mobile terminal}
-\cvitem{201410613796.8}{Mobile terminal and achievement method of virtual drive of same}
-\cvitem{201210368281.7}{Headphone interface device and control method based on the headphone interface device}
-\cvitem{201510745100.1}{A kind of key encryption method and system, electronic equipment}
-\cvitem{201210585845.2}{Hardware and firmware independently updating system and method thereof}
-\cvitem{201420615063.3}{A kind of mobile phone water enter preventing device}
-\cvitem{CN201811304800.7A}{Generation method of thermodynamic diagram of active area and server}
-\cventry{CN201811126928.9A}{Coordinate calibration method and system and robot}
+  \section{GRANTED PATENTS}
+  \cvitem{201510477097.X}{Login authentication method and system}
+  \cvitem{201510612722.7}{System for expanding operational capability of mobile terminal}
+  \cvitem{201410613796.8}{Mobile terminal and achievement method of virtual drive of same}
+  \cvitem{201210368281.7}{Headphone interface device and control method based on the headphone interface device}
+  \cvitem{201510745100.1}{A kind of key encryption method and system, electronic equipment}
+  \cvitem{201210585845.2}{Hardware and firmware independently updating system and method thereof}
+  \cvitem{201420615063.3}{A kind of mobile phone water enter preventing device}
+  \cvitem{CN201811304800.7A}{Generation method of thermodynamic diagram of active area and server}
+  \cventry{CN201811126928.9A}{Coordinate calibration method and system and robot}
 
-\section{MISCELLANOUS}
-\cventry{Contributed 3rd party projects}{github}{}{}{}{
-  \begin{itemize}
-  \item twip: Added proxy support.
-  \item ChinaDNS-C: Fixed bugs and ported to tomato.
-  \item Koreader: Fixed bugs and optimized compilation speed.
-  \item tmk\_keyboard: Added bluetooth support for usb2usb.
-  \item RT Thread: Fixed STM32F1 bsp bugs. Wrote CAN driver for Stm32f4 using hal library.
-  \item \href{https://github.com/iceman1001/ChameleonMini-rebooted/commit/d33eca6dcea4f39e569321471c1679b96e580c50}{ChameleonMini-rebooted}: Added NTAG-213、215、216 support.
-  \item lsp-sonarlint: An Emacs plugin from using sonarlint as a lsp backend to help checking codes rules. Added c/c++ checking support.
-  \end{itemize}
-}
+  \section{MISCELLANOUS}
+  \cventry{Contributed 3rd party projects}{github}{}{}{}{
+    \begin{itemize}
+    \item twip: Added proxy support.
+    \item ChinaDNS-C: Fixed bugs and ported to tomato.
+    \item Koreader: Fixed bugs and optimized compilation speed.
+    \item tmk\_keyboard: Added bluetooth support for usb2usb.
+    \item RT Thread: Fixed STM32F1 bsp bugs. Wrote CAN driver for Stm32f4 using hal library.
+    \item \href{https://github.com/iceman1001/ChameleonMini-rebooted/commit/d33eca6dcea4f39e569321471c1679b96e580c50}{ChameleonMini-rebooted}: Added NTAG-213、215、216 support.
+    \item lsp-sonarlint: An Emacs plugin from using sonarlint as a lsp backend to help checking codes rules. Added c/c++ checking support.
+    \end{itemize}
+  }
 
-\cventry{My projects}{github}{}{}{}{
-  \begin{itemize}
-  \item vim\_configs: Vim configure used for co-workers.
-  \item battery\_analyzer:  A tool that auto sampling and use spline method to generate SOC table for battery driver
-  \item csr\_tool: Script which can dump firmware from CSR chips.
-  \item Ultramanmedal: A lua script which can generate tags for zeta ultraman.
-  \item bin2elf: Add elf header for bin file.
-  \item wintoolset: An environment for running script tools under windows.
-  \item trc2asc：Convert trc file which is saved by peak apps to asc file.
-  \item asc2blf：Convert ASC to blf or blf to asc.
-  \item exportdrawio：Export png svg pdf files from a drawio file.
-  \item crackmfkey：Auto download sniff data from chameleon and calcuate keys out.
-  \end{itemize}
-}
-% \item images2bin
-% \item rasproxy
+  \cventry{My projects}{github}{}{}{}{
+    \begin{itemize}
+    \item vim\_configs: Vim configure used for co-workers.
+    \item battery\_analyzer:  A tool that auto sampling and use spline method to generate SOC table for battery driver
+    \item csr\_tool: Script which can dump firmware from CSR chips.
+    \item Ultramanmedal: A lua script which can generate tags for zeta ultraman.
+    \item bin2elf: Add elf header for bin file.
+    \item wintoolset: An environment for running script tools under windows.
+    \item trc2asc：Convert trc file which is saved by peak apps to asc file.
+    \item asc2blf：Convert ASC to blf or blf to asc.
+    \item exportdrawio：Export png svg pdf files from a drawio file.
+    \item crackmfkey：Auto download sniff data from chameleon and calcuate keys out.
+    \end{itemize}
+  }
+  % \item images2bin
+  % \item rasproxy
 
-\renewcommand{\listitemsymbol}{-}             % 改变列表符号
+  \renewcommand{\listitemsymbol}{-}             % 改变列表符号
 
-% \section{其他 2}
-% \cvlistdoubleitem{项目 1}{项目 4}
-% \cvlistdoubleitem{项目 2}{项目 5\cite{book1}}
-% \cvlistdoubleitem{项目 3}{}
+  % \section{其他 2}
+  % \cvlistdoubleitem{项目 1}{项目 4}
+  % \cvlistdoubleitem{项目 2}{项目 5\cite{book1}}
+  % \cvlistdoubleitem{项目 3}{}
 
-% 来自BibTeX文件但不使用multibib包的出版物
-% \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
+  % 来自BibTeX文件但不使用multibib包的出版物
+  % \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+  \nocite{*}
+  \bibliographystyle{plain}
+  \bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
 
-% 来自BibTeX文件并使用multibib包的出版物
-% \section{出版物}
-% \nocitebook{book1,book2}
-% \bibliographystylebook{plain}
-% \bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
-% \nocitemisc{misc1,misc2,misc3}
-% \bibliographystylemisc{plain}
-% \bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+  % 来自BibTeX文件并使用multibib包的出版物
+  % \section{出版物}
+  % \nocitebook{book1,book2}
+  % \bibliographystylebook{plain}
+  % \bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+  % \nocitemisc{misc1,misc2,misc3}
+  % \bibliographystylemisc{plain}
+  % \bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
 
-\clearpage
+  \clearpage
 
-% -----       letter       ---------------------------------------------------------
-% recipient data
-% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-% \date{January 01, 1984}
-% \opening{Dear Sir or Madam,}
-% \closing{Yours faithfully,}
-% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-% \makelettertitle
+  % -----       letter       ---------------------------------------------------------
+  % recipient data
+  % \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+  % \date{January 01, 1984}
+  % \opening{Dear Sir or Madam,}
+  % \closing{Yours faithfully,}
+  % \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+  % \makelettertitle
 
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+  % Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
 
-% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+  % Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
 
-% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+  % Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
 
-% Albert Einstein discovered that $e=mc^2$ in 1905.
+  % Albert Einstein discovered that $e=mc^2$ in 1905.
 
-% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+  % \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
 
-% \makeletterclosing
+  % \makeletterclosing
 
-\ifxetexorluatex
-\else
-  \clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+  \ifxetexorluatex
+  \else
+    \clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 \fi
 \end{document}
 
